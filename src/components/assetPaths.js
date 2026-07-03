@@ -17,10 +17,6 @@ const getAssetBasePath = () => {
     basePath = '/chaotic-react';  // Default to same path
   }
   
-  console.log('Current hostname:', window.location.hostname);
-  console.log('Environment:', isDevelopment ? 'development' : isGitHubPages ? 'github-pages' : 'other');
-  console.log('Using base path:', basePath);
-  
   return basePath;
 };
 
@@ -33,7 +29,6 @@ const getAssetPath = (path) => {
   // Combine base path with normalized path
   const fullPath = `${basePath}/${normalizedPath}`;
   
-  console.log('Requested asset path:', fullPath);
   return fullPath;
 };
 
