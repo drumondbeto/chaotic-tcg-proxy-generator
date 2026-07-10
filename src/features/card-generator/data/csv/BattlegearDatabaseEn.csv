@@ -1,0 +1,263 @@
+id,name,set,rarity,ability,flavorText,unique,legendary,loyal,artist,imageUrl,uniqueId
+136/232,Aqua Shield,dop,super rare,"Equipped Creature has an additional 5 Energy.
+Sacrifice Aqua Shield: Heal 15 damage to target Creature.",,false,false,false,"Andrew Bradshaw, David Curiel",https://i.imgur.com/O0dWhvv.png,Aqua Shield__dop
+137/232,Cyclance,dop,rare,Sacrifice Cyclance: equipped Creature gains :air:Air until the end of combat.,,false,false,false,"Andrew Bradshaw, Etienne St.Laurent",https://i.imgur.com/WFBPijk.png,Cyclance__dop
+138/232,Diamond of Vlaric,dop,rare,Sacrifice Diamond of Vlaric: equipped Creature gains :earth:Earth until the end of combat.,,false,false,false,"Edwin Nebres, Emilio Lopez",https://i.imgur.com/sgaso4S.png,Diamond of Vlaric__dop
+139/232,Dragon Pulse,dop,common,Equipped Creature has an additional 25 :courage:Courage.,,false,false,false,"Andrew Bradshaw, David Curiel",https://i.imgur.com/Jl1hk3J.png,Dragon Pulse__dop
+140/232,Elixir of Tenacity,dop,common,"Equipped Creature has an additional 10 :courage:Courage and an additional 10 :speed:Speed.
+
+If equipped Creature has at least 50 :power:Power, it has an additional 10 Energy.",,false,false,false,"Aris Illopoulos, Edwin Nebres, David Curiel",https://i.imgur.com/RTyULyY.png,Elixir of Tenacity__dop
+141/232,Flux Bauble,dop,rare,"At the beginning of combat, look at the top two cards of your Location Deck. Put one of them on top of that deck and the other on the bottom.",,false,false,false,"Andrew Bradshaw, Emilio Lopez",https://i.imgur.com/aKVIkOT.png,Flux Bauble__dop
+142/232,Gauntlets of Might,dop,common,Equipped Creature has an additional 25 :power:Power.,,false,false,false,"Aris Illopoulos, Edwin Nebres, Etienne St.Laurent",https://i.imgur.com/MZE9NlY.png,Gauntlets of Might__dop
+143/232,Liquilizer,dop,rare,Sacrifice Liquilizer: equipped Creature gains :water:Water until the end of combat.,,false,false,false,"Andrew Bradshaw, Etienne St.Laurent",https://i.imgur.com/MDzBVYr.png,Liquilizer__dop
+144/232,Mipedian Cactus,dop,super rare,"Equipped Creature has an additional 15 :wisdom:Wisdom.
+Equipped Mipedian Creature has :mipedianmugic:: equipped Creature can move to any space on the board as if it were adjacent.""",,false,false,false,"Keith Conroy, Anthony Washington",https://i.imgur.com/L8JtwA4.png,Mipedian Cactus__dop
+145/232,Mowercycle,dop,common,Equipped Creature has an additional 25 :speed:Speed.,,false,false,false,"Anthony Washington, Edwin Nebres, Francis Barrios",https://i.imgur.com/1KaJWyv.png,Mowercycle__dop
+146/232,Mugician's Lyre,dop,common,Sacrifice Mugician's Lyre: Put a Mugic counter on the equipped Creature,,false,false,false,"Andrew Bradshaw, Etienne St.Laurent, Edwin Nebres",https://i.imgur.com/MFng08Z.png,Mugician's Lyre__dop
+147/232,Nexus Fuse,dop,super rare,"Equipped Creature has an additional 5 Energy.
+Sacrifice Nexus Fuse: Deal 15 damage to target Creature.",,false,false,false,"Edwin Nebres, Etienne St.Laurent, Andrew Bradshaw",https://i.imgur.com/97LjbD8.png,Nexus Fuse__dop
+148/232,Orb of Foresight,dop,rare,"At the beginning of combat, look at the top three cards of your Attack Deck. Put one of them on top of that deck and the other two on the bottom in any order.",,false,false,false,"Edwin Nebres, Etienne St.Laurent",https://i.imgur.com/dYMVHMP.png,Orb of Foresight__dop
+149/232,Phobia Mask,dop,uncommon,"Equipped Creature has ""Intimidate: :courage:Courage 10"" and ""Intimidate: :power:Power 10.""",,false,false,false,"Andrew Bradshaw, David Curiel, Edwin Nebres",https://i.imgur.com/s9BxCXc.png,Phobia Mask__dop
+150/232,Prism of Vacuity,dop,uncommon,"Equipped Creature has an additional 5 Energy.
+Sacrifice Prism of Vacuity: Target Creature loses 20 :power:Power.",,false,false,false,"Adrian Barrios, Etienne St.Laurent",https://i.imgur.com/eNFUPdt.png,Prism of Vacuity__dop
+151/232,Pyroblaster,dop,rare,Sacrifice Pyroblaster: equipped Creature gains :fire:Fire until the end of combat.,,false,false,false,"Andrew Bradshaw, Etienne St.Laurent",https://i.imgur.com/7WIzgvm.png,Pyroblaster__dop
+152/232,Ring of Na'arin,dop,common,"Equipped Creature has an additional 10 :power:Power and an additional 10 :wisdom:Wisdom.
+If equipped Creature has at least 50 :courage:Courage, it has an additional 10 Energy.",,false,false,false,"Andrew Bradshaw, Etienne St.Laurent",https://i.imgur.com/zlmNMdC.png,Ring of Na'arin__dop
+153/232,Riverland Star,dop,super rare,"Equipped Creature has an additional 15 :courage:Courage.
+Equipped OverWorld Creature has ""When equipped Creature deals :water:Water damage, heal 5 damage to it.""",,false,false,false,"Andrew Bradshaw, David Curiel, Edwin Nebres",https://i.imgur.com/Qwfs3c7.png,Riverland Star__dop
+154/232,Skeletal Steed,dop,uncommon,"Equipped Creature has ""Range"" and ""Swift 1.""
+This Battlegear begins the game face-up.",,false,false,false,Kozutoku matsumoto,https://i.imgur.com/8vwGnVy.png,Skeletal Steed__dop
+155/232,Spectral Viewer,dop,rare,"When equipped Creature becomes engaged, Creatures engaged with it lose and cannot gain Invisibility.",,false,false,false,"Andrew Bradshaw, Etienne St.Laurent, Edwin Nebres",https://i.imgur.com/0hn5oni.png,Spectral Viewer__dop
+156/232,Staff of Wisdom,dop,common,Equipped Creature has an additional 25 :wisdom:Wisdom.,,false,false,false,"Edwin Nebres, Emilio Lopez",https://i.imgur.com/onFeCjn.png,Staff of Wisdom__dop
+157/232,Stone Mail,dop,ultra rare,"Equipped Creature cannot move.
+Equipped Creature has an additional 50 Energy.
+All damage dealt to equipped Creature is increased by 5.
+Equipped Creature has no abilities and cannot gain abilities.",,false,false,false,"Andrew Bradshaw, Jimmy Tran",https://i.imgur.com/rcpF5dr.png,Stone Mail__dop
+158/232,Talisman of the Mandiblor,dop,super rare,"Equipped Creature has an additional 15 :speed:Speed.
+Equipped Danian Creature has ""Sacrifice equipped Creature: Return a Mandiblor Creature Card in your general discard pile to play to any unoccupied space on the Battleboard.""",,false,false,false,"Rudy Nebres, Anthony Washington",https://i.imgur.com/ciQOuJV.png,Talisman of the Mandiblor__dop
+159/232,Torrent Krinth,dop,uncommon,"Equipped Creature has "":water:Water 5.""",,false,false,false,"Aris Illopoulos, Anthony Washington",https://i.imgur.com/1lPjYZJ.png,Torrent Krinth__dop
+160/232,Torwegg,dop,uncommon,"Equipped Creature has "":air:Air 5.""",,false,false,false,"Edwin Nebres, Andrew Bradshaw, David Curiel",https://i.imgur.com/Wgvf1wh.png,Torwegg__dop
+161/232,Viledriver,dop,uncommon,"Equipped Creature has "":fire:Fire 5.""",,false,false,false,"Andrew Bradshaw, Etienne St.Laurent",https://i.imgur.com/TaiMNEV.png,Viledriver__dop
+162/232,Vlaric Shard,dop,uncommon,"Equipped Creature has "":earth:Earth 5.""",,false,false,false,"Adrian Barrios, David Curiel",https://i.imgur.com/D0Sqckh.png,Vlaric Shard__dop
+163/232,Whepcrack,dop,super rare,"Equipped Creature has an additional 15 :power:Power.
+Equipped UnderWorld Creature has "":fire:Fire 5.""",,false,false,false,"Andrew Bradshaw, Etienne St.Laurent, Edwin Nebres",https://i.imgur.com/k3NCFU7.png,Whepcrack__dop
+164/232,Windstrider,dop,super rare,"Equipped Creature has ""Swift 2.""
+This Battlegear begins the game face-up.",,false,false,false,"Andrew Bradshaw, David Curiel, Edwin Nebres",https://i.imgur.com/Qq4HTuG.png,Windstrider__dop
+56/100,Danian Carapace,zoth,super rare,"When equipped Creature deals damage to an Uninfected Creature, Infect that Creature.
+When the equipped Creature is destroyed while engaged, destroy all Battlegear equipped to the opposing engaged Creature. Then, if that Creature is Unequipped, equip Danian carapace to it.
+(Players control any Battlegear equipped to Creatures they control.)",,false,false,false,"Adrian Barrios, Anthony Washington",https://i.imgur.com/awD7eXN.png,Danian Carapace__zoth
+57/100,Elementalist Pauldrons,zoth,rare,"Equipped Creature has an additional 5 Energy and 15 :power:Power. 
+Equipped Elementalist Creature has all Elemental Types your Creatures have.",,false,false,false,Imaginary Friends Studios,https://i.imgur.com/nRUV8OX.png,Elementalist Pauldrons__zoth
+58/100,Ice Cloak,zoth,rare,"When Ice Cloak is flipped face-up, if equipped Creature is engaged with a Creature with :fire:Fire, equipped Creature gains 10 Energy.
+Equipped Creature has "":fire:Fire proof 10.""",,false,false,false,"Adrian Barrios, Etienne St.Laurent",https://i.imgur.com/4qYLdzL.png,Ice Cloak__zoth
+59/100,Mandiblor Crown,zoth,common,"Equipped Creature has Creature Type ""Mandiblor"" in addition to its other types.
+Equipped Creature has ""Hive: equipped Creature has an additional 5 Energy.""",,false,false,false,"Andrew Bradshaw, Etienne St.Laurent",https://i.imgur.com/GIuqyyp.png,Mandiblor Crown__zoth
+60/100,Scout's Monocular,zoth,common,"Equipped Creature has an additional 5 Energy and 15 :wisdom:Wisdom.
+Equipped Scout Creature has :genericmugic:: Turn target face-down Battlegear face-up.""",,false,false,false,"Andrew Bradshaw, Etienne St.Laurent",https://i.imgur.com/O3V6LTV.png,Scout's Monocular__zoth
+61/100,Stingblade Prototype,zoth,super rare,"When Hive is activated, the next time an Attack would deal damage this turn, it deals 10 damage instead.",,true,false,false,Imaginary Friends Studios,https://i.imgur.com/chUhMt2.png,Stingblade Prototype__zoth
+62/100,Supercharged Alterant,zoth,uncommon,"When Supercharged Alterant is flipped face-up, choose a Discipline. Equipped Creature gains 100 in the chosen Discipline.",,false,false,false,"Khary Randolph, Emilio Lopez",https://i.imgur.com/UsgTdkw.png,Supercharged Alterant__zoth
+63/100,Sword of Khy'at,zoth,uncommon,"Equipped Creature has an additional 5 Energy and 15 :speed:Speed. 
+Equipped Warrior Creature has ""When equipped Creature deals 20 or more attack damage, deal 5 damage to target Creature.""",,false,false,false,"Patrick Gagne, Etienne St.Laurent",https://i.imgur.com/WzgSGFa.png,Sword of Khy'at__zoth
+64/100,Telebracers,zoth,super rare,"When Telebracers is flipped face-up, reveal a new active Location.",,false,false,false,"Andrew Bradshaw, Etienne St.Laurent",https://i.imgur.com/ARdx2DC.png,Telebracers__zoth
+65/100,Ur-Shard,zoth,ultra rare,"Equipped Creature has "":earth:Earth 5"" and ""Recklessness 5.""
+If equipped Creature is destroyed while engaged, destroy all Battlegear equipped to the opposing engaged Creature. Then, if that Creature is Unequipped, equip Ur-Shard to it.
+(Players control any Battlegear equipped to Creatures they control.)",,false,false,false,"Khary Randolph, Etienne St.Laurent",https://i.imgur.com/dx70GJj.png,Ur-Shard__zoth
+66/100,Challor,ss,super rare,"Equipped Creature cannot be targeted by abilities.
+This Battlegear begins the game face-up.",,false,false,false,HotShotsVFX,https://i.imgur.com/8rp1tPo.png,Challor__ss
+68/100,Entropy Modulator,ss,common,Sacrifice Entropy Modulator: Target attack deals 15 damage.,,false,false,false,HotShotsVFX,https://i.imgur.com/MSFDBeJ.png,Entropy Modulator__ss
+69/100,Heptadd's Crown,ss,rare,"Equipped Creature can play Mugic of any tribe. 
+When a Mugic or ability is played by equipped Creature, deal 10 damage to it.
+This Battlegear begins the game face-up.",,true,false,false,HotShotsVFX,https://i.imgur.com/rpOh1gg.png,Heptadd's Crown__ss
+70/100,Hunter's Lure,ss,uncommon,Sacrifice Hunter's Lure: Relocate both engaged Creatures to any unoccupied space on the Battleboard.,,false,false,false,HotShotsVFX,https://i.imgur.com/T4GrsUb.png,Hunter's Lure__ss
+71/100,Lightning Canister,ss,common,"Equipped Creature has an additional 5 Energy. 
+When Lightning Canister is put into your general discard pile from face-up, deal 5 damage to target engaged Creature.",,false,false,false,HotShotsVFX,https://i.imgur.com/8Pi76oa.png,Lightning Canister__ss
+72/100,Ravita Flower,ss,common,"Equipped Creature has an additional 5 Energy. 
+Sacrifice Ravita Flower: Put 2 Mugic counters on target Conjuror Creature.",,false,false,false,HotShotsVFX,https://i.imgur.com/l8DiCKA.png,Ravita Flower__ss
+73/100,Reality Field Generator,ss,rare,"When equipped Creature enters a space with a Mirage Location, shuffle that Mirage Location into its controller's Location Deck. 
+Mirage Locations cannot be placed in equipped Creature's space.",,false,false,false,HotShotsVFX,https://i.imgur.com/ooAIbdG.png,Reality Field Generator__ss
+67/100,The Doomhammer,ss,ultra rare,"Equipped Creature deals an additional 5 Attack damage to UnderWorld and Danian Creatures.
+Equipped Danian Creature has "":earth:Earth 5.""
+Equipped UnderWorld Creature has an additional 50 :power:Power.",,true,false,false,HotShotsVFX,https://i.imgur.com/nj3cDhO.png,The Doomhammer__ss
+74/100,Warbeast Power Leash,ss,super rare,"Equipped Creature has an additional 5 Energy. 
+Equipped Warbeast Creature has ""Recklessness 5,"" has an additional 5 Energy for each Conjuror Creature you control and deals an additional 5 damage with attacks.",,false,false,false,HotShotsVFX,https://i.imgur.com/sewW8cU.png,Warbeast Power Leash__ss
+75/100,Wind Whip,ss,uncommon,"Equipped Mipedian Creature has :air:Air.
+If equipped Creature is a Conjuror Creature, Warbeast Creatures you control have ""Recklessness 5.""",,false,false,false,HotShotsVFX,https://i.imgur.com/Uie1SgI.png,Wind Whip__ss
+126/222,Aerodrone,btd,super rare,"When equipped Creature deals :air:Air damage, you can look at the top four cards of your Attack Deck and put them back on top in any order.",,false,false,false,HotShotsVFX,https://i.imgur.com/yYQUlTw.png,Aerodrone__btd
+127/222,Algal Wings of Attraction,btd,ultra rare,Adjacent Creatures to equipped Creature must move into its space if able.,,true,false,false,HotShotsVFX,https://i.imgur.com/QujDths.png,Algal Wings of Attraction__btd
+128/222,Alluring Bait,btd,rare,"Equipped Creature has ""Discard a Mugic Card: Relocate target opposing unengaged Creature to any unoccupied space adjacent to this Creature.""",,false,false,false,HotShotsVFX,https://i.imgur.com/Stfc6B1.png,Alluring Bait__btd
+129/222,Aspect Amplifier: Agility,btd,common,"Equipped Creature has ""Outperform :speed:Speed 5."" (Outperform increases the damage of attacks that success at least one Stat Check, Challenge, or Stat Fail of the indicated Discipline.)",,false,false,false,HotShotsVFX,https://i.imgur.com/CxYXfO5.png,Aspect Amplifier: Agility__btd
+130/222,Aspect Amplifier: Bravery,btd,common,"Equipped Creature has ""Outperform :courage:Courage 5."" (Outperform increases the damage of attacks that success at least one Stat Check, Challenge, or Stat Fail of the indicated Discipline.)",,false,false,false,Imaginary Friends Studios,https://i.imgur.com/3yzudhs.png,Aspect Amplifier: Bravery__btd
+131/222,Aspect Amplifier: Might,btd,common,"Equipped Creature has ""Outperform :power:Power 5."" (Outperform increases the damage of attacks that success at least one Stat Check, Challenge, or Stat Fail of the indicated Discipline.)",,false,false,false,Imaginary Friends Studios,https://i.imgur.com/54jlmZy.png,Aspect Amplifier: Might__btd
+132/222,Aspect Amplifier: Wit,btd,common,"Equipped Creature has ""Outperform :wisdom:Wisdom 5."" (Outperform increases the damage of attacks that success at least one Stat Check, Challenge, or Stat Fail of the indicated Discipline.)",,false,false,false,Imaginary Friends Studios,https://i.imgur.com/PBPUTF0.png,Aspect Amplifier: Wit__btd
+133/222,Brain Amplifier,btd,super rare,"Equipped Creature has an additional 15 :wisdom:Wisdom and 5 Energy.
+When equipped Creature wins combat, put a Mugic counter on it.",,false,false,false,HotShotsVFX,https://i.imgur.com/J73G94I.png,Brain Amplifier__btd
+134/222,Breath of the Desert,btd,uncommon,"Equipped Creature has an additional 10 :speed:Speed. 
+Sacrifice Breath of the Desert: equipped Creature gains "":air:Air 5."" Play this ability only while equipped Creature is engaged.",,false,false,false,HotShotsVFX,https://i.imgur.com/tPVU6AY.png,Breath of the Desert__btd
+135/222,Destructozooka,btd,rare,"When Destructozooka is flipped face-up, choose an Elemental Type. Equipped Creature gains the chosen Elemental Type and ""Element 5"" of the chosen Elemental Type.",,false,false,false,"David Curiel, Andrew Bradshaw",https://i.imgur.com/3TKQrcO.png,Destructozooka__btd
+136/222,Hive Amber,btd,rare,"Sacrifice Hive Amber: Activate Hive.
+If Hive Amber is in your general discard pile, when a Mandiblor Creature you control leaves play, you can return Hive Amber to play equipped to an Unequipped Creature you control.",,false,false,false,HotShotsVFX,https://i.imgur.com/sIi0fSJ.png,Hive Amber__btd
+137/222,Kha'rall Husk Armor,btd,rare,"Equipped Creature has an additional 50 Energy.
+When equipped Creature is dealt 15 or more attack damage, the next attack played by the equipped Creature this turn deals 0 damage.",,true,false,false,HotShotsVFX,https://i.imgur.com/h7UbQqU.png,Kha'rall Husk Armor__btd
+138/222,Manual of Vidav,btd,uncommon,"Equipped Creature has an additional 10 :wisdom:Wisdom. 
+Sacrifice Manual of Vidav: Heal 15 damage to equipped Creature. Play this ability only while equipped Creature is engaged.",,false,false,false,HotShotsVFX,https://i.imgur.com/8dBpbDb.png,Manual of Vidav__btd
+139/222,Maxxor's Torch,btd,super rare,Sacrifice Maxxor's Torch: Target opponent chooses a M'arrillian or Minion Creature they control. Maxxor's Torch deals 25 damage to the chosen Creature.,,true,false,false,HotShotsVFX,https://i.imgur.com/Kea5BCP.png,Maxxor's Torch__btd
+140/222,Mind Prism,btd,uncommon,Equipped Creature has an additional 10 Energy.,,false,false,false,HotShotsVFX,https://i.imgur.com/YXWvz2f.png,Mind Prism__btd
+141/222,Mindclasp,btd,rare,"When a source controlled by an opponent reduces any of equipped Creature's Disciplines, Mindclasp deals 5 damage to target engaged Creature.",,false,false,false,HotShotsVFX,https://i.imgur.com/s9FXRTL.png,Mindclasp__btd
+142/222,Mirrors of Misplacement,btd,super rare,"When a Mugic Card is put into a general discard pile, discard an Attack Card and draw an Attack Card.",,false,false,false,HotShotsVFX,https://i.imgur.com/8yQ6Noi.png,Mirrors of Misplacement__btd
+143/222,Parasite Tablet,btd,uncommon,"Equipped Creature has an additional 10 :courage:Courage. 
+Sacrifice Parasite Tablet: equipped Creature gains Creature Type ""Mandiblor"" in addition to its other types. Play this ability only while equipped Creature is engaged.",,false,false,false,HotShotsVFX,https://i.imgur.com/YRxmXNd.png,Parasite Tablet__btd
+145/222,Phobia Tabard,btd,uncommon,"Equipped Creature has ""Intimidate: :wisdom:Wisdom 10"" and ""Intimidate: :speed:Speed 10.""",,false,false,false,Imaginary Friends Studios,https://i.imgur.com/aa4DQEd.png,Phobia Tabard__btd
+147/222,Plasma Pounder,btd,super rare,"When equipped Creature deals :earth:Earth damage, you can look at the top two cards of your Location Deck. Put one of them on top and the other on the bottom.",,true,false,false,HotShotsVFX,https://i.imgur.com/t9jtcKw.png,Plasma Pounder__btd
+148/222,Prism of Fright,btd,common,"Equipped Creature has an additional 5 Energy. 
+Sacrifice Prism of Fright: Target Creature loses 20 :courage:Courage.",,false,false,false,HotShotsVFX,https://i.imgur.com/XtygqXr.png,Prism of Fright__btd
+149/222,Prism of Mindlessness,btd,common,"Equipped Creature has an additional 5 Energy.
+Sacrifice Prism of Mindlessness: Target Creature loses 20 :wisdom:Wisdom.",,false,false,false,HotShotsVFX,https://i.imgur.com/Cej4kqf.png,Prism of Mindlessness__btd
+150/222,Prism of Sloth,btd,common,"Equipped Creature has an additional 5 Energy.
+Sacrifice Prism of Sloth: Target Creature loses 20 :speed:Speed.",,false,false,false,HotShotsVFX,https://i.imgur.com/0MK3vY0.png,Prism of Sloth__btd
+152/222,Reefshard,btd,rare,"While any player controls a Chieftain Creature, equipped Creature has an additional 10 in all Disciplines.",,false,false,false,HotShotsVFX,https://i.imgur.com/BREeDre.png,Reefshard__btd
+153/222,Sinister Statuette,btd,uncommon,"When equipped Creature deals 15 or more attack damage, opposing engaged Creature loses 10 in a Discipline of your choice.",,false,false,false,Imaginary Friends Studios,https://i.imgur.com/gOs8DYa.png,Sinister Statuette__btd
+146/222,The Pit Token,btd,uncommon,"Equipped Creature has an additional 10 :power:Power. 
+Sacrifice The Pit Token: Deal 10 damage to target engaged Creature. Play this ability only while equipped Creature is engaged.",,false,false,false,HotShotsVFX,https://i.imgur.com/VWbvuTB.png,The Pit Token__btd
+154/222,Ulmar's Bionic Steam Arms,btd,rare,"Equipped Creature deals an additional 5 damage with attacks. 
+If equipped Creature deals more than 20 damage with a single attack, sacrifice Ulmar's Bionic Steam Arms and deal 20 damage to the equipped Creature.",,false,false,false,Imaginary Friends Studios,https://i.imgur.com/7k5sZJ8.png,Ulmar's Bionic Steam Arms__btd
+155/222,Ulmar's Projector,btd,rare,"Equipped Creature has 10 less Energy.
+When equipped Creature is destroyed while engaged, return it from the discard pile to play to any unoccupied space on your side of the Battleboard.",,true,false,false,HotShotsVFX,https://i.imgur.com/ZLlxP8Q.png,Ulmar's Projector__btd
+67/100,Baton of Aa'une,roto,uncommon,"Equipped Creature has an additional 5 Energy. 
+Equipped Chieftain Creature has "":water:Water 5.""",,false,false,false,HotShotsVFX,https://i.imgur.com/7s8yNHt.png,Baton of Aa'une__roto
+68/100,Dractyl Scales,roto,common,"Sacrifice Dractyl Scales: equipped Creature gains 10 Energy and target Creature loses 10 to all Disciplines. If Dractyl Scales was equipped to H'earring, it gains an additional 10 Energy.",,false,false,false,HotShotsVFX,https://i.imgur.com/jffjL91.png,Dractyl Scales__roto
+69/100,Kha'rall Amber Shard,roto,uncommon,"Equipped M'arrillian or Minion Creature has :earth:Earth. 
+Equipped Kha'rall Creature has an additional 25 Energy and ""Defender: Minion."" 
+This Battlegear begins the game face-up.",,false,false,false,Imaginary Friends Studios,https://i.imgur.com/rY6JiL4.png,Kha'rall Amber Shard__roto
+70/100,Kha'rall Chime Shard,roto,uncommon,"Equipped M'arrillian or Minion Creature has :air:Air. 
+Equipped Kha'rall Creature has an additional 25 Energy and ""Defender: Kha'rall."" 
+This Battlegear begins the game face-up.",,false,false,false,Imaginary Friends Studios,https://i.imgur.com/wYC6T8m.png,Kha'rall Chime Shard__roto
+71/100,Kha'rall Freshwater Shard,roto,rare,"Equipped M'arrillian or Minion Creature has :water:Water. 
+Equipped Kha'rall Creature has an additional 25 Energy and ""Defender: Fluidmorpher."" 
+This Battlegear begins the game face-up.",,false,false,false,Imaginary Friends Studios,https://i.imgur.com/xLqt2G9.png,Kha'rall Freshwater Shard__roto
+72/100,Kha'rall Magma Shard,roto,rare,"Equipped M'arrillian or Minion Creature has :fire:Fire. 
+Equipped Kha'rall Creature has an additional 25 Energy and ""Defender: Chieftain."" 
+This Battlegear begins the game face-up.",,false,false,false,Imaginary Friends Studios,https://i.imgur.com/tsjkfXO.png,Kha'rall Magma Shard__roto
+73/100,Kha'rall Shard of the Tidal Crest,roto,ultra rare,"Equipped M'arrillian or Minion Creature has "":water:Water 5.""
+At the beginning of combat, equipped Kha'rall Creature gains 40 Energy if there are 8 or more Mugic counters among Creatures you control.
+This Battlegear begins the game face-up.",,true,false,false,Imaginary Friends Studios,https://i.imgur.com/CtcFiGU.png,Kha'rall Shard of the Tidal Crest__roto
+74/100,Liquid Thought Evaporator,roto,rare,"Attacks played by equipped Creature also count as :water:Water attacks.
+When Liquid Thought Evaporator is flipped face-down, put a Mugic counter on the equipped Fluidmorpher Creature.",,false,false,false,HotShotsVFX,https://i.imgur.com/j6oAY4c.png,Liquid Thought Evaporator__roto
+75/100,Phobia Plates,roto,super rare,"Creatures engaged with equipped Creature fail all Challenges on attacks they play. 
+Equipped Creature takes 10 less damage from Mugic.",,false,false,false,HotShotsVFX,https://i.imgur.com/N7XA3Sy.png,Phobia Plates__roto
+76/100,Vial of Liquid Thought,roto,common,"Sacrifice Vial of Liquid Thought: Return an Attack Card from your Attack Discard pile to your hand. If you do, place one Attack Card from your hand on the bottom of your Attack Deck.",,false,false,false,HotShotsVFX,https://i.imgur.com/SdTfiLj.png,Vial of Liquid Thought__roto
+56/100,Blazier's Map Collection,tott,rare,"If equipped Creature moved this turn, at the beginning of combat reveal a new active Location.","If Blazier would only stop mapping new lands and look over his collection, he would discover that he has already found what he's been searching for his entire life.",false,false,false,HotShotsVFX,https://i.imgur.com/si18Fgc.png,Blazier's Map Collection__tott
+57/100,Bronzeflight,tott,rare,"Equipped Creature has an additional 20 :speed:Speed. 
+If an opposing Creature has Range, equipped Creature has ""Defender.""
+This Battlegear begins the game face-up.","A marvel of engineering, the Bronzeflight can travel from Mipedim Oasis to Mount Pillar on a single charge.",false,false,false,"Keron Grant, Etienne St.Laurent",https://i.imgur.com/cmvo5y1.png,Bronzeflight__tott
+58/100,Burithean Axe,tott,uncommon,"Stat Check :power:Power 50: equipped Creature has an additional 5 Energy. 
+Stat Check :power:Power 75: equipped Creature has ""Intimidate: Energy 10.""","What takes 20 to wield, Rothar swings with one arm!",false,false,false,Imaginary Friends Studios,https://i.imgur.com/RSl2uEi.png,Burithean Axe__tott
+59/100,Dread Tread,tott,ultra rare,"If equipped Creature has moved and won a combat this turn, it may move a second time, this move may begin an additonal combat","The Dread Tread can rip through Kiru City's ""impenetrable"" walls as if they were made of paper.",false,true,false,HotShotsVFX,https://i.imgur.com/4c6HRqy.png,Dread Tread__tott
+60/100,Evergreen Tunic,tott,uncommon,"Stat Check :courage:Courage 50: equipped Creature has an additional 5 Energy. 
+Stat Check :courage:Courage 75: equipped Creature has an additional 15 Energy.","The perfect combination of weight, durability and flexibility.",false,false,false,"Robert Dizon, Stone Perales",https://i.imgur.com/RMEaT8u.png,Evergreen Tunic__tott
+61/100,Flitflut,tott,common,"Equipped Creature has an additional 15 :wisdom:Wisdom and 15 :speed:Speed. 
+Sacrifice Flitflut: Relocate equipped Creature to any unoccupied space on the Battleboard. Play this ability only while equipped Creature is unengaged.",,false,false,false,Augusto Barranco,https://i.imgur.com/KooXMkL.png,Flitflut__tott
+62/100,Girgeth Tar,tott,super rare,"Equipped OverWorld Creature has an additional 5 Energy.
+Sacrifice Girgeth Tar: Heal 20 damage to target Creature. If the target is a Caretaker Creature, put a Mugic counter on it.",,false,false,false,HotShotsVFX,https://i.imgur.com/yCPIPgn.png,Girgeth Tar__tott
+63/100,Hornsabre,tott,ultra rare,"Opposing Creatures on your side of the Battleboard have ""Recklessness 5.""","Infused with the spirits of warriors past, the luminescent glow intensifies whenever it senses an intruder nearby.",false,true,false,HotShotsVFX,https://i.imgur.com/aI77kIS.png,Hornsabre__tott
+64/100,Ikkatosh's Aichstick,tott,uncommon,"Stat Check :wisdom:Wisdom 50: equipped Creature has an additional 5 Energy. 
+Stat Check :wisdom:Wisdom 75: The first attack played by equipped Creature each combat has ""Untargetable.""","To aid in the war, Ikkatosh proved he would give part of himself... literally!",false,false,false,HotShotsVFX,https://i.imgur.com/gRdnq5g.png,Ikkatosh's Aichstick__tott
+65/100,Levitaar,tott,uncommon,"Equipped Creature has an additional 50 :speed:Speed. 
+When equipped Creature is dealt attack damage, deal 5 damage to the opposing engaged Creature.",Raznus's favorite transport before his unfortunate transformation.,false,false,false,"Andrew Bradshaw, Chris Fisher, HotShotsVFX",https://i.imgur.com/wKq2zb4.png,Levitaar__tott
+66/100,Mipedian Balladeers' Flute,tott,rare,"Sacrifice Mipedian Balladeers' Flute: Put a Mugic counter on the equipped Creature. Your opponent can put a Mugic counter on a Creature of their choice.
+This Battlegear begins the game face-up.","Melodies, harmonies, cacophonies: Mugicians love all music without prejudice.",false,false,false,HotShotsVFX,https://i.imgur.com/JxERePB.png,Mipedian Balladeers' Flute__tott
+67/100,Obliterators,tott,common,"Equipped Creature has :fire:Fire. 
+Sacrifice Obliterators: Deal 5 damage to target Creature. Play this ability only while you control Dread Tread.",It's the perfect war machine: the Obliterators annihilate anything the Dread Tread fails to steamroll.,false,false,false,Imaginary Friends Studios,https://i.imgur.com/9wVDyyB.png,Obliterators__tott
+68/100,Ozlai's Wreck,tott,common,Sacrifice Ozlai's Wreck: Destroy target Battlegear equipped to an engaged Creature.,"Though Ozlai named ""The Wreck"" after what it can do to other vehicles, many believe that it's named after his state of mind.",true,false,false,Tom Baxa,https://i.imgur.com/E0ULmMH.png,Ozlai's Wreck__tott
+69/100,Residual Lightning Dust,tott,uncommon,"Stat Check :speed:Speed 50: equipped Creature has an additional 5 Energy. 
+Stat Check :speed:Speed 75: When equipped Creature takes 20 or more damage from a single source, deal 5 damage to the opposing engaged Creature.",,false,false,false,HotShotsVFX,https://i.imgur.com/Mk1ykkh.png,Residual Lightning Dust__tott
+70/100,Sahrnokk,tott,super rare,Sacrifice Sahrnokk: Creatures cannot end their move in equipped Creature's space.,"As Ørth whizzed by Gespedan to win the race and their wager, Gespedan regretted agreeing to give Ørth naming rights to his next child.",false,false,false,Imaginary Friends Studios,https://i.imgur.com/Re40HMj.png,Sahrnokk__tott
+71/100,Scepter of the Infernal Parasite,tott,ultra rare,"If engaged with an Infected Creature, equipped Creature has ""Outperform all Disciplines 5.""",The parasites proved once again that determination trumps size every time.,false,true,false,"Augusto Barranco, Etienne St.Laurent",https://i.imgur.com/Z4dxVRq.png,Scepter of the Infernal Parasite__tott
+72/100,Van Bloot's Sickle,tott,super rare,"Equipped Creature has an additional 15 :courage:Courage. 
+Attacks played by equipped Creature have ""The opposing engaged Creature loses 10 :courage:Courage.""","Seeing its sharpness, even the most courageous lose heart... just before they lose their heads.",false,false,false,Imaginary Friends Studios,https://i.imgur.com/K9cklgD.png,Van Bloot's Sickle__tott
+73/100,Warriors of Owayki,tott,ultra rare,"Mipedian Creatures you control have :genericmugic:: Deal 10 damage to target engaged Creature."" 
+When combat ends, flip Warriors of Owayki face-down.",,false,true,false,HotShotsVFX,https://i.imgur.com/QYoN3Sc.png,Warriors of Owayki__tott
+74/100,Weightless Energy Vessel,tott,rare,"Equipped Creature cannot be targeted by Mugic.
+This Battlegear begins the game face-up.","Even the most unimaginative Mipedians thought the name was too ""on-the-nose.""",false,false,false,HotShotsVFX,https://i.imgur.com/MGyBkJW.png,Weightless Energy Vessel__tott
+75/100,Wing-Fin,tott,super rare,"Equipped Creature has an additional 15 :courage:Courage and 15 :power:Power. 
+Sacrifice Wing-Fin: Relocate equipped Creature to any unoccupied space on the Battleboard. Play this ability only while equipped Creature is unengaged.",,false,false,false,Augusto Barranco,https://i.imgur.com/hRn5CLv.png,Wing-Fin__tott
+65/100,Aichlyys Wisp,fun,common,Equipped Creature has an additional 40 :wisdom:Wisdom and 5 Energy.,As ephemeral as dreams and just as cherished.,false,false,false,HotShotsVFX,https://i.imgur.com/SftlJkA.png,Aichlyys Wisp__fun
+66/100,Armbands of Lore,fun,common,Equipped Creature has an additional 40 :courage:Courage and 5 Energy.,"""Total control and domination!? You are fools! Control is an illusion... and that is why you will fail."" — Lore",false,false,false,Robert Dizon,https://i.imgur.com/hE8FfzD.png,Armbands of Lore__fun
+67/100,Bodal's Dagger,fun,rare,Equipped Creature deals an additional 10 damage with non-Elemental and non-Discipline Attacks.,,false,false,false,Imaginary Friends Studios,https://i.imgur.com/VwYQ2Ay.png,Bodal's Dagger__fun
+68/100,Crown of Aa'une,fun,ultra rare,"Equipped Creature has Creature Type ""Chieftain"" in addition to its other types. (Minions use Brainwashed text. Minions can only play Generic Mugic.)","For true leaders, the crown does not define the king. The king defines the crown.",false,true,false,Imaginary Friends Studios,https://i.imgur.com/DedhX68.png,Crown of Aa'une__fun
+69/100,General's Standard,fun,super rare,"When General's Standard is flipped face-up, choose a Tribe. Equipped Creature is considered to belong to that Tribe while General's Standard is face-up. (This ability does not end at the end of the turn.)",,false,false,false,Dave Droman,https://i.imgur.com/OTncy6R.png,General's Standard__fun
+70/100,Gigantroper,fun,super rare,"At the beginning of combat, equipped Creature loses all abilities and gains or loses :courage:Courage, :power:Power, :wisdom:Wisdom, :speed:Speed and Energy to make those values 70.",,true,false,false,Imaginary Friends Studios,https://i.imgur.com/h4bA5vf.png,Gigantroper__fun
+71/100,Indigo Sash,fun,common,Equipped Creature has an additional 40 :speed:Speed and 5 Energy.,"""I never expected to see an UnderWorlder wearing the emblem of our noble Mipedian ancestors. And I've never been happier."" — Tiaane",false,false,false,Robert Dizon,https://i.imgur.com/A5oV5wf.png,Indigo Sash__fun
+72/100,Khybon's Mech-blade,fun,common,Equipped Creature has an additional 40 :power:Power and 5 Energy.,"The handle hides a trigger that instantly doubles the length of the blade. Naturally, Khybon has not told anyone about this feature.",false,false,false,Dave Droman,https://i.imgur.com/seuCNbZ.png,Khybon's Mech-blade__fun
+73/100,Mipedian Fulgurite,fun,super rare,"Equipped Creature has "":air:Air 10.""
+When combat ends, destroy Mipedian Fulgurite.","The air crackled and sizzled, as did the enemy.",false,false,false,Dave Droman,https://i.imgur.com/3u7cfoD.png,Mipedian Fulgurite__fun
+74/100,Muge's Tuningfork,fun,rare,"Equipped Creature can play Mugic from any Tribe you control.
+This Battlegear begins the game face-up.","Though Mugicians may appear to love one tribe's music over another, the fact remains they they love all music equally.",true,false,false,Imaginary Friends Studios,https://i.imgur.com/lpRRJi8.png,Muge's Tuningfork__fun
+75/100,Riverland Moon,fun,common,"When equipped Creature deals :water:Water damage, it gains 10 to all Disciplines.",,false,false,false,Chris Fisher,https://i.imgur.com/QMfZAHr.png,Riverland Moon__fun
+76/100,Shard of Solitude,fun,super rare,"Equipped Creature has an additional 5 Energy.
+If equipped Kha'rall Creature is engaged, unengaged Creatures cannot play Mugic or activated abilities.","""Another one? The M'arrillians have more shards than Van Bloot has feathers!"" — Takinom",false,false,false,Imaginary Friends Studios,https://i.imgur.com/pjyGBJK.png,Shard of Solitude__fun
+124/200,Ankh of Kehn-Sep,au,rare,Damage dealt by equipped Creature to Creatures with no Elemental Types is increased by 5.,,false,false,false,Stone Perales,https://i.imgur.com/vY4bHrN.png,Ankh of Kehn-Sep__au
+125/200,Aquatic Familiar,au,common,"Equipped Creature has ""Expend :water:water: Gain 50 :wisdom:Wisdom.""",,false,false,false,Peter Bergting,https://i.imgur.com/C1grkR5.png,Aquatic Familiar__au
+126/200,AZAIA Mindprobe,au,rare,"Equipped Creature cannot be targeted by Mugic or abilities played by Creatures with lower :wisdom:Wisdom than it. 
+This Battlegear begins the game face-up.",,false,false,false,Imaginary Friends Studios,https://i.imgur.com/czxAVNw.png,AZAIA Mindprobe__au
+127/200,Bi-Mowercycle,au,rare,"Equipped Creature has ""Range"" and ""Swift 1."" 
+Sacrifice Bi-Mowercycle: Target Creature gains ""Range"" and ""Swift 1."" 
+This Battlegear begins the game face-up.",,false,false,false,HotShotsVFX,https://i.imgur.com/o2YkxFY.png,Bi-Mowercycle__au
+128/200,Citadel Fragments,au,common,Equipped Creature has an additional 5 Energy and 5 in each Discipline for each Elemental Type it has.,,false,false,false,Stone Perales,https://i.imgur.com/tSYu1Nf.png,Citadel Fragments__au
+129/200,Citadel Lodestone,au,common,"When equipped Creature becomes engaged, it gains :earth:Earth.",,false,false,false,Stone Perales,https://i.imgur.com/v6Qcgni.png,Citadel Lodestone__au
+130/200,Colstone,au,super rare,"When any Creature engaged with the equipped Creature fails a Discipline check on an attack it played, the equipped Creature gains 10 Energy.",,false,false,false,Stone Perales,https://i.imgur.com/Nqm7WlA.png,Colstone__au
+131/200,Double Edge,au,common,"At the beginning of combat, choose "":fire:Fire 5,"" "":air:Air 5,"" "":earth:Earth 5"" or "":water:Water 5."" equipped Creature gains the chosen ability and ""Recklessness 5.""",,false,false,false,"Edwin Nebres, Anthony Washington, Emilio Lopez",https://i.imgur.com/iGANGLn.png,Double Edge__au
+132/200,"Drilldozer, Customized Rig",au,rare,"Equipped Creature has an additional 10 Energy. If equipped Creature has :earth:Earth, it has an additional 10 Energy.",,false,false,false,HotShotsVFX,https://i.imgur.com/5gisAg5.png,"Drilldozer, Customized Rig__au"
+133/200,Flameblade of Seeryn,au,super rare,"When equipped Creature deals 30 or more :fire:Fire damage with a single attack, destroy target Battlegear.",,false,false,false,Stone Perales,https://i.imgur.com/p4i2Hx8.png,Flameblade of Seeryn__au
+134/200,Hyperhover,au,rare,"Equipped Creature has ""Untargetable"" if it has moved this turn.",,false,false,false,HotShotsVFX,https://i.imgur.com/rR8HhLc.png,Hyperhover__au
+135/200,Kha'rall Shard of the Staunch,au,rare,"Equipped Creature has :water:Water. 
+Equipped Kha'rall Creature has an additional 15 Energy and ""Defender: :water:Water."" 
+This Battlegear begins the game face-up.",,false,false,false,Stone Perales,https://i.imgur.com/ctvZ96K.png,Kha'rall Shard of the Staunch__au
+136/200,Metabolic Overloader,au,common,"Equipped Creature has ""Expend :fire:fire: Gain 50 :power:Power.""",,false,false,false,Peter Bergting,https://i.imgur.com/DGs9G2v.png,Metabolic Overloader__au
+137/200,Mysterious Clawblade,au,common,"Equipped Creature has ""Expend :air:Air: Gain 50 :speed:Speed.""",,false,false,false,Stone Perales,https://i.imgur.com/4W2VQTS.png,Mysterious Clawblade__au
+138/200,Orb of Unda,au,rare,"Sacrifice Orb of Unda: Put a Mugic counter on equipped Creature. If equipped Creature has :water:Water, heal 10 damage from it.",,false,false,false,Stone Perales,https://i.imgur.com/dA6DdUm.png,Orb of Unda__au
+139/200,Orchis Undin,au,common,"When equipped Creature becomes engaged, it gains :water:Water.",,false,false,false,Stone Perales,https://i.imgur.com/V8wo2o3.png,Orchis Undin__au
+140/200,Phoenix Belt,au,rare,"Sacrifice Phoenix Belt: Deal 10 damage to target Creature. If equipped Creature has :fire:Fire, deal an additional 10 damage.",,false,false,false,Stone Perales,https://i.imgur.com/zfzoWSq.png,Phoenix Belt__au
+141/200,Pranker Tanker,au,super rare,"At the beginning of each turn, equipped Creature swaps spaces on the Battleboard with another unengaged Creature you control.
+This Battlegear begins the game face-up.",,false,false,false,"Andrew Bradshaw, Anthony Washington, David Rodriguez",https://i.imgur.com/gIZZ91x.png,Pranker Tanker__au
+142/200,Quranium Pendant,au,common,"Equipped Creature has ""Expend :earth:earth: Gain 50 :courage:Courage.""",,false,false,false,Stone Perales,https://i.imgur.com/uOBNkB3.png,Quranium Pendant__au
+143/200,Sandstorm Shroud,au,common,"When equipped Creature becomes engaged, it gains :air:Air.",,false,false,false,Stone Perales,https://i.imgur.com/u9eiker.png,Sandstorm Shroud__au
+144/200,Scarab of Khilai,au,super rare,"Equipped Creature and Creatures engaged with it cannot lose Elemental Types from Mugic, Attacks or abilities.",,false,false,false,Stone Perales,https://i.imgur.com/DI4HlRl.png,Scarab of Khilai__au
+S16/26,Skopolon,au,super rare,"At the beginning of each turn, you can look at target face-down Battlegear you do not control.
+This Battlegear begins the game face-up.",,false,false,false,Stone Perales,https://i.imgur.com/scsSWAZ.png,Skopolon__au
+145/200,Stormbird Statues,au,rare,"Equipped Creature has ""Swift 1."" If equipped Creature has :air:Air, it has ""Surprise.""
+This Battlegear begins the game face-up.",,false,false,false,Stone Perales,https://i.imgur.com/Inrznoo.png,Stormbird Statues__au
+146/200,Sun Chariot of Kehn-Sep,au,common,"When equipped Creature becomes engaged, it gains :fire:Fire.",,false,false,false,Stone Perales,https://i.imgur.com/ZrJWgvE.png,Sun Chariot of Kehn-Sep__au
+S17/26,Trident of Treachery,au,rare,"If equipped Creature would deal 20 or more :fire:Fire attack damage, it can deal 10 damage to a Creature of your choice instead.",,false,false,false,Stone Perales,https://i.imgur.com/6XebUsF.png,Trident of Treachery__au
+147/200,Ulmanator,au,rare,Creatures engaged with equipped Creature have 10 less in all Disciplines for each Elemental Type they have.,,false,false,false,HotShotsVFX,https://i.imgur.com/M8eHgQ1.png,Ulmanator__au
+S18/26,Varanohs,au,rare,"Equipped Creature has ""Range"" and ""Swift 1"" for each Creature Card in your general discard pile.
+This Battlegear begins the game face-up.",,false,false,false,Stone Perales,https://i.imgur.com/RtzNzRk.png,Varanohs__au
+S19/26,"Vlaric Shard, Relic of the Past",au,rare,"Equipped Creature with :earth:Earth deals an additional 5 attack damage. 
+When you shuffle your Attack Deck, destroy Vlaric Shard.",,false,false,false,Stone Perales,https://i.imgur.com/hAW6uww.png,"Vlaric Shard, Relic of the Past__au"
+148/200,Xerium Armor,au,ultra rare,"If equipped Creature would take more than 20 damage from an attack, it takes 20 damage instead.",,true,false,false,"Khary Randolph, Etienne St.Laurent",https://i.imgur.com/SNW93Vm.png,Xerium Armor__au
+63/100,Armor of Earthen Might,fas,rare,"Damage dealt by Mugic or activated abilities to equipped Creature with :earth:Earth is reduced by 10. 
+This Battlegear begins the game face-up.",,false,false,false,Stone Perales,https://i.imgur.com/I4969fD.png,Armor of Earthen Might__fas
+OP1-14/20,Flux Bauble,op,rare,"At the beginning of combat, look at the top two cards of your Location Deck. Put one of them on top of that deck and the other on the bottom.",,false,false,false,Imaginary Friends Studios,https://i.imgur.com/aKVIkOT.png,Flux Bauble__op
+OP1-15/20,Orb of Foresight,op,rare,"At the beginning of combat, look at the top three cards of your Attack Deck. Put one of them on top of that deck and the other two on the bottom in any order.",,false,false,false,Imaginary Friends Studios,https://i.imgur.com/dYMVHMP.png,Orb of Foresight__op
+OP1-16/20,Talisman of the Mandiblor,op,super rare,"Equipped Creature has an additional 15 :speed:Speed.
+Equipped Danian Creature has ""Sacrifice equipped Creature: Return a Mandiblor Creature Card in your general discard pile to play to any unoccupied space on the Battleboard.""",,false,false,false,Imaginary Friends Studios,https://i.imgur.com/ciQOuJV.png,Talisman of the Mandiblor__op
+P-021,Bodal's Element Converter,op,promo,"Equipped Creature has "":fire:Fire 5"" and "":water:Water 5.""
+When equipped Creature deals 25 or more damage with a single attack, flip Bodal's Element Converter face-down.",,false,false,false,Imaginary Friends Studios,https://i.imgur.com/X47rwXo.png,Bodal's Element Converter__op
+OP-qw3jcokw,Kha'rall Shard of Chance,op,super rare,"Equipped Creature has an additional 5 Energy and :air:Air.
+If equipped Kha'rall Creature is engaged, Creatures play attacks at random.",,false,false,false,Imaginary Friends Studios,https://i.imgur.com/VMXktou.png,Kha'rall Shard of Chance__op
+OP-0g0jkoty,Mommark's Energy Infuser,op,ultra rare,"At the beginning of combat, equipped Creature gains 5 Energy for each Mugic counter on it. The equipped Creature cannot gain more than 40 Energy this way.
+If equipped Creature has no Mugic counters on it, destroy it.",,true,false,false,Imaginary Friends Studios,https://i.imgur.com/F23ZOlY.png,Mommark's Energy Infuser__op
+OP-9r4d1dy1,Olkiex' Apron,op,uncommon,"Equipped Creature has ""When equipped Creature becomes engaged, flip all Battlegear equipped to the opposing engaged Creature face-down.""",,false,false,false,Imaginary Friends Studios,https://i.imgur.com/pS5B3uR.png,Olkiex' Apron__op
+P-013,Droskin,op,promo,Sacrifice Droskin: Negate target attack. Play this ability only while equipped Creature is engaged.,The Droskin is rumored to be able to absorb even the most devastating attacks.,true,false,false,"Jimmy Tran, Imaginary Friends Studios",https://i.imgur.com/vquBcPw.png,Droskin__op
+P-011,The Indigo Arc,op,promo,"Equipped Creature's first attack each combat has ""Untargetable.""",The blade cuts with such force that neither armor nor Mugic can slow its strikes.,true,false,false,HotShotsVFX,https://i.imgur.com/2wwoh4t.png,The Indigo Arc__op
+AU-hxdk7k6j,Giant Mechanical Python of Pyrithion,au,super rare,"Recklessness 10
+Increase :fire:Fire attacks by 20.","""It's indestructible made by Ulmar."" - Pyrithion",false,false,false,,https://imgur.com/MVu1yUi.png,Giant Mechanical Python of Pyrithion__au
+AU-zivm4lns,Chaor's Battle Titan Statue,au,ultra rare,"Increase Energy by 50
+Increase :fire:Fire attacks by 10
+Increase :speed:Speed by 50
+
+Only Chaor or Ulmar can be equipped with this Battlegear.",,false,false,false,,https://imgur.com/jAQIbeg.png,Chaor's Battle Titan Statue__au
+AU-8r7covq4,Staff of Ar'Khan From Spiritlands,au,super rare,"Returns one attack back to the opposing Creature and returns one attack by battlegear; back to the opposing Creature. Once every Battle.
+If user takes 25 or more damage, destroy this.",The Staff Belonged to the Father of Vitog. Vertog,false,false,false,,https://imgur.com/YMi84KC.png,Staff of Ar'Khan From Spiritlands__au
+AU-pz1w36ou,Chaor's Mugic Battle Axe,au,super rare,"Increase Energy by 20
+Increase :fire:Fire attacks by 5
+Increase Mugic attacks by 5",,false,false,false,,https://imgur.com/0w0Fs2q.png,Chaor's Mugic Battle Axe__au
