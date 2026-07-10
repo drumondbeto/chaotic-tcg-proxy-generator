@@ -22,36 +22,6 @@ const createHighQualityCanvas = (width, height) => {
     ctx.imageSmoothingQuality = 'high';
     return { canvas, ctx };
 };
-const fontLoader = {
-    loaded: false,
-    promises: [],
-    init() {
-
-        if (this.loaded) return Promise.resolve();
-        const fonts = [
-            new FontFace('Eurostile Medium', 'url(/fonts/EurostileMedium.woff2)'),
-            new FontFace('Eurostile Heavy', 'url(/fonts/EurostileHeavy.woff2)'),
-            new FontFace('Eurostile Extd Black', 'url(/fonts/EurostileExtdBlack.woff2)'),
-            new FontFace('Arial Black', 'url(/fonts/ArialBlack.woff2)'),
-            new FontFace('Arial Bold', 'url(/fonts/ArialBold.woff2)'),
-            new FontFace('Arial Narrow Italic', 'url(/fonts/ArialNarrowItalic.woff2)'),
-            new FontFace('Century Gothic Bold', 'url(/fonts/CenturyGothicBold.woff2)'),
-            new FontFace('Eurostile Heavy Italic', 'url(/fonts/EurostileHeavyItalic.woff2)'),
-            new FontFace('Eurostile Cond Heavy Italic', 'url(/fonts/EurostileCondHeavyItalic.woff2)'),
-            new FontFace('Eurostile-BoldExtendedTwo', 'url(/fonts/EurostileBoldExtendedTwo.woff2)'),
-            new FontFace('Eurostile Medium Italic', 'url(/fonts/EurostileMediumItalic.woff2)')
-        ];
-        this.promises = fonts.map(font => 
-            font.load().then(loadedFont => {
-                document.fonts.add(loadedFont);
-                return loadedFont;
-            })
-        );
-        return Promise.all(this.promises).then(() => {
-            this.loaded = true;
-        });
-    }
-};
 
 // Helper function to measure text width with current font settings
 
@@ -480,6 +450,7 @@ async function drawTextWithSymbols(text, x, y, fontSize) {
 const CardCreator = {
     async createCard(cardData, locale = 'pt') {
         setCurrentLocale(locale);
+        await ensureCanvasFontsReady();
         const assets = await loadAssets(cardData, locale);
         return drawCard(cardData, assets);
     },
@@ -570,8 +541,35 @@ function drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh) {
 }
 
 function setFont(size, style, weight) {
-    ctx.font = `${weight ? `${weight} ` : ''}${size * scale}px ${style}`;
+    ctx.font = `${weight ? `${weight} ` : ''}${size * scale}px "${style}"`;
 }
+
+async function ensureCanvasFontsReady() {
+    if (ensureCanvasFontsReady.loaded) return;
+
+    // Wait for critical faces used by canvas stats and card body text.
+    const criticalFonts = [
+        '9px "Roboto Bold"',
+        '9px "Arial Bold"',
+        '9px "Arial Black"',
+        '18px "Arial Black"',
+        '12px "Eurostile Extd Black"',
+        '10px "Eurostile Medium"',
+        '10px "Eurostile Heavy"'
+    ];
+
+    try {
+        await Promise.all(criticalFonts.map((font) => document.fonts.load(font)));
+        await document.fonts.ready;
+    } catch (error) {
+        // Keep rendering with fallback fonts instead of breaking card generation.
+        console.warn('Font preload failed, using fallback fonts.', error);
+    }
+
+    ensureCanvasFontsReady.loaded = true;
+}
+
+ensureCanvasFontsReady.loaded = false;
 
 function fillText(text, x, y, maxWidth) {
     
@@ -2936,7 +2934,7 @@ function drawCreature(cardData) {
     fillText(cardData.stats.energy === 0 ? '0' : cardData.stats.energy.toString(), 219, 335);
     
     // Combat stats (courage, power, wisdom, speed)
-    setFont(9, 'Arial Bold');
+    setFont(9, 'Roboto Bold', '900');
     ctx.textAlign = 'right';
     ctx.fillStyle = '#000000';
     const stats = [

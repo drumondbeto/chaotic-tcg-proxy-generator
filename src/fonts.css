@@ -74,3 +74,10 @@
          url('./fonts/Eurostile Medium Italic.ttf') format('truetype');
     font-display: swap;
 }
+
+@font-face {
+    font-family: 'Roboto Bold';
+    src: local('Roboto Bold'),
+         url('./fonts/Roboto-Bold.ttf') format('truetype');
+    font-display: swap;
+}
