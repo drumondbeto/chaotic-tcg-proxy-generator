@@ -1,6 +1,6 @@
 // src/components/MugicNotesEditor.jsx
 import React, { useState } from 'react';
-import { getAssetPath } from './assetPaths';
+import { getAssetPath } from '../utils/assetPaths';
 
 // Musical note options
 const NOTES = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];

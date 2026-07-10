@@ -1,76 +1,68 @@
-// src/components/LocationSelector.jsx
+// src/components/AttackSelector.jsx
 import React, { useState, useEffect, useRef, memo } from 'react';
-import { getAllLocationNames, getLocationById } from './LocationDatabase';
+import { getAllAttackNames, getAttackById } from '../data/AttackDatabase';
 
 // Use React.memo to prevent unnecessary re-renders
-const LocationSelector = memo(({ onSelectLocation }) => {
+const AttackSelector = memo(({ onSelectAttack }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [filteredLocations, setFilteredLocations] = useState([]);
+  const [filteredAttacks, setFilteredAttacks] = useState([]);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const dropdownRef = useRef(null);
   const inputRef = useRef(null);
   const listRef = useRef(null);
-  // Cache all locations to avoid recalculation
-  const allLocations = useRef([]);
+  // Cache all attacks to avoid recalculation
+  const allAttacks = useRef([]);
   
-  // Load locations in alphabetical order
+  // Load attacks in alphabetical order
   useEffect(() => {
-    const loadLocations = async () => {
-      const locationItems = getAllLocationNames();
+    const loadAttacks = async () => {
+      const attacks = getAllAttackNames();
       
-      // Filter out locations without a name property first
-      const validLocations = locationItems.filter(location => location && location.name);
+      // Filter out attacks without a name property first
+      const validAttacks = attacks.filter(attack => attack && attack.name);
       
-      // Create displayName for each location (like CreatureSelector does)
-      const locationsWithDisplayName = validLocations.map(location => ({
-        ...location,
-        displayName: location.subname && location.subname.trim() !== '' 
-          ? `${location.name}, ${location.subname}` 
-          : location.name
-      }));
-      
-      // Sort locations alphabetically by displayName
-      const sortedLocations = locationsWithDisplayName.sort((a, b) => 
-        a.displayName.localeCompare(b.displayName)
+      // Sort attacks alphabetically
+      const sortedAttacks = validAttacks.sort((a, b) => 
+        a.name.localeCompare(b.name)
       );
       
-      allLocations.current = sortedLocations;
-      setFilteredLocations(sortedLocations);
+      allAttacks.current = sortedAttacks;
+      setFilteredAttacks(sortedAttacks);
     };
     
-    loadLocations();
+    loadAttacks();
   }, []);
   
-  // Filter locations when search term changes
+  // Filter attacks when search term changes
   useEffect(() => {
     if (searchTerm.trim() === '') {
-      setFilteredLocations(allLocations.current);
+      setFilteredAttacks(allAttacks.current);
     } else {
-      const filtered = allLocations.current.filter(location => {
-        // Ensure location has displayName property
-        if (!location || !location.displayName) return false;
+      const filtered = allAttacks.current.filter(attack => {
+        // Ensure attack has name property
+        if (!attack || !attack.name) return false;
         
-        return location.displayName.toLowerCase().includes(searchTerm.toLowerCase());
+        return attack.name.toLowerCase().includes(searchTerm.toLowerCase());
       });
       
-      setFilteredLocations(filtered);
+      setFilteredAttacks(filtered);
     }
     // Reset selected index when filtered results change
     setSelectedIndex(-1);
   }, [searchTerm]);
 
   // Memoize the selection handler to avoid recreating during renders
-  const handleLocationSelection = React.useCallback((locationId) => {
-    // Get the full location data from the database
-    const locationData = getLocationById(locationId);
-    if (!locationData) {
-      console.error(`Location not found with ID: ${locationId}`);
+  const handleAttackSelection = React.useCallback((attackId) => {
+    // Get the full attack data from the database
+    const attackData = getAttackById(attackId);
+    if (!attackData) {
+      console.error(`Attack not found with ID: ${attackId}`);
       return;
     }
     
-    // Call the parent component's handler with all the location data
-    onSelectLocation(locationData);
+    // Call the parent component's handler with all the attack data
+    onSelectAttack(attackData);
     
     // Reset local state
     setIsDropdownOpen(false);
@@ -81,7 +73,7 @@ const LocationSelector = memo(({ onSelectLocation }) => {
     setTimeout(() => {
       inputRef.current?.focus();
     }, 10);
-  }, [onSelectLocation]);
+  }, [onSelectAttack]);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -98,9 +90,9 @@ const LocationSelector = memo(({ onSelectLocation }) => {
     };
   }, []);
 
-  // Get a flattened list of selectable locations
-  const getSelectableLocations = () => {
-    return filteredLocations;
+  // Get a flattened list of selectable attacks
+  const getSelectableAttacks = () => {
+    return filteredAttacks;
   };
 
   // Special key handler with focus lock
@@ -108,7 +100,7 @@ const LocationSelector = memo(({ onSelectLocation }) => {
     const handleGlobalKeyDown = (e) => {
       if (!isDropdownOpen) return;
       
-      const selectableLocations = getSelectableLocations();
+      const selectableAttacks = getSelectableAttacks();
       
       if (['ArrowDown', 'ArrowUp', 'Enter', 'Escape'].includes(e.key)) {
         e.preventDefault();
@@ -117,10 +109,10 @@ const LocationSelector = memo(({ onSelectLocation }) => {
         switch (e.key) {
           case 'ArrowDown':
             setSelectedIndex(prevIndex => {
-              if (prevIndex < selectableLocations.length - 1) {
+              if (prevIndex < selectableAttacks.length - 1) {
                 // Move selection down
                 const newIndex = prevIndex + 1;
-                scrollToIndex(newIndex, selectableLocations);
+                scrollToIndex(newIndex, selectableAttacks);
                 return newIndex;
               }
               return prevIndex;
@@ -132,7 +124,7 @@ const LocationSelector = memo(({ onSelectLocation }) => {
               if (prevIndex > 0) {
                 // Move selection up
                 const newIndex = prevIndex - 1;
-                scrollToIndex(newIndex, selectableLocations);
+                scrollToIndex(newIndex, selectableAttacks);
                 return newIndex;
               }
               return prevIndex;
@@ -140,9 +132,9 @@ const LocationSelector = memo(({ onSelectLocation }) => {
             break;
             
           case 'Enter':
-            if (selectedIndex >= 0 && selectedIndex < selectableLocations.length) {
-              // Select the highlighted location
-              handleLocationSelection(selectableLocations[selectedIndex].id);
+            if (selectedIndex >= 0 && selectedIndex < selectableAttacks.length) {
+              // Select the highlighted attack
+              handleAttackSelection(selectableAttacks[selectedIndex].id);
             }
             break;
             
@@ -163,31 +155,28 @@ const LocationSelector = memo(({ onSelectLocation }) => {
     return () => {
       document.removeEventListener('keydown', handleGlobalKeyDown, true);
     };
-  }, [isDropdownOpen, selectedIndex, filteredLocations, handleLocationSelection]);
+  }, [isDropdownOpen, selectedIndex, filteredAttacks, handleAttackSelection]);
 
   // Initialize dropdown state with first item selected
   useEffect(() => {
     if (isDropdownOpen && selectedIndex === -1) {
-      const selectableLocations = getSelectableLocations();
-      if (selectableLocations.length > 0) {
+      const selectableAttacks = getSelectableAttacks();
+      if (selectableAttacks.length > 0) {
         setSelectedIndex(0);
       }
     }
-  }, [isDropdownOpen, selectedIndex, filteredLocations]);
+  }, [isDropdownOpen, selectedIndex, filteredAttacks]);
 
   // Function to scroll to a specific index
-  const scrollToIndex = (index, selectableLocations) => {
+  const scrollToIndex = (index, selectableAttacks) => {
     if (index < 0 || !listRef.current) return;
     
     // Use setTimeout to ensure this runs after render
     setTimeout(() => {
-      const locationId = selectableLocations[index]?.id;
-      if (!locationId) return;
+      const attackId = selectableAttacks[index]?.id;
+      if (!attackId) return;
       
-      // Safely escape the locationId for use in a CSS selector
-      const escapedId = locationId.replace(/"/g, '\\"').replace(/\\/g, '\\\\').replace(/:/g, '\\:');
-      
-      const element = listRef.current.querySelector(`[data-id="${escapedId}"]`);
+      const element = listRef.current.querySelector(`[data-id="${attackId.replace(/"/g, '\\"')}"]`);
       if (element) {
         element.scrollIntoView({
           block: 'nearest',
@@ -201,19 +190,19 @@ const LocationSelector = memo(({ onSelectLocation }) => {
   const handleInputFocus = () => {
     // Don't auto-open, but prepare for keyboard navigation
     if (isDropdownOpen) {
-      const selectableLocations = getSelectableLocations();
-      if (selectableLocations.length > 0 && selectedIndex === -1) {
+      const selectableAttacks = getSelectableAttacks();
+      if (selectableAttacks.length > 0 && selectedIndex === -1) {
         setSelectedIndex(0);
       }
     }
   };
 
-  // Helper to find if a location is currently selected
-  const isSelected = (location) => {
+  // Helper to find if an attack is currently selected
+  const isSelected = (attack) => {
     if (selectedIndex === -1) return false;
     
-    const selectableLocations = getSelectableLocations();
-    return selectableLocations[selectedIndex]?.id === location.id;
+    const selectableAttacks = getSelectableAttacks();
+    return selectableAttacks[selectedIndex]?.id === attack.id;
   };
 
   // Combined input click and focus handler
@@ -226,9 +215,9 @@ const LocationSelector = memo(({ onSelectLocation }) => {
     <div className="relative w-full" ref={dropdownRef}>
       <div className="flex flex-col gap-2">
         <div className="flex justify-between items-center">
-          <label className="text-white font-bold">Select Location</label>
+          <label className="text-white font-bold">Select Attack</label>
           <span className="text-xs text-gray-400">
-            {getSelectableLocations().length} locations available
+            {getSelectableAttacks().length} attacks available
           </span>
         </div>
         
@@ -249,7 +238,7 @@ const LocationSelector = memo(({ onSelectLocation }) => {
                 }
               }
             }}
-            placeholder="Search locations..."
+            placeholder="Search attacks..."
             className="w-full p-2 border border-gray-700 rounded bg-black text-white focus:border-[#9FE240] focus:outline-none pl-8"
             autoComplete="off"
             aria-expanded={isDropdownOpen}
@@ -269,27 +258,28 @@ const LocationSelector = memo(({ onSelectLocation }) => {
               role="listbox"
               tabIndex="-1"
             >
-              {filteredLocations.length === 0 ? (
-                <div className="p-3 text-gray-400 text-center">No locations found</div>
+              {filteredAttacks.length === 0 ? (
+                <div className="p-3 text-gray-400 text-center">No attacks found</div>
               ) : (
-                <div className="location-list">
-                  {filteredLocations.map((location) => (
-                    location && location.name && location.id ? (
+                <div className="attack-list">
+                  {filteredAttacks.map((attack) => (
+                    attack && attack.name && attack.id ? (
                       <div
-                        key={location.id}
-                        data-id={location.id}
-                        className={`p-2 cursor-pointer border-t border-gray-700 first:border-0 location-item ${
-                          isSelected(location) ? 'bg-gray-700' : 'hover:bg-gray-800'
+                        key={attack.id}
+                        data-id={attack.id}
+                        className={`p-2 cursor-pointer border-t border-gray-700 first:border-0 attack-item ${
+                          isSelected(attack) ? 'bg-gray-700' : 'hover:bg-gray-800'
                         }`}
-                        onClick={() => handleLocationSelection(location.id)}
+                        onClick={() => handleAttackSelection(attack.id)}
                         role="option"
-                        aria-selected={isSelected(location)}
+                        aria-selected={isSelected(attack)}
                       >
                         <div className="flex justify-between items-start">
                           <div>
-                            <div className="text-white">{location.displayName}</div>
+                            <div className="text-white">{attack.name}</div>
+                            {/* Removed fire, earth, air, water element tags */}
                           </div>
-                          <div className="text-xs text-gray-400 ml-2">{location.setDisplay || location.set?.toUpperCase()}</div>
+                          <div className="text-xs text-gray-400 ml-2">{attack.setDisplay || attack.set?.toUpperCase()}</div>
                         </div>
                       </div>
                     ) : null
@@ -305,6 +295,6 @@ const LocationSelector = memo(({ onSelectLocation }) => {
 });
 
 // Export with display name for better debugging
-LocationSelector.displayName = 'LocationSelector';
+AttackSelector.displayName = 'AttackSelector';
 
-export default LocationSelector;
+export default AttackSelector;

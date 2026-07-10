@@ -1,12 +1,14 @@
-// src/components/BatchCardGenerator.js
-import { CardCreator } from './cardCreator';
-import { creatureDatabase } from './CreatureDatabase';
+// Batch card generator for the card generator feature
+import { CardCreator } from '../utils/cardCreator';
+import { creatureDatabase } from '../data/CreatureDatabase';
 import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
 
 export class BatchCardGenerator {
-  constructor(progressCallback = () => {}) {
+  constructor(progressCallback = () => {}, useEmptyStats = false, useUnofficials = false) {
     this.progressCallback = progressCallback;
+    this.useEmptyStats = useEmptyStats;
+    this.useUnofficials = useUnofficials;
   }
 
   /**
@@ -14,7 +16,7 @@ export class BatchCardGenerator {
    * @param {Object} creatureData - The creature data from the database
    * @returns {Promise<HTMLCanvasElement>} - The rendered canvas
    */
-  async generateCardFromData(creatureData) {
+  async generateCardFromData(creatureData, locale = 'pt') {
     // Convert image URL to File object if it exists
     let artFile = null;
     if (creatureData.imageUrl) {
@@ -27,9 +29,27 @@ export class BatchCardGenerator {
       }
     }
 
+    const stats = this.useEmptyStats
+      ? {
+          energy: "",
+          courage: "",
+          power: "",
+          wisdom: "",
+          speed: "",
+          mugic: creatureData.stats?.mugic || 0
+        }
+      : creatureData.stats || {
+          energy: 0,
+          courage: 0,
+          power: 0,
+          wisdom: 0,
+          speed: 0,
+          mugic: 0
+        };
+
     // Prepare card data in the format expected by CardCreator
     const cardData = {
-      type: 'creature',
+      type: creatureData.type || 'creature',
       name: creatureData.name || '',
       subname: creatureData.subname || '',
       tribe: creatureData.tribe || '',
@@ -37,6 +57,7 @@ export class BatchCardGenerator {
       set: creatureData.set || '',
       rarity: creatureData.rarity || '',
       subtype: creatureData.subtype || '',
+      initiative: creatureData.initiative || "",
       ability: creatureData.ability || '',
       brainwashed: creatureData.brainwashed || false,
       brainwashedText: creatureData.brainwashedText || '',
@@ -47,14 +68,7 @@ export class BatchCardGenerator {
       loyal: creatureData.loyal || false,
       loyalRestriction: creatureData.loyalRestriction || '',
       past: creatureData.isPast || false,
-      stats: creatureData.stats || {
-        energy: 0,
-        courage: 0,
-        power: 0,
-        wisdom: 0,
-        speed: 0,
-        mugic: 0
-      },
+      stats,
       elements: creatureData.elements || {
         fire: 0,
         air: 0,
@@ -68,7 +82,7 @@ export class BatchCardGenerator {
 
     // Create the card canvas
     try {
-      const canvas = await CardCreator.createCard(cardData);
+      const canvas = await CardCreator.createCard(cardData, locale);
       return canvas;
     } catch (error) {
       console.error(`Error generating card for ${creatureData.name}:`, error);
@@ -97,15 +111,18 @@ export class BatchCardGenerator {
    * Generate all cards and download as a zip file
    * @param {Array} creatureList - List of creature data to process (defaults to all creatures)
    * @param {string} zipFilename - Name of the zip file to download
+   * @param {string} locale - Locale for card text (defaults to 'pt')
    */
-  async generateAllCards(creatureList = creatureDatabase, zipFilename = 'chaotic-cards.zip') {
+  async generateAllCards(creatureList = creatureDatabase, zipFilename = 'chaotic-cards.zip', locale = 'pt') {
+    creatureList = this.filterUnofficials(creatureList);
     const zip = new JSZip();
     const total = creatureList.length;
     let completed = 0;
     let errors = 0;
+    const errorsList = [];
+    const usedFilenames = new Set();
 
-    // Create folders in the zip based on tribes
-    const folders = {};
+    // All files will be placed in the zip root (no subfolders)
     
     this.progressCallback({
       status: 'Starting batch generation',
@@ -118,8 +135,9 @@ export class BatchCardGenerator {
     for (let i = 0; i < creatureList.length; i += BATCH_SIZE) {
       const batch = creatureList.slice(i, i + BATCH_SIZE);
       
-      // Process each creature in the batch
-      await Promise.all(batch.map(async (creature) => {
+      // Process each creature in the batch sequentially to avoid concurrent
+      // rendering on the shared global canvas (which causes drawing overlap).
+      for (const creature of batch) {
         try {
           // Update progress
           this.progressCallback({
@@ -128,28 +146,34 @@ export class BatchCardGenerator {
             total
           });
 
-          // Generate card
+          // Generate card (sequential to avoid canvas reuse race)
           const canvas = await this.generateCardFromData(creature);
           const blob = await this.canvasToBlob(canvas);
-          
-          // Get folder for tribe, create if it doesn't exist
-          const tribeName = creature.tribe ? this.formatTribe(creature.tribe) : 'Other';
-          if (!folders[tribeName]) {
-            folders[tribeName] = zip.folder(tribeName);
+
+          // Create a safe filename and ensure uniqueness (no duplicate names)
+          let filename = this.createSafeFilename(creature);
+          // Add extension if missing
+          if (!filename.toLowerCase().endsWith('.png')) filename = `${filename}.png`;
+          const baseName = filename.replace(/\.png$/i, '');
+          let uniqueName = filename;
+          let counter = 1;
+          while (usedFilenames.has(uniqueName)) {
+            uniqueName = `${baseName}-${counter}.png`;
+            counter++;
           }
-          
-          // Create a safe filename
-          const filename = this.createSafeFilename(creature);
-          
-          // Add to zip in the appropriate folder
-          folders[tribeName].file(`${filename}.png`, blob, { binary: true });
-          
+          usedFilenames.add(uniqueName);
+
+          // Add file to zip root
+          zip.file(uniqueName, blob, { binary: true });
+
           completed++;
         } catch (error) {
           console.error(`Failed to process ${creature.name}:`, error);
           errors++;
+          const id = creature.uniqueId || creature.serialNumber || creature.name || 'unknown';
+          errorsList.push(`${id} - ${creature.name} : ${error && error.message ? error.message : String(error)}`);
         }
-      }));
+      }
       
       // Force garbage collection between batches (kind of)
       await new Promise(resolve => setTimeout(resolve, 100));
@@ -167,8 +191,15 @@ export class BatchCardGenerator {
       compression: 'DEFLATE',
       compressionOptions: { level: 6 }
     });
-    
-    saveAs(content, zipFilename);
+    // If there were errors, include an errors.txt at root
+    if (errorsList.length > 0) {
+      zip.file('errors.txt', errorsList.join('\n'));
+      // regenerate content including errors.txt
+      const contentWithErrors = await zip.generateAsync({ type: 'blob', compression: 'DEFLATE', compressionOptions: { level: 6 } });
+      saveAs(contentWithErrors, zipFilename);
+    } else {
+      saveAs(content, zipFilename);
+    }
     
     this.progressCallback({
       status: `Complete! Generated ${completed} cards with ${errors} errors.`,
@@ -202,9 +233,12 @@ export class BatchCardGenerator {
    */
   createSafeFilename(creature) {
     // Start with set and serial number if available
-    let prefix = '';
+    let sufix = '';
     if (creature.set && creature.serialNumber) {
-      prefix = `${creature.set.toUpperCase()}-${creature.serialNumber}_`;
+      sufix = `_${creature.set.toUpperCase()}-${creature.serialNumber}`;
+    }
+    else if (creature.set && creature.id) {
+      sufix = `_${creature.set.toUpperCase()}-${creature.id}`;
     }
     
     // Add name, and handle subname if it exists
@@ -215,8 +249,10 @@ export class BatchCardGenerator {
     
     // Clean up invalid filename characters
     const safeName = name.replace(/[/\\?%*:|"<>]/g, '-');
-    
-    return `${prefix}${safeName}`;
+    var filename = `${name}${sufix}`;
+    const safeFilename = filename.replace(/[/\\?%*:|"<>]/g, '-');
+    console.log(`Generated filename: ${safeFilename}`);
+    return safeFilename;
   }
   
   /**
@@ -232,5 +268,12 @@ export class BatchCardGenerator {
     }
     
     return this.generateAllCards(tribeCreatures, `${this.formatTribe(tribe)}-cards.zip`);
+  }
+
+  filterUnofficials(creatureList) {
+    if (!this.useUnofficials) {
+      return creatureList.filter(c => c.set !== "" && c.serialNumber !== "");
+    }
+    return creatureList;
   }
 }

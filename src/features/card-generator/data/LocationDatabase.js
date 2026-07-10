@@ -1,5 +1,48 @@
 // This file was automatically generated from Excel data
 // src/components/LocationDatabase.js
+import LocationPtBr from './json/LocationPtBr.json';
+
+console.log("Iniciando Localizações")
+
+// Build a quick lookup for PT-BR entries by `name||subname`
+  // console.log('Testeando dados de localização PT-BR:', LocationPtBr);
+const _ptbrEntries = Array.isArray(LocationPtBr) ? LocationPtBr : [];
+// const testee = _ptbrEntries.filter(l => _ptbrEntries.filter(p => p.name === l.name).length > 1).sort(e => e.name);
+const _ptbrLookup = new Map();
+_ptbrEntries.forEach(e => {
+  const key = `${e.name},${(e.subname || '').trim()}`;
+  _ptbrLookup.set(key, e);
+});
+
+// normalize e compara desconsiderando \n, \r e "
+const normalize = s =>
+  (s || '')
+    .normalize('NFC')               // opcional: normaliza unicode
+    .replace(/[\n\r"]/g, '')        // remove newlines e aspas duplas
+    .replace(/\s+/g, ' ')           // colapsa espaços em branco
+    .trim()
+    .toLowerCase(); 
+
+const mergeWithPtBr = (location) => {
+  // console.log('Merging location with PT-BR data:', location);
+  if (!location) return location;
+  // if (location.name === 'The Passage') {
+  //   console.log('Found The Passage in PT-BR data');
+  // }
+  const key = `${location.name},${(location.subname || '').trim()}`;
+  const tr = _ptbrLookup.get(key);
+  if (!tr) return location;
+  return {
+    ...location,
+    type: 'location', // Override type to ensure it's correct for batch generation
+    subtype: location.type || location.subtype || '',
+    name: tr.name_PtBr || location.name,
+    subname: tr.subname_PtBr || location.subname,
+    ability: tr.ability_PtBr || location.ability,
+    flavorText: tr.flavorText_PtBr || location.flavorText,
+    initiative: tr.initiative_PtBr || location.initiative
+  };
+};
 
 // Helper function for creating unique card keys
 function createUniqueCardKey(card) {
@@ -1938,7 +1981,7 @@ export const locationDatabase = [
     "type": "Past Mirage",
     "artist": "HotShotsVFX",
     "imageUrl": "https://i.imgur.com/ZtU0icW.png",
-    "uniqueId": "Prexxor Chasm__au"
+    "uniqueId": "Prexxor Chasm The Blight__au"
   },
   {
     "id": "193/200",
@@ -2088,7 +2131,7 @@ export const locationDatabase = [
     "type": "",
     "artist": "HotShotsVFX",
     "imageUrl": "https://i.imgur.com/oernXdw.png",
-    "uniqueId": "The Passage__au"
+    "uniqueId": "The Passage__au_OW"
   },
   {
     "id": "191/200",
@@ -2103,7 +2146,7 @@ export const locationDatabase = [
     "type": "",
     "artist": "HotShotsVFX",
     "imageUrl": "https://i.imgur.com/r4GRInb.png",
-    "uniqueId": "The Passage__au"
+    "uniqueId": "The Passage__au_UW"
   },
   {
     "id": "192/200",
@@ -2302,38 +2345,74 @@ export const locationDatabase = [
   }
 ];
 
+
+// const testee2 = _ptbrEntries.filter(l => 
+//   locationDatabase.some(
+//     p => normalize(p.name) === normalize(l.name) && normalize(p.ability) === normalize(l.ability) &&
+//       (normalize(p.initiative) !== normalize(l.initiative) || normalize(p.subname) === normalize(l.subname))
+//   )).sort(e => e.name);
+
+// const testee3 = _ptbrEntries.filter(l => 
+//   !locationDatabase.some(
+//     p => normalize(p.name) === normalize(l.name) 
+//     && normalize(p.ability) === normalize(l.ability) 
+//     && normalize(p.initiative) === normalize(l.initiative) 
+//     && normalize(p.subname) === normalize(l.subname)
+//   )).sort(e => e.name);
+  
+// console.log(testee2.map(l => `${l.name} (${l.initiative}) - ${l.subname}`).join('\n'));
+// console.log(testee.length + ' cartas com nomes iguais');
+// console.log(testee3.length + ' cartas corretas');
+
 // Helper functions to work with the database
-export const getLocationById = (idOrKey) => {
+export const getLocationById = (idOrKey, locale = 'en') => {
   // First try direct ID lookup for backward compatibility
   const directMatch = locationDatabase.find(location => location.id === idOrKey);
-  if (directMatch) return directMatch;
+  if (directMatch) return locale === 'pt' ? mergeWithPtBr(directMatch) : directMatch;
   
   // Next try uniqueId match
   const uniqueMatch = locationDatabase.find(location => location.uniqueId === idOrKey);
-  if (uniqueMatch) return uniqueMatch;
+  if (uniqueMatch) return locale === 'pt' ? mergeWithPtBr(uniqueMatch) : uniqueMatch;
   
   // If not found, check if it's a composite key
   if (idOrKey.includes('__')) {
     const [name, set] = idOrKey.split('__');
-    return locationDatabase.find(location => 
+    const found = locationDatabase.find(location => 
       location.name === name && location.set === set
     );
+    return locale === 'pt' ? mergeWithPtBr(found) : found;
   }
   
   return null;
 };
 
-export const getAllLocationNames = () => {
-  return locationDatabase.map(location => ({
-    id: location.uniqueId || createUniqueCardKey(location), // Use the composite key here
-    name: location.name,
-    subname: location.subname || '', // Include subname in the list
-    set: location.set || '',
-    setDisplay: location.set ? location.set.toUpperCase() : '',
-    type: location.type || '',
-    unique: location.unique || false,
-    initiative: location.initiative || '',
-    // Keep the original ID for reference
-    originalId: location.id
-  }));
+export const getAllLocationNames = (locale = 'en') => {
+  // Optionally return localized display data when locale === 'pt'
+  return locationDatabase.map(location => {
+    const src = locale === 'pt' ? mergeWithPtBr(location) : location;
+    return {
+      id: src.uniqueId || createUniqueCardKey(src), // Use the composite key here
+      name: src.name,
+      subname: src.subname || '', // Include subname in the list
+      set: src.set || '',
+      setDisplay: src.set ? src.set.toUpperCase() : '',
+      type: src.type || '',
+      unique: src.unique || false,
+      initiative: src.initiative || '',
+      // Keep the original ID for reference
+      originalId: src.id
+    };
+  });
+};
+
+/**
+ * Return the full location database, optionally localized.
+ * Each entry will be passed through `mergeWithPtBr` when `locale === 'pt'`.
+ */
+export const getLocalizedLocationDatabase = (locale = 'en') => {
+  if (!Array.isArray(locationDatabase)) return [];
+  if (locale === 'pt') {
+    return locationDatabase.map(loc => mergeWithPtBr(loc));
+  }
+  return locationDatabase.slice();
 };

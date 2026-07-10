@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { getAssetPath } from './assetPaths';
+import { getAssetPath } from '../utils/assetPaths';
 
 const INITIATIVE_SYMBOLS = [
   // Ability elements

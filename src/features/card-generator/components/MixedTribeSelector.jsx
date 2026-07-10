@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getAssetPath } from './assetPaths';
+import { getAssetPath } from '../utils/assetPaths';
 
 // Import this component in your CardForm.jsx file
 

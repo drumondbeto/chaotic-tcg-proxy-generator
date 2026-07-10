@@ -3,6 +3,15 @@
 import { getAssetPath } from './assetPaths';
 
 //high-quality image scaling
+var currentLocale = 'pt'; // Default to 'pt' if locale is not provided
+var uniqueText = currentLocale === 'pt' ? 'Única' : 'Unique';
+var legendaryText = currentLocale === 'pt' ? 'Lendária' : 'Legendary';
+var loyalText = currentLocale === 'pt' ? 'Leal' : 'Loyal';
+var locationText = currentLocale === 'pt' ? 'Local' : 'Location';
+var creatureText = currentLocale === 'pt' ? 'Criatura' : 'Creature';
+var attackText = currentLocale === 'pt' ? 'Ataque' : 'Attack';
+var battlegearText = currentLocale === 'pt' ? 'Equipamento de Batalha' : 'Battlegear';
+
 
 const createHighQualityCanvas = (width, height) => {
     const canvas = document.createElement('canvas');
@@ -124,6 +133,12 @@ const SYMBOL_MAPPINGS = {
     ':power:': { img: 'img/icons/power.png' },
     ':wisdom:': { img: 'img/icons/wisdom.png' },
     ':speed:': { img: 'img/icons/speed.png' },   
+
+     // Discipline elements Pt Br
+    ':coragem:': { img: 'img/icons/courage.png' },
+    ':poder:': { img: 'img/icons/power.png' },
+    ':sabdoria:': { img: 'img/icons/wisdom.png' },
+    ':velocidade:': { img: 'img/icons/speed.png' },   
 
      // Tribe elements
     ':overworld:': { img: 'img/icons/overworld.png' },
@@ -463,11 +478,13 @@ async function drawTextWithSymbols(text, x, y, fontSize) {
     }
 }
 const CardCreator = {
-    async createCard(cardData) {
-        const assets = await loadAssets(cardData);
+    async createCard(cardData, locale = 'pt') {
+        setCurrentLocale(locale);
+        const assets = await loadAssets(cardData, locale);
         return drawCard(cardData, assets);
     },
-    downloadCard(canvas, name = 'card.png') {
+    downloadCard(canvas, name = 'card.png', locale = 'pt') {
+        setCurrentLocale(locale);
 
         // Create a temporary canvas that will contain just the card without any scaling
         const tempCanvas = document.createElement('canvas');
@@ -557,12 +574,22 @@ function setFont(size, style, weight) {
 }
 
 function fillText(text, x, y, maxWidth) {
+    
+    text = remapText(text);
 
     if (maxWidth !== undefined) {
         ctx.fillText(text, x * scale, y * scale, maxWidth * scale);
     } else {
         ctx.fillText(text, x * scale, y * scale);
     }
+}
+
+function remapText(text) {
+    if (text == 'Unique') return "Única";
+    if (text == 'Loyal') return "Leal";
+    if (text == 'Legendary') return "Lendária";
+
+    return text;
 }
 
 function setCanvas(x, y, useBleed = false) {
@@ -799,13 +826,13 @@ function formatTribe(tribe, mainTribe = '') {
         }
 
         // Format the secondary tribe
-        const formattedSecondary = formatSingleTribe(secondaryTribe);
+        const formattedSecondary = formatTranslatedSingleTribe(secondaryTribe);
         return formattedSecondary ? `Past ${formattedSecondary}` : '';
     }
 
     // Use mainTribe for other mixed tribes, otherwise use regular tribe
     const tribeToFormat = mainTribe || tribe;
-    return formatSingleTribe(tribeToFormat);
+    return formatTranslatedSingleTribe(tribeToFormat);
 }
 
 function formatSingleTribe(tribe) {
@@ -829,7 +856,30 @@ function formatSingleTribe(tribe) {
     }
 }
 
-async function loadAssets(cardData) {
+
+function formatTranslatedSingleTribe(tribe) {
+
+    if (!tribe) return "";
+
+    const trybeMap = {
+        'danian': currentLocale === 'pt' ? 'Danian' : 'Danian',
+        'overworld': currentLocale === 'pt' ? 'OutroMundo' : 'OverWorld',
+        'mipedian': currentLocale === 'pt' ? 'Mipedian' : 'Mipedian',
+        'underworld': currentLocale === 'pt' ? 'Submundo' : 'UnderWorld',
+        "m'arrillian": currentLocale === 'pt' ? "M'arrillian" : "M'arrillian",
+        'tribeless': currentLocale === 'pt' ? '' : '',
+        'generic': currentLocale === 'pt' ? 'Genérico' : 'Generic',
+        'mipedianow': currentLocale === 'pt' ? 'Mipedian OutroMundo' : 'Mipedian OverWorld',
+        'panivian': currentLocale === 'pt' ? 'Paniviano' : 'Panivian',
+        'umbrian': currentLocale === 'pt' ? 'Umbriano' : 'Umbrian',
+        'frozen': currentLocale === 'pt' ? 'Congelado' : 'Frozen',
+        'custom': currentLocale === 'pt' ? '' : ''
+    }
+    return trybeMap[tribe.toLowerCase()] || tribe;
+}
+
+
+async function loadAssets(cardData, locale = 'pt') {
     const assets = {};
     const promises = [];
 
@@ -844,7 +894,7 @@ if (cardData.type) {
     // Use different folder path based on bleed preference
     const templateFolder = useBleed ? 'img/template/blended bleed' : 'img/template/blended';
     const standardTemplateFolder = useBleed ? 'img/template/bleed' : 'img/template';
-    console.log(`Template settings - Type: ${cardData.type}, Tribe: ${cardData.tribe}, UseBleed: ${useBleed}`);
+    // console.log(`Template settings - Type: ${cardData.type}, Tribe: ${cardData.tribe}, UseBleed: ${useBleed}`);
 
     if (cardData.type === 'creature' && cardData.tribe) {
 
@@ -915,7 +965,7 @@ if (cardData.type) {
             console.log('Loading brainwashed template:', templatePath);
         } else {
             templatePath = getAssetPath(`${standardTemplateFolder}/${cardData.tribe.toLowerCase()}.png`);
-            console.log('Loading normal template:', templatePath);
+            // console.log('Loading normal template:', templatePath);
         }
     } else if (cardData.type === 'mugic' && cardData.tribe) {
 
@@ -939,7 +989,7 @@ if (cardData.type) {
     promises.push(loadAsset('template', templatePath)
         .then(img => {
             assets.template = img;
-            console.log(`Template loaded successfully: ${templatePath}`);
+            // console.log(`Template loaded successfully: ${templatePath}`);
         })
         .catch(error => {
             console.error(`Failed to load template: ${templatePath}`, error);
@@ -1023,8 +1073,9 @@ if (cardData.type) {
 
     if (cardData.type === 'creature' && cardData.brainwashed) {
         console.log('Loading brainwashed bar');
+        const brainwashedBarPathText = locale === 'pt' ? 'img/brainwashed_bar_pt.png' : 'img/brainwashed_bar_en.png';
         promises.push(loadAsset('brainwashedBar', 
-            getAssetPath('img/brainwashed_bar.png')
+            getAssetPath(brainwashedBarPathText)
         ).then(img => {
             console.log('Brainwashed bar loaded successfully');
             assets.brainwashedBar = img;
@@ -1190,13 +1241,13 @@ return assets;
 }
 
 async function loadAsset(key, path) {
-    console.log(`Loading asset: ${key} from path: ${path}`);
+    // console.log(`Loading asset: ${key} from path: ${path}`);
     return new Promise((resolve, reject) => {
         const img = new Image();
         img.crossOrigin = 'anonymous';
         img.onload = () => {
-            console.log(`Successfully loaded: ${key} from ${path}`);
-            console.log(`Original dimensions: ${img.width}x${img.height}`);
+            // console.log(`Successfully loaded: ${key} from ${path}`);
+            // console.log(`Original dimensions: ${img.width}x${img.height}`);
 
             // For set symbols, pre-process the image for better quality
 
@@ -1207,7 +1258,7 @@ async function loadAsset(key, path) {
                 // Create a new image from the high-quality canvas
                 const processedImg = new Image();
                 processedImg.onload = () => {
-                    console.log(`Processed ${key} for high-quality scaling`);
+                    // console.log(`Processed ${key} for high-quality scaling`);
                     resolve(processedImg);
                 };
                 processedImg.src = canvas.toDataURL('image/png');
@@ -1587,7 +1638,7 @@ if (cardData.type === 'attack') {
     ctx.shadowOffsetX = 0.5;
     ctx.shadowOffsetY = 0.5;
     ctx.shadowColor = "#696969";
-    fillText("Attack", 17, 218.5);
+    fillText(attackText, 17, 218.5);
 } else if (cardData.type === 'battlegear') {
     setFont(7.5, 'Eurostile Heavy Italic');
     ctx.fillStyle = '#ffffff';
@@ -1596,7 +1647,7 @@ if (cardData.type === 'attack') {
     ctx.shadowOffsetX = 0.5;
     ctx.shadowOffsetY = 0.5;
     ctx.shadowColor = "#696969"; 
-    fillText("Battlegear", 17, 218);    
+    fillText(battlegearText, 17, 218);    
 } else if (cardData.type === 'location') {
     // Location cards - rotate text 90 degrees counter-clockwise
     setFont(7.5, 'Eurostile Heavy Italic');
@@ -1611,12 +1662,12 @@ if (cardData.type === 'attack') {
     ctx.textAlign = 'left';  // Changed from 'center' to 'left'
     
     // Build the location type text with optional subtype
-    let locationText = "Location";
-    if (cardData.subtype) {
-        locationText += ` - ${cardData.subtype}`;
+    let locationTypeText = locationText;
+    if (cardData.subtype && cardData.subtype.trim() !== 'location') {
+        locationTypeText += ` - ${remapSubtypeText(cardData.subtype)}`;
     }
     
-    fillText(locationText, 0, 0);
+    fillText(locationTypeText, 0, 0);
     ctx.restore();
 } else if (cardData.subtype || cardData.tribe) {
     setFont(7.5, 'Eurostile Heavy Italic');
@@ -1626,7 +1677,12 @@ if (cardData.type === 'attack') {
     ctx.shadowOffsetX = 0.5;
     ctx.shadowOffsetY = 0.5;
     ctx.shadowColor = "#696969";
-    let typeText = cardData.type.charAt(0).toUpperCase() + cardData.type.slice(1);
+    
+    // let typeText = cardData.type.charAt(0).toUpperCase() + cardData.type.slice(1);
+
+    let typeText = remapTypeText(cardData.type);
+
+    console.log(`Card Type: ${cardData.type}, Tribe: ${cardData.tribe}, Subtype: ${cardData.subtype}`);
 
     if (cardData.tribe) {
         typeText += ` - `;
@@ -1651,6 +1707,8 @@ if (cardData.type === 'attack') {
     } else if (cardData.subtype) {
         typeText += ` - ${cardData.subtype}`;
     }
+
+    typeText = remapTypeText(typeText);
 
     if (cardData.type === 'mugic') {
         fillText(typeText, 15, 225);
@@ -1694,7 +1752,7 @@ if (cardData.ability || cardData.flavorText || cardData.unique || cardData.legen
     const totalText = [
         cardData.ability,
         cardData.brainwashed ? '\n'.repeat(2) + cardData.brainwashedText : [
-            [cardData.unique && 'Unique', cardData.legendary && 'Legendary', cardData.loyal && (cardData.loyalRestriction ? `Loyal - ${cardData.loyalRestriction}` : 'Loyal')].filter(Boolean).join(', '),
+            [cardData.unique && uniqueText, cardData.legendary && legendaryText, cardData.loyal && (cardData.loyalRestriction ? `${loyalText} - ${cardData.loyalRestriction}` : `${loyalText}`)].filter(Boolean).join(', '),
             cardData.flavorText
         ].filter(Boolean).join('\n')
     ].filter(Boolean).join('\n');
@@ -1729,9 +1787,9 @@ if (cardData.type === 'attack') {
             ctx.fillStyle = '#000000';
             ctx.textAlign = 'left';
             let statusText = [
-                cardData.legendary && 'Legendary',
-                cardData.unique && 'Unique',
-                cardData.loyal && (cardData.loyalRestriction ? `Loyal - ${cardData.loyalRestriction}` : 'Loyal')
+                cardData.legendary && legendaryText,
+                cardData.unique && uniqueText,
+                cardData.loyal && (cardData.loyalRestriction ? `${loyalText} - ${cardData.loyalRestriction}` : `${loyalText}`)
             ].filter(Boolean).join(', ');
             fillText(statusText, 18, currentY);
             currentY += lineHeight;
@@ -1741,9 +1799,9 @@ if (cardData.type === 'attack') {
         ctx.fillStyle = '#000000';
         ctx.textAlign = 'left';
         let statusText = [
-            cardData.legendary && 'Legendary',
-            cardData.unique && 'Unique',
-            cardData.loyal && (cardData.loyalRestriction ? `Loyal - ${cardData.loyalRestriction}` : 'Loyal')
+            cardData.legendary && legendaryText,
+            cardData.unique && uniqueText,
+            cardData.loyal && (cardData.loyalRestriction ? `${loyalText} - ${cardData.loyalRestriction}` : `${loyalText}`)
         ].filter(Boolean).join(', ');
         const textY = topBoundary + (availableHeight / 2);
         fillText(statusText, 18, textY);
@@ -1769,9 +1827,9 @@ if (cardData.type === 'attack') {
     if (!cardData.brainwashed && (cardData.unique || cardData.legendary || cardData.loyal)) {
         setFont(fontSize, 'Eurostile Heavy');
         let statusText = [
-            cardData.legendary && 'Legendary',
-            cardData.unique && 'Unique',
-            cardData.loyal && (cardData.loyalRestriction ? `Loyal - ${cardData.loyalRestriction}` : 'Loyal')
+            cardData.legendary && legendaryText,
+            cardData.unique && uniqueText,
+            cardData.loyal && (cardData.loyalRestriction ? `${loyalText} - ${cardData.loyalRestriction}` : `${loyalText}`)
         ].filter(Boolean).join(', ');
         statusHeight = lineHeight;
     }
@@ -1805,9 +1863,9 @@ if (cardData.type === 'attack') {
             ctx.fillStyle = '#000000';
             ctx.textAlign = 'left';
             let statusText = [
-                cardData.legendary && 'Legendary',
-                cardData.unique && 'Unique',
-                cardData.loyal && (cardData.loyalRestriction ? `Loyal - ${cardData.loyalRestriction}` : 'Loyal')
+                cardData.legendary && legendaryText,
+                cardData.unique && uniqueText,
+                cardData.loyal && (cardData.loyalRestriction ? `${loyalText} - ${cardData.loyalRestriction}` : `${loyalText}`)
             ].filter(Boolean).join(', ');
             fillText(statusText, 21, currentY);
         }
@@ -1816,9 +1874,9 @@ if (cardData.type === 'attack') {
         ctx.fillStyle = '#000000';
         ctx.textAlign = 'left';
         let statusText = [
-            cardData.legendary && 'Legendary',
-            cardData.unique && 'Unique',
-            cardData.loyal && (cardData.loyalRestriction ? `Loyal - ${cardData.loyalRestriction}` : 'Loyal')
+            cardData.legendary && legendaryText,
+            cardData.unique && uniqueText,
+            cardData.loyal && (cardData.loyalRestriction ? `${loyalText} - ${cardData.loyalRestriction}` : `${loyalText}`)
         ].filter(Boolean).join(', ');
 
         // Center the status text vertically in the available space
@@ -2068,7 +2126,7 @@ if (cardData.brainwashed && (cardData.ability || cardData.brainwashedText)) {
         ctx.textAlign = 'left';
 
         // Draw at fixed y position
-        fillText("Unique", 45, uniqueTextY);
+        fillText(uniqueText, 45, uniqueTextY);
     }
 } else {
 
@@ -2153,7 +2211,7 @@ if (!cardData.brainwashed && cardData.flavorText) {
             setFont(fontSize, 'Eurostile Heavy');
             ctx.fillStyle = '#000000';
             ctx.textAlign = 'left';
-            fillText("Unique", abilityX, currentY);
+            fillText(uniqueText, abilityX, currentY);
         }
     } 
 
@@ -2212,7 +2270,7 @@ if (!cardData.brainwashed && cardData.flavorText) {
             if (hasUnique) {
                 const uniqueY = startY + abilityHeight + gapBetweenAbilityAndUnique;
                 setFont(fontSize, 'Eurostile Heavy');
-                fillText("Unique", 0, uniqueY);
+                fillText(uniqueText, 0, uniqueY);
             }
         } else if (hasUnique) {
             // Only unique text, no ability
@@ -2220,7 +2278,7 @@ if (!cardData.brainwashed && cardData.flavorText) {
             
             // Center unique text in available space
             const uniqueY = initiativeBottom + (availableSpace / 2);
-            fillText("Unique", 0, uniqueY);
+            fillText(uniqueText, 0, uniqueY);
         }
         
         ctx.restore();
@@ -2252,7 +2310,7 @@ if (!cardData.brainwashed && cardData.flavorText) {
         const availableSpace = flavorTopY - initiativeBottom;
         const uniqueY = initiativeBottom + (availableSpace / 2);
         
-        fillText("Unique", 0, uniqueY);
+        fillText(uniqueText, 0, uniqueY);
         ctx.restore();
     }
 
@@ -2265,7 +2323,7 @@ if (!cardData.brainwashed && cardData.flavorText) {
         // ADJUSTED: More balanced position for the unique status when it appears alone
         const midY = 280; // Adjusted from 285 to 280
         const midStatusX = 18;
-        fillText("Unique", midStatusX, midY);
+        fillText(uniqueText, midStatusX, midY);
     }
 
    // Original handling for non-mugic, non-location cards with ability text
@@ -2304,9 +2362,9 @@ if (!cardData.brainwashed && cardData.flavorText) {
            ctx.fillStyle = '#000000';
            ctx.textAlign = 'left';
            let statusText = [
-               cardData.legendary && 'Legendary',
-               cardData.unique && 'Unique',
-               cardData.loyal && (cardData.loyalRestriction ? `Loyal - ${cardData.loyalRestriction}` : 'Loyal')
+               cardData.legendary && legendaryText,
+               cardData.unique && uniqueText,
+               cardData.loyal && (cardData.loyalRestriction ? `${loyalText} - ${cardData.loyalRestriction}` : `${loyalText}`)
            ].filter(Boolean).join(', ');
            fillText(statusText, abilityX, currentY);
        }
@@ -2320,9 +2378,9 @@ if (!cardData.brainwashed && cardData.flavorText) {
            ctx.fillStyle = '#000000';
            ctx.textAlign = 'left';
            let statusText = [
-               cardData.legendary && 'Legendary',
-               cardData.unique && 'Unique',
-               cardData.loyal && (cardData.loyalRestriction ? `Loyal - ${cardData.loyalRestriction}` : 'Loyal')
+               cardData.legendary && legendaryText,
+               cardData.unique && uniqueText,
+               cardData.loyal && (cardData.loyalRestriction ? `${loyalText} - ${cardData.loyalRestriction}` : `${loyalText}`)
            ].filter(Boolean).join(', ');
 
 // For Location cards with only status text, use specific positioning
@@ -2845,11 +2903,13 @@ if (cardData.artist && cardData.showArtist !== false && cardData.type !== 'mugic
         case 'attack': drawAttack(cardData); break;
         case 'creature': drawCreature(cardData); break;
         case 'mugic': 
-
             // Modified to pass the assets parameter
-            const mugicResult = await drawMugic(cardData, assets);
+            await drawMugic(cardData, assets);
             break;
-        case 'location': drawLocation(cardData); break;
+        case 'location':
+            // drawLocation is async (loads assets), await to ensure drawing completes
+            await drawLocation(cardData);
+            break;
     }
 return canvas;
 }
@@ -3200,15 +3260,60 @@ async function drawLocation(cardData) {
         ctx.textAlign = 'left';
 
         // Check if initiative contains symbols and process accordingly
+            // Normalize and prepare initiative text. If it doesn't contain a symbol code,
+            // try to map common localized or English words to a symbol code so the icon
+            // will be drawn alongside the localized word (e.g., ':fire: Fogo').
+            let initiativeText = String(cardData.initiative || '');
+            const hasSymbol = initiativeText.includes(':');
 
-        if (cardData.initiative.includes(':')) {
+            if (!hasSymbol && initiativeText.trim()) {
+                const normalized = initiativeText.toLowerCase().trim();
+                const initiativeMap = {
+                    // English
+                    'fire': ':fire:',
+                    'air': ':air:',
+                    'earth': ':earth:',
+                    'water': ':water:',
+                    'courage': ':courage:',
+                    'power': ':power:',
+                    'wisdom': ':wisdom:',
+                    'speed': ':speed:',
+                    'overworld': ':overworld:',
+                    'underworld': ':underworld:',
+                    'mipedian': ':mipedian:',
+                    'danian': ':danian:',
+                    "m'arrillian": ':marrillian:',
+                    'marrillian': ':marrillian:',
+                    'panivian': ':panivian:',
+                    'umbrian': ':umbrian:',
+                    'frozen': ':frozen:',
+                    // Portuguese
+                    'fogo': ':fire:',
+                    'ar': ':air:',
+                    'terra': ':earth:',
+                    'água': ':water:',
+                    'agua': ':water:',
+                    'coragem': ':courage:',
+                    'poder': ':power:',
+                    'sabedoria': ':wisdom:',
+                    'velocidade': ':speed:',
+                    'outro mundo': ':overworld:',
+                    'submundo': ':underworld:',
+                    'mipediano': ':mipedian:'
+                };
 
-            // Process initiative text to show both symbol and text, then add "Initiative: " prefix
-            const processedInitiative = await processInitiativeText(cardData.initiative);
-            await drawTextWithSymbols(`Initiative: ${processedInitiative}`, 0, 0, 10); // Changed from 8.5 to 10
-        } else {
-            fillText(`Initiative: ${cardData.initiative}`, 0, 0);
-        }
+                if (initiativeMap[normalized]) {
+                    // initiativeText = `${initiativeMap[normalized]} ${initiativeText}`;
+                    initiativeText = initiativeMap[normalized];
+                }
+            }
+
+            if (initiativeText.includes(':')) {
+                const processedInitiative = await processInitiativeText(initiativeText);
+                await drawTextWithSymbols(`Iniciativa: ${processedInitiative}`, 0, 0, 10);
+            } else {
+                fillText(`Iniciativa: ${initiativeText}`, 0, 0);
+            }
         ctx.restore();
     }
 }
@@ -3222,23 +3327,39 @@ async function processInitiativeText(initiativeText) {
 
     // Map of symbol codes to their text equivalents
     const symbolTextMap = {
-        ':fire:': ':fire: Fire',
-        ':air:': ':air: Air', 
-        ':earth:': ':earth: Earth',
-        ':water:': ':water: Water',
-        ':courage:': ':courage: Courage',
-        ':power:': ':power: Power',
-        ':wisdom:': ':wisdom: Wisdom', 
-        ':speed:': ':speed: Speed',
-        ':overworld:': ':overworld: OverWorld',
-        ':underworld:': ':underworld: UnderWorld',
+        ':fire:': ':fire: Fogo',
+        ':air:': ':air: Ar', 
+        ':earth:': ':earth: Terra',
+        ':water:': ':water: Água',
+
+        ':fogo:': ':fire: Fogo',
+        ':ar:': ':air: Ar', 
+        ':terra:': ':earth: Terra',
+        ':água:': ':water: Água',
+
+        ':courage:': ':courage: Coragem',
+        ':power:': ':power: Poder',
+        ':wisdom:': ':wisdom: Sabedoria', 
+        ':speed:': ':speed: Velocidade',
+
+        ':coragem:': ':courage: Coragem',
+        ':poder:': ':power: Poder',
+        ':sabedoria:': ':wisdom: Sabedoria', 
+        ':velocidade:': ':speed: Velocidade',
+
+        ':overworld:': ':overworld: Outro Mundo',
+        ':underworld:': ':underworld: Submundo',
         ':mipedian:': ':mipedian: Mipedian',
         ':danian:': ':danian: Danian',
         ':marrillian:': ':marrillian: M\'arrillian',
         ':tribeless:': ':tribeless: Tribeless',
         ':panivian:': ':panivian: Panivian',
         ':umbrian:': ':umbrian: Umbrian',
-        ':frozen:': ':frozen: Frozen'
+        ':frozen:': ':frozen: Frozen',
+
+        ':outro mundo:': ':overworld: Outro Mundo',
+        ':submundo:': ':underworld: Submundo',
+        ':mipediano:': ':mipedian: Mipedian',
     };
 
     // Replace each symbol code with symbol + text
@@ -3248,12 +3369,45 @@ async function processInitiativeText(initiativeText) {
     }
     return processedText;
 }
-    function drawBattlegear(cardData) {
+function drawBattlegear(cardData) {
 
-        if (cardData.ability) {
-            setFont(10.3, 'Arial');
-            ctx.fillStyle = '#000000';
-            ctx.textAlign = 'left';
-            fillText(cardData.ability, 21.2, 225);
-        }
+    if (cardData.ability) {
+        setFont(10.3, 'Arial');
+        ctx.fillStyle = '#000000';
+        ctx.textAlign = 'left';
+        fillText(cardData.ability, 21.2, 225);
     }
+}
+
+function setCurrentLocale(locale) {
+    if (locale === 'pt') {
+        currentLocale = 'pt';
+    } else {
+        currentLocale = 'en';
+    }
+}
+
+function remapTypeText(type) {
+    if (!type) return type; // Return as is if type is null or undefined
+
+    const typeMap = {
+        'attack': currentLocale === 'pt' ? 'Ataque' : 'Attack',
+        'creature': currentLocale === 'pt' ? 'Criatura' : 'Creature',
+        'mugic': currentLocale === 'pt' ? 'Mugic' : 'Mugic',
+        'location': currentLocale === 'pt' ? 'Localização' : 'Location',
+        'battlegear': currentLocale === 'pt' ? 'Equipamento de Batalha' : 'Battlegear'
+    };
+    return typeMap[type] || type;
+}
+
+function remapSubtypeText(subtype) {
+    if (!subtype) return subtype; // Return as is if subtype is null or undefined
+
+    const subtypeMap = {
+        'mirage': currentLocale === 'pt' ? 'Miragem' : 'Mirage',
+        'past': currentLocale === 'pt' ? 'Passado' : 'Past',
+        'mirage past': currentLocale === 'pt' ? 'Miragem Passado' : 'Mirage Past',
+        'past mirage': currentLocale === 'pt' ? 'Passado Miragem' : 'Past Mirage',
+    }
+    return subtypeMap[subtype.toLowerCase()] || subtype;
+}

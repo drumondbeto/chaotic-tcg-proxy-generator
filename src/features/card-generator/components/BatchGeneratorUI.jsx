@@ -1,7 +1,7 @@
-// src/components/BatchGeneratorUI.jsx
+// Card batch generation UI for the card generator feature
 import React, { useState } from 'react';
 import { BatchCardGenerator } from './BatchCardGenerator';
-import { creatureDatabase } from './CreatureDatabase';
+import { creatureDatabase } from '../data/CreatureDatabase';
 
 const BatchGeneratorUI = () => {
   const [generating, setGenerating] = useState(false);

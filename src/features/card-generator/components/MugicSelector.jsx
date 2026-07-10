@@ -1,68 +1,68 @@
-// src/components/BattlegearSelector.jsx
+// src/components/MugicSelector.jsx
 import React, { useState, useEffect, useRef, memo } from 'react';
-import { getAllBattlegearNames, getBattlegearById } from './BattlegearDatabase';
+import { getAllMugicNames, getMugicById } from '../data/MugicDatabase';
 
 // Use React.memo to prevent unnecessary re-renders
-const BattlegearSelector = memo(({ onSelectBattlegear }) => {
+const MugicSelector = memo(({ onSelectMugic }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [filteredBattlegear, setFilteredBattlegear] = useState([]);
+  const [filteredMugic, setFilteredMugic] = useState([]);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const dropdownRef = useRef(null);
   const inputRef = useRef(null);
   const listRef = useRef(null);
-  // Cache all battlegear to avoid recalculation
-  const allBattlegear = useRef([]);
+  // Cache all mugic to avoid recalculation
+  const allMugic = useRef([]);
   
-  // Load battlegear in alphabetical order
+  // Load mugic in alphabetical order
   useEffect(() => {
-    const loadBattlegear = async () => {
-      const battlegearItems = getAllBattlegearNames();
+    const loadMugic = async () => {
+      const mugicItems = getAllMugicNames();
       
-      // Filter out battlegear without a name property first
-      const validBattlegear = battlegearItems.filter(battlegear => battlegear && battlegear.name);
+      // Filter out mugic without a name property first
+      const validMugic = mugicItems.filter(mugic => mugic && mugic.name);
       
-      // Sort battlegear alphabetically
-      const sortedBattlegear = validBattlegear.sort((a, b) => 
+      // Sort mugic alphabetically
+      const sortedMugic = validMugic.sort((a, b) => 
         a.name.localeCompare(b.name)
       );
       
-      allBattlegear.current = sortedBattlegear;
-      setFilteredBattlegear(sortedBattlegear);
+      allMugic.current = sortedMugic;
+      setFilteredMugic(sortedMugic);
     };
     
-    loadBattlegear();
+    loadMugic();
   }, []);
   
-  // Filter battlegear when search term changes
+  // Filter mugic when search term changes
   useEffect(() => {
     if (searchTerm.trim() === '') {
-      setFilteredBattlegear(allBattlegear.current);
+      setFilteredMugic(allMugic.current);
     } else {
-      const filtered = allBattlegear.current.filter(battlegear => {
-        // Ensure battlegear has name property
-        if (!battlegear || !battlegear.name) return false;
+      const filtered = allMugic.current.filter(mugic => {
+        // Ensure mugic has name property
+        if (!mugic || !mugic.name) return false;
         
-        return battlegear.name.toLowerCase().includes(searchTerm.toLowerCase());
+        return mugic.name.toLowerCase().includes(searchTerm.toLowerCase());
       });
       
-      setFilteredBattlegear(filtered);
+      setFilteredMugic(filtered);
     }
     // Reset selected index when filtered results change
     setSelectedIndex(-1);
   }, [searchTerm]);
 
   // Memoize the selection handler to avoid recreating during renders
-  const handleBattlegearSelection = React.useCallback((battlegearId) => {
-    // Get the full battlegear data from the database
-    const battlegearData = getBattlegearById(battlegearId);
-    if (!battlegearData) {
-      console.error(`Battlegear not found with ID: ${battlegearId}`);
+  const handleMugicSelection = React.useCallback((mugicId) => {
+    // Get the full mugic data from the database
+    const mugicData = getMugicById(mugicId);
+    if (!mugicData) {
+      console.error(`Mugic not found with ID: ${mugicId}`);
       return;
     }
     
-    // Call the parent component's handler with all the battlegear data
-    onSelectBattlegear(battlegearData);
+    // Call the parent component's handler with all the mugic data
+    onSelectMugic(mugicData);
     
     // Reset local state
     setIsDropdownOpen(false);
@@ -73,7 +73,7 @@ const BattlegearSelector = memo(({ onSelectBattlegear }) => {
     setTimeout(() => {
       inputRef.current?.focus();
     }, 10);
-  }, [onSelectBattlegear]);
+  }, [onSelectMugic]);
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -90,9 +90,9 @@ const BattlegearSelector = memo(({ onSelectBattlegear }) => {
     };
   }, []);
 
-  // Get a flattened list of selectable battlegear
-  const getSelectableBattlegear = () => {
-    return filteredBattlegear;
+  // Get a flattened list of selectable mugic
+  const getSelectableMugic = () => {
+    return filteredMugic;
   };
 
   // Special key handler with focus lock
@@ -100,7 +100,7 @@ const BattlegearSelector = memo(({ onSelectBattlegear }) => {
     const handleGlobalKeyDown = (e) => {
       if (!isDropdownOpen) return;
       
-      const selectableBattlegear = getSelectableBattlegear();
+      const selectableMugic = getSelectableMugic();
       
       if (['ArrowDown', 'ArrowUp', 'Enter', 'Escape'].includes(e.key)) {
         e.preventDefault();
@@ -109,10 +109,10 @@ const BattlegearSelector = memo(({ onSelectBattlegear }) => {
         switch (e.key) {
           case 'ArrowDown':
             setSelectedIndex(prevIndex => {
-              if (prevIndex < selectableBattlegear.length - 1) {
+              if (prevIndex < selectableMugic.length - 1) {
                 // Move selection down
                 const newIndex = prevIndex + 1;
-                scrollToIndex(newIndex, selectableBattlegear);
+                scrollToIndex(newIndex, selectableMugic);
                 return newIndex;
               }
               return prevIndex;
@@ -124,7 +124,7 @@ const BattlegearSelector = memo(({ onSelectBattlegear }) => {
               if (prevIndex > 0) {
                 // Move selection up
                 const newIndex = prevIndex - 1;
-                scrollToIndex(newIndex, selectableBattlegear);
+                scrollToIndex(newIndex, selectableMugic);
                 return newIndex;
               }
               return prevIndex;
@@ -132,9 +132,9 @@ const BattlegearSelector = memo(({ onSelectBattlegear }) => {
             break;
             
           case 'Enter':
-            if (selectedIndex >= 0 && selectedIndex < selectableBattlegear.length) {
-              // Select the highlighted battlegear
-              handleBattlegearSelection(selectableBattlegear[selectedIndex].id);
+            if (selectedIndex >= 0 && selectedIndex < selectableMugic.length) {
+              // Select the highlighted mugic
+              handleMugicSelection(selectableMugic[selectedIndex].id);
             }
             break;
             
@@ -155,29 +155,29 @@ const BattlegearSelector = memo(({ onSelectBattlegear }) => {
     return () => {
       document.removeEventListener('keydown', handleGlobalKeyDown, true);
     };
-  }, [isDropdownOpen, selectedIndex, filteredBattlegear, handleBattlegearSelection]);
+  }, [isDropdownOpen, selectedIndex, filteredMugic, handleMugicSelection]);
 
-    // Initialize dropdown state with first item selected
+  // Initialize dropdown state with first item selected
   useEffect(() => {
     if (isDropdownOpen && selectedIndex === -1) {
-      const selectableBattlegear = getSelectableBattlegear();
-      if (selectableBattlegear.length > 0) {
+      const selectableMugic = getSelectableMugic();
+      if (selectableMugic.length > 0) {
         setSelectedIndex(0);
       }
     }
-  }, [isDropdownOpen, selectedIndex, filteredBattlegear]);
+  }, [isDropdownOpen, selectedIndex, filteredMugic]);
 
   // Function to scroll to a specific index
-  const scrollToIndex = (index, selectableBattlegear) => {
+  const scrollToIndex = (index, selectableMugic) => {
     if (index < 0 || !listRef.current) return;
     
     // Use setTimeout to ensure this runs after render
     setTimeout(() => {
-      const battlegearId = selectableBattlegear[index]?.id;
-      if (!battlegearId) return;
+      const mugicId = selectableMugic[index]?.id;
+      if (!mugicId) return;
       
-      // Safely escape the battlegearId for use in a CSS selector
-      const escapedId = battlegearId.replace(/"/g, '\\"').replace(/\\/g, '\\\\').replace(/:/g, '\\:');
+      // Safely escape the mugicId for use in a CSS selector
+      const escapedId = mugicId.replace(/"/g, '\\"').replace(/\\/g, '\\\\').replace(/:/g, '\\:');
       
       const element = listRef.current.querySelector(`[data-id="${escapedId}"]`);
       if (element) {
@@ -193,19 +193,19 @@ const BattlegearSelector = memo(({ onSelectBattlegear }) => {
   const handleInputFocus = () => {
     // Don't auto-open, but prepare for keyboard navigation
     if (isDropdownOpen) {
-      const selectableBattlegear = getSelectableBattlegear();
-      if (selectableBattlegear.length > 0 && selectedIndex === -1) {
+      const selectableMugic = getSelectableMugic();
+      if (selectableMugic.length > 0 && selectedIndex === -1) {
         setSelectedIndex(0);
       }
     }
   };
 
-  // Helper to find if a battlegear is currently selected
-  const isSelected = (battlegear) => {
+  // Helper to find if a mugic is currently selected
+  const isSelected = (mugic) => {
     if (selectedIndex === -1) return false;
     
-    const selectableBattlegear = getSelectableBattlegear();
-    return selectableBattlegear[selectedIndex]?.id === battlegear.id;
+    const selectableMugic = getSelectableMugic();
+    return selectableMugic[selectedIndex]?.id === mugic.id;
   };
 
   // Combined input click and focus handler
@@ -218,9 +218,9 @@ const BattlegearSelector = memo(({ onSelectBattlegear }) => {
     <div className="relative w-full" ref={dropdownRef}>
       <div className="flex flex-col gap-2">
         <div className="flex justify-between items-center">
-          <label className="text-white font-bold">Select Battlegear</label>
+          <label className="text-white font-bold">Select Mugic</label>
           <span className="text-xs text-gray-400">
-            {getSelectableBattlegear().length} battlegear available
+            {getSelectableMugic().length} mugic available
           </span>
         </div>
         
@@ -241,7 +241,7 @@ const BattlegearSelector = memo(({ onSelectBattlegear }) => {
                 }
               }
             }}
-            placeholder="Search battlegear..."
+            placeholder="Search mugic..."
             className="w-full p-2 border border-gray-700 rounded bg-black text-white focus:border-[#9FE240] focus:outline-none pl-8"
             autoComplete="off"
             aria-expanded={isDropdownOpen}
@@ -261,27 +261,27 @@ const BattlegearSelector = memo(({ onSelectBattlegear }) => {
               role="listbox"
               tabIndex="-1"
             >
-              {filteredBattlegear.length === 0 ? (
-                <div className="p-3 text-gray-400 text-center">No battlegear found</div>
+              {filteredMugic.length === 0 ? (
+                <div className="p-3 text-gray-400 text-center">No mugic found</div>
               ) : (
-                <div className="battlegear-list">
-                  {filteredBattlegear.map((battlegear) => (
-                    battlegear && battlegear.name && battlegear.id ? (
+                <div className="mugic-list">
+                  {filteredMugic.map((mugic) => (
+                    mugic && mugic.name && mugic.id ? (
                       <div
-                        key={battlegear.id}
-                        data-id={battlegear.id}
-                        className={`p-2 cursor-pointer border-t border-gray-700 first:border-0 battlegear-item ${
-                          isSelected(battlegear) ? 'bg-gray-700' : 'hover:bg-gray-800'
+                        key={mugic.id}
+                        data-id={mugic.id}
+                        className={`p-2 cursor-pointer border-t border-gray-700 first:border-0 mugic-item ${
+                          isSelected(mugic) ? 'bg-gray-700' : 'hover:bg-gray-800'
                         }`}
-                        onClick={() => handleBattlegearSelection(battlegear.id)}
+                        onClick={() => handleMugicSelection(mugic.id)}
                         role="option"
-                        aria-selected={isSelected(battlegear)}
+                        aria-selected={isSelected(mugic)}
                       >
                         <div className="flex justify-between items-start">
                           <div>
-                            <div className="text-white">{battlegear.name}</div>
+                            <div className="text-white">{mugic.name}</div>
                           </div>
-                          <div className="text-xs text-gray-400 ml-2">{battlegear.setDisplay || battlegear.set?.toUpperCase()}</div>
+                          <div className="text-xs text-gray-400 ml-2">{mugic.setDisplay || mugic.set?.toUpperCase()}</div>
                         </div>
                       </div>
                     ) : null
@@ -297,6 +297,6 @@ const BattlegearSelector = memo(({ onSelectBattlegear }) => {
 });
 
 // Export with display name for better debugging
-BattlegearSelector.displayName = 'BattlegearSelector';
+MugicSelector.displayName = 'MugicSelector';
 
-export default BattlegearSelector;
+export default MugicSelector;

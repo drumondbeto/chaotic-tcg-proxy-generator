@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import CardPreview from './CardPreview';
-import { CardCreator } from './cardCreator';
-import { getAssetPath } from './assetPaths';
+import { CardCreator } from '../utils/cardCreator';
+import { getAssetPath } from '../utils/assetPaths';
 import FormattingToolbar from './FormattingToolbar';
 import CreatureSelector from './CreatureSelector';
-import { getCreatureById } from './CreatureDatabase';
-import { urlToFile, loadAndCacheImage } from './imageCache';
+import { getCreatureById } from '../data/CreatureDatabase';
+import { urlToFile, loadAndCacheImage } from '../utils/imageCache';
 import AttackSelector from './AttackSelector';
 import BattlegearSelector from './BattlegearSelector';
 import MugicSelector from './MugicSelector';
@@ -17,6 +17,10 @@ import React, { useCallback, useMemo } from 'react';
 import MugicNotesEditor from './MugicNotesEditor';
 import MixedTribeSelector from './MixedTribeSelector';
 import InitiativeInput from './InitiativeInput';
+import { BatchCardGenerator } from './BatchCardGenerator';
+import { locationDatabase } from '../data/LocationDatabase';
+import { convertLocationToBatchEntry, getAllLocations, getAllCreatures, filterCreaturesByTribe } from '../utils/batchHelpers';
+import { useLocale } from '../../../app/LocaleContext';
 
 const generateRandomMugicNotes = () => {
   const NOTES = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
@@ -476,6 +480,22 @@ const ELEMENT_ICONS = {
     water: {
         creature: getAssetPath('img/icons/water.png'),
         attack: getAssetPath('img/icons/water.png')
+    },
+    fogo: {
+        creature: getAssetPath('img/icons/fogo.png'),
+        attack: getAssetPath('img/icons/fogo.png')
+    },
+    ar: {
+        creature: getAssetPath('img/icons/ar.png'),
+        attack: getAssetPath('img/icons/ar.png')
+    },
+    terra: {
+        creature: getAssetPath('img/icons/terra.png'),
+        attack: getAssetPath('img/icons/terra.png')
+    },
+    água: {
+        creature: getAssetPath('img/icons/água.png'),
+        attack: getAssetPath('img/icons/água.png')
     }
 };
 
@@ -513,6 +533,7 @@ const ElementItem = ({ element, value, onChange, type = 'creature' }) => (
 
 // Main Form Component
 const CardForm = () => {
+  const { locale } = useLocale();
   const [tribeLogo, setTribeLogo] = useState(null);
   const [customColor, setCustomColor] = useState({ h: 0, s: 0.5, l: 0.5 });
   const [brainwashed, setBrainwashed] = useState(false);
@@ -557,6 +578,9 @@ const CardForm = () => {
   const [showArtPositioner, setShowArtPositioner] = useState(true);
   const [mainTribe, setMainTribe] = useState('');
   const [noStats, setNoStats] = useState(false);
+  const [batchTribeFilter, setBatchTribeFilter] = useState('all');
+  const [batchEmptyStats, setBatchEmptyStats] = useState(false);
+  const [batchUnofficialsIncluded, setBatchUnofficialsIncluded] = useState(false);
   const handleArtPositionChange = useCallback((newPosition) => {
     setArtPosition(newPosition);
   }, []);  
@@ -614,7 +638,7 @@ const getFormattedSubtype = (type, tribe, subtype, isPast, mainTribe = '') => {
     const tribeToFormat = mainTribe || tribe;
 
     const formattedTribe = {
-        'overworld': 'OverWorld',
+        'overworld': 'OutroMundo',
         'underworld': 'UnderWorld',
         'mipedian': 'Mipedian',
         'danian': 'Danian',
@@ -824,6 +848,15 @@ const generateRandomStats = (maxStats) => {
   return result;
 };
 
+  const generateEmptyStats = () => ({
+    energy: "",
+    courage: "",
+    power: "",
+    wisdom: "",
+    speed: "",
+    mugic: 0
+  });
+
   // Function to determine if card type can have legendary/loyal properties
   const canHaveSpecialProperties = (type) => {
     return type === 'creature' || type === 'battlegear';
@@ -843,11 +876,11 @@ const generateRandomStats = (maxStats) => {
           await new Promise((resolve, reject) => {
             img.onload = resolve;
             img.onerror = reject;
-            img.src = path;
+            img.src = path ?? `/chaotic-react/img/icons/${element}.png`;
           });
           loadedImages[element] = true;
         } catch (error) {
-          console.error(`Failed to load ${element} icon:`, error);
+          console.error(`Failed to load ${element} icon:`, error, path);
           loadedImages[element] = false;
         }
       }
@@ -1244,6 +1277,45 @@ const handleBleedDownload = async () => {
   }
 };
 
+// Download all cards for the currently selected type (initial support: 'location')
+const handleDownloadAllOfType = async () => {
+  if (!selectedType) return;
+
+  console.log(`Starting batch download for card type: ${selectedType}`);
+
+  let list = [];
+  let generator = null;
+  let zipFilename = `${selectedType}.zip`;
+
+  if (selectedType === 'location') {
+    list = getAllLocations(locale);
+    generator = new BatchCardGenerator((progress) => {
+      console.log('Batch progress:', progress);
+    });
+  }
+
+  if (selectedType === 'creature') {
+    const allCreatures = getAllCreatures(locale);
+
+    list = filterCreaturesByTribe(allCreatures, batchTribeFilter);
+    zipFilename = batchTribeFilter === 'all'
+      ? 'creatures.zip'
+      : `${batchTribeFilter.toLowerCase()}-cards.zip`;
+
+    generator = new BatchCardGenerator((progress) => {
+      console.log('Batch progress:', progress);
+    }, batchEmptyStats, batchUnofficialsIncluded);
+  }
+
+  if (generator !== null) {
+    try {
+      await generator.generateAllCards(list, zipFilename);
+    } catch (err) {
+      console.error('Batch generation failed:', err);
+    }
+  }
+};
+
 return (
   // Added a max-width container that centers the content
   <div className="mx-auto flex flex-col lg:flex-row gap-0 p-2 lg:p-4 max-w-6xl">
@@ -1261,6 +1333,7 @@ return (
             onChange={(e) => {
               const newType = e.target.value;
               setSelectedType(newType);
+              setBatchTribeFilter('all');
               resetForm();
               // Reset related states when changing card type
               setTribe('');
@@ -1308,7 +1381,7 @@ return (
         // Reset any custom art position
         setArtPosition({ x: 0, y: 0, width: 0, height: 0 });
         
-        const cardData = getCreatureById(creatureId);
+        const cardData = getCreatureById(creatureId, locale);
         if (!cardData) {
           setIsLoading(false);
           return;
@@ -1598,7 +1671,7 @@ return (
         // Set basic location data including subname
         setName(locationData.name || '');
         setSubname(locationData.subname || '');
-        setSubtype(locationData.type || locationData.subtype || '');
+        setSubtype(locationData.subtype || locationData.type || '');
         setSet(locationData.set?.toLowerCase() || '');
         setRarity(locationData.rarity || '');
         setAbility(locationData.ability || '');
@@ -1981,7 +2054,7 @@ return (
     <div className="flex flex-wrap items-center justify-center gap-4 pt-0 border-gray-700">
         {/* Unique checkbox always visible */}
         <div className="flex items-center gap-2">
-            <label className="font-bold">Unique</label>
+            <label className="font-bold">Única</label>
             <input 
                 type="checkbox" 
                 checked={unique}
@@ -1994,7 +2067,7 @@ return (
         {!brainwashed && (
             <>
                 <div className="flex items-center gap-2">
-                    <label className="font-bold">Legendary</label>
+                    <label className="font-bold">Lendário</label>
                     <input 
                         type="checkbox" 
                         checked={legendary}
@@ -2004,7 +2077,7 @@ return (
                 </div>
                 
                 <div className="flex items-center gap-2">
-                    <label className="font-bold">Loyal</label>
+                    <label className="font-bold">Leal</label>
                     <input 
                         type="checkbox" 
                         checked={loyal}
@@ -2049,7 +2122,7 @@ return (
                 </div>
             )}
             <div className="flex items-center gap-2">
-                <label className="font-bold">Unique</label>
+                <label className="font-bold">Única</label>
                 <input 
                     type="checkbox" 
                     checked={unique}
@@ -2213,7 +2286,46 @@ return (
         type="small"
       />
     </div>
-    <div className="flex justify-center gap-4">
+    <div className="flex justify-center gap-4 flex-wrap">
+      {selectedType === 'creature' && (
+        <div className="flex flex-col items-center gap-2 w-full">
+          <label className="text-sm text-gray-400">Tribe for ZIP</label>
+          <select
+            value={batchTribeFilter}
+            onChange={(e) => setBatchTribeFilter(e.target.value)}
+            className="w-40 p-2 border border-gray-700 rounded bg-black text-white focus:border-[#9FE240] focus:outline-none"
+          >
+            <option value="all">All Tribes</option>
+            <option value="overworld">OverWorld</option>
+            <option value="underworld">UnderWorld</option>
+            <option value="mipedian">Mipedian</option>
+            <option value="danian">Danian</option>
+            <option value="m'arrillian">M'arrillian</option>
+            <option value="tribeless">Tribeless</option>
+            <option value="panivian">Panivian</option>
+            <option value="umbrian">Umbrian</option>
+            <option value="frozen">Frozen</option>
+          </select>
+          <label className="flex items-center gap-2 text-sm text-gray-400">
+            <input
+              type="checkbox"
+              checked={batchEmptyStats}
+              onChange={(e) => setBatchEmptyStats(e.target.checked)}
+              className="w-4 h-4 accent-[#9FE240]"
+            />
+            Empty stats
+          </label>
+          <label className="flex items-center gap-2 text-sm text-gray-400">
+            <input
+              type="checkbox"
+              checked={batchUnofficialsIncluded}
+              onChange={(e) => setBatchUnofficialsIncluded(e.target.checked)}
+              className="w-4 h-4 accent-[#9FE240]"
+            />
+            Unofficials Included
+          </label>
+        </div>
+      )}
       <button 
         onClick={handleDownload}
         className="px-6 py-2 bg-[#9FE240] text-black font-bold rounded hover:bg-[#8FD230] transition-colors"
@@ -2225,6 +2337,12 @@ return (
         className="px-6 py-2 bg-[#FF9933] text-black font-bold rounded hover:bg-[#FF8822] transition-colors"
       >
         Download with Bleed
+      </button>
+      <button
+        onClick={handleDownloadAllOfType}
+        className="px-6 py-2 bg-[#4DA6FF] text-black font-bold rounded hover:bg-[#3B95EE] transition-colors"
+      >
+        Download Each Card (ZIP)
       </button>
     </div>
   </div>
@@ -2252,7 +2370,14 @@ return (
                     const randomStats = generateRandomStats(originalMaxStats);
                     randomStats.mugic = originalMugic;
                     setStats(randomStats);
-                  } else {
+                  } 
+                  else if (newPreset === 'empty') {
+                    const originalMugic = stats.mugic;
+                    const emptyStats = generateEmptyStats();
+                    emptyStats.mugic = originalMugic;
+                    setStats(emptyStats);
+                  } 
+                  else {
                     const adjustedStats = adjustStatsBasedOnPreset(originalMaxStats, newPreset);
                     setStats(adjustedStats);
                   }
@@ -2263,6 +2388,7 @@ return (
                 <option value="mid">Mid</option>
                 <option value="min">Min</option>
                 <option value="random">Random</option>
+                <option value="empty">Empty</option>
               </select>
               
               {statsPreset === 'random' && (
@@ -2335,7 +2461,16 @@ return (
                   // Keep the original mugic value
                   randomStats.mugic = originalMugic;
                   setStats(randomStats);
-                } else {
+                }
+                else if (newPreset === 'empty') {
+                  // Modified to preserve mugic stat
+                  const originalMugic = stats.mugic;
+                  const emptyStats = generateEmptyStats();
+                  // Keep the original mugic value
+                  emptyStats.mugic = originalMugic;
+                  setStats(emptyStats);
+                }
+                else {
                   // Use the existing adjustment for other presets
                   const adjustedStats = adjustStatsBasedOnPreset(originalMaxStats, newPreset);
                   setStats(adjustedStats);
@@ -2347,6 +2482,7 @@ return (
               <option value="mid">Mid</option>
               <option value="min">Min</option>
               <option value="random">Random</option>
+              <option value="empty">Empty</option>
             </select>
           </div>
           
@@ -2397,7 +2533,46 @@ return (
   
 {/* Download Buttons for Non-Attack Cards */}
 {selectedType && selectedType !== 'attack' && (
-  <div className="flex justify-center gap-4 mt-5">
+  <div className="flex justify-center gap-4 mt-5 flex-wrap">
+    {selectedType === 'creature' && (
+      <div className="flex flex-col items-center gap-2 w-full">
+        <label className="text-sm text-gray-400">Tribe for ZIP</label>
+        <select
+          value={batchTribeFilter}
+          onChange={(e) => setBatchTribeFilter(e.target.value)}
+          className="w-40 p-2 border border-gray-700 rounded bg-black text-white focus:border-[#9FE240] focus:outline-none"
+        >
+          <option value="all">All Tribes</option>
+          <option value="overworld">OverWorld</option>
+          <option value="underworld">UnderWorld</option>
+          <option value="mipedian">Mipedian</option>
+          <option value="danian">Danian</option>
+          <option value="m'arrillian">M'arrillian</option>
+          <option value="tribeless">Tribeless</option>
+          <option value="panivian">Panivian</option>
+          <option value="umbrian">Umbrian</option>
+          <option value="frozen">Frozen</option>
+        </select>
+        <label className="flex items-center gap-2 text-sm text-gray-400">
+          <input
+            type="checkbox"
+            checked={batchEmptyStats}
+            onChange={(e) => setBatchEmptyStats(e.target.checked)}
+            className="w-4 h-4 accent-[#9FE240]"
+          />
+          Empty stats
+        </label>
+        <label className="flex items-center gap-2 text-sm text-gray-400">
+          <input
+            type="checkbox"
+            checked={batchUnofficialsIncluded}
+            onChange={(e) => setBatchUnofficialsIncluded(e.target.checked)}
+            className="w-4 h-4 accent-[#9FE240]"
+          />
+          Unofficials Included
+        </label>
+      </div>
+    )}
     <button 
       onClick={handleDownload}
       className="px-6 py-2 bg-[#9FE240] text-black font-bold rounded hover:bg-[#8FD230] transition-colors"
@@ -2409,6 +2584,12 @@ return (
       className="px-6 py-2 bg-[#FF9933] text-black font-bold rounded hover:bg-[#FF8822] transition-colors"
     >
       Download with Bleed
+    </button>
+    <button
+      onClick={handleDownloadAllOfType}
+      className="px-6 py-2 bg-[#4DA6FF] text-black font-bold rounded hover:bg-[#3B95EE] transition-colors"
+    >
+      Download All (ZIP)
     </button>
   </div>
 )}

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { CardCreator } from './cardCreator';
-import { getAssetPath } from './assetPaths';
+import { CardCreator } from '../utils/cardCreator';
+import { getAssetPath } from '../utils/assetPaths';
 
 const CardPreview = ({ cardData }) => {
   const containerRef = useRef(null);
@@ -53,13 +53,13 @@ const CardPreview = ({ cardData }) => {
           loyalRestriction: cardData.loyalRestriction || '',
           past: cardData.past || false,
           noStats: cardData.noStats || false,
-          stats: cardData.stats || {
-            energy: 0,
-            courage: 0,
-            power: 0,
-            wisdom: 0,
-            speed: 0,
-            mugic: 0
+          stats: cardData.stats ||  {
+            energy: '',
+            courage: '',
+            power: '',
+            wisdom: '',
+            speed: '',
+            mugic: cardData.stats?.mugic || 0
           },
           elements: cardData.elements || {
             fire: 0,

@@ -1,8 +1,4 @@
-// This file was automatically generated from Excel data
-// src/components/CreatureDatabase.js
-
-// Pre-populated creature database
-export const creatureDatabase = [
+[
   {
     "id": "DOP-57/232",
     "displayName": "Ekuud",
@@ -4036,7 +4032,7 @@ export const creatureDatabase = [
     "imageUrl": "https://i.imgur.com/b0iPClD.png"
   },
   {
-    "id": "ROTO-29/100",
+    "id": "ROTO-29/100-P",
     "displayName": "Aa'une the Oligarch, Projection",
     "name": "Aa'une the Oligarch",
     "subname": "Projection",
@@ -4053,7 +4049,7 @@ export const creatureDatabase = [
     "loyal": true,
     "loyalRestriction": "",
     "artist": "Khary Randolph, Liz Artinian",
-    "serialNumber": "29/100",
+    "serialNumber": "29/100-P",
     "isPast": false,
     "stats": {
       "courage": 60,
@@ -4072,7 +4068,7 @@ export const creatureDatabase = [
     "imageUrl": "https://i.imgur.com/S2olBfa.png"
   },
   {
-    "id": "ROTO-29/100",
+    "id": "ROTO-29/100-A",
     "displayName": "Aa'une the Oligarch, Avatar",
     "name": "Aa'une the Oligarch",
     "subname": "Avatar",
@@ -4089,7 +4085,7 @@ export const creatureDatabase = [
     "loyal": true,
     "loyalRestriction": "",
     "artist": "Khary Randolph, Chris Fisher",
-    "serialNumber": "29/100",
+    "serialNumber": "29/100-A",
     "isPast": false,
     "stats": {
       "courage": 210,
@@ -23727,20 +23723,4 @@ export const creatureDatabase = [
     },
     "imageUrl": "https://i.imgur.com/SH65Rtk.png"
   }
-];
-
-// Helper functions to work with the database
-export const getCreatureById = (id) => {
-  return creatureDatabase.find(creature => creature.id === id);
-};
-
-export const getAllCreatureNames = () => {
-  return creatureDatabase.map(creature => ({
-    id: creature.id,
-    displayName: creature.displayName,
-    tribe: creature.tribe,
-    isPast: creature.isPast,
-    set: creature.set || '',
-    setDisplay: creature.set ? creature.set.toUpperCase() : ''
-  }));
-};
+]
