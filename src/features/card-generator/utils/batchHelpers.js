@@ -1,6 +1,9 @@
 // Helper adapters for batch generation
 import { locationDatabase, getLocalizedLocationDatabase } from '../data/LocationDatabase';
 import { creatureDatabase, getLocalizedCreatureDatabase } from '../data/CreatureDatabase';
+import { attackDatabase } from '../data/AttackDatabase';  
+import { battlegearDatabase } from '../data/BattlegearDatabase';
+import { mugicDatabase } from '../data/MugicDatabase';
 
 /**
  * Convert a location database entry into the minimal shape
@@ -51,6 +54,18 @@ export function getAllCreatures(locale = 'pt') {
     return getLocalizedCreatureDatabase(locale);
   }
   return creatureDatabase;
+}
+
+export function getAllAttacks(locale = 'pt') {
+  return attackDatabase;
+}
+
+export function getAllBattlegear(locale = 'pt') {
+  return battlegearDatabase;
+}
+
+export function getAllMugic(locale = 'pt') {
+  return mugicDatabase;
 }
 
 export function filterCreaturesByTribe(creatures, tribeFilter = 'all') {

@@ -1,6 +1,10 @@
 // This file was automatically generated from Excel data
 // src/components/BattlegearDatabase.js
 
+
+// import BattlegearDatabasePt from './json/BattlegearDatabasePt.json';
+import BattlegearDatabaseEn from './json/BattlegearDatabaseEn.json';
+
 // Helper function for creating unique card keys
 function createUniqueCardKey(card) {
   // Combine name and set for a unique identifier

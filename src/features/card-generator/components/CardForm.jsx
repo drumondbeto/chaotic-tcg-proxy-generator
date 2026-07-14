@@ -19,7 +19,7 @@ import MixedTribeSelector from './MixedTribeSelector';
 import InitiativeInput from './InitiativeInput';
 import { BatchCardGenerator } from './BatchCardGenerator';
 import { locationDatabase } from '../data/LocationDatabase';
-import { convertLocationToBatchEntry, getAllLocations, getAllCreatures, filterCreaturesByTribe } from '../utils/batchHelpers';
+import { convertLocationToBatchEntry, getAllLocations, getAllCreatures, getAllAttacks, getAllBattlegear, getAllMugic, filterCreaturesByTribe } from '../utils/batchHelpers';
 import { useLocale } from '../../../app/LocaleContext';
 
 const generateRandomMugicNotes = () => {
@@ -1305,6 +1305,27 @@ const handleDownloadAllOfType = async () => {
     generator = new BatchCardGenerator((progress) => {
       console.log('Batch progress:', progress);
     }, batchEmptyStats, batchUnofficialsIncluded);
+  }
+
+  if (selectedType === 'attack') {
+    list = getAllAttacks(locale);
+    generator = new BatchCardGenerator((progress) => {
+      console.log('Batch progress:', progress);
+    });
+  }
+
+  if (selectedType === 'battlegear') {
+    list = getAllBattlegear(locale);
+    generator = new BatchCardGenerator((progress) => {
+      console.log('Batch progress:', progress);
+    });
+  }
+
+  if (selectedType === 'mugic') {
+    list = getAllMugic(locale);
+    generator = new BatchCardGenerator((progress) => {
+      console.log('Batch progress:', progress);
+    });
   }
 
   if (generator !== null) {

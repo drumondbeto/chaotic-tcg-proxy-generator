@@ -28,8 +28,8 @@ const usePtFields = (attack) => {
   }
 };
 
-export const attackDatabaseEn = Array.isArray(AttackDatabaseEn) ? AttackDatabaseEn : [];
-export const attackDatabasePt = Array.isArray(AttackDatabasePt) ? AttackDatabasePt.map(attack => { return usePtFields(attack) }) : [];
+const attackDatabaseEn = Array.isArray(AttackDatabaseEn) ? AttackDatabaseEn : [];
+const attackDatabasePt = Array.isArray(AttackDatabasePt) ? AttackDatabasePt.map(attack => { return usePtFields(attack) }) : [];
 
 // Helper function for creating unique card keys
 function createUniqueCardKey(card) {
