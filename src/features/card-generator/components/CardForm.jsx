@@ -18,8 +18,7 @@ import MugicNotesEditor from './MugicNotesEditor';
 import MixedTribeSelector from './MixedTribeSelector';
 import InitiativeInput from './InitiativeInput';
 import { BatchCardGenerator } from './BatchCardGenerator';
-import { locationDatabase } from '../data/LocationDatabase';
-import { convertLocationToBatchEntry, getAllLocations, getAllCreatures, getAllAttacks, getAllBattlegear, getAllMugic, filterCreaturesByTribe } from '../utils/batchHelpers';
+import { getAllLocations, getAllCreatures, getAllAttacks, getAllBattlegear, getAllMugic, filterCreaturesByTribe } from '../utils/batchHelpers';
 import { useLocale } from '../../../app/LocaleContext';
 
 const generateRandomMugicNotes = () => {
@@ -1284,14 +1283,14 @@ const handleDownloadAllOfType = async () => {
   console.log(`Starting batch download for card type: ${selectedType}`);
 
   let list = [];
-  let generator = null;
   let zipFilename = `${selectedType}.zip`;
+  const generator = new BatchCardGenerator((progress) => {
+    console.log('Batch progress:', progress);
+  }, batchEmptyStats, batchUnofficialsIncluded);
 
   if (selectedType === 'location') {
     list = getAllLocations(locale);
-    generator = new BatchCardGenerator((progress) => {
-      console.log('Batch progress:', progress);
-    });
+    zipFilename = 'locations.zip';
   }
 
   if (selectedType === 'creature') {
@@ -1301,39 +1300,27 @@ const handleDownloadAllOfType = async () => {
     zipFilename = batchTribeFilter === 'all'
       ? 'creatures.zip'
       : `${batchTribeFilter.toLowerCase()}-cards.zip`;
-
-    generator = new BatchCardGenerator((progress) => {
-      console.log('Batch progress:', progress);
-    }, batchEmptyStats, batchUnofficialsIncluded);
   }
 
   if (selectedType === 'attack') {
     list = getAllAttacks(locale);
-    generator = new BatchCardGenerator((progress) => {
-      console.log('Batch progress:', progress);
-    });
+    zipFilename = 'attacks.zip';
   }
 
   if (selectedType === 'battlegear') {
     list = getAllBattlegear(locale);
-    generator = new BatchCardGenerator((progress) => {
-      console.log('Batch progress:', progress);
-    });
+    zipFilename = 'battlegear.zip';
   }
 
   if (selectedType === 'mugic') {
     list = getAllMugic(locale);
-    generator = new BatchCardGenerator((progress) => {
-      console.log('Batch progress:', progress);
-    });
+    zipFilename = 'mugic.zip';
   }
 
-  if (generator !== null) {
-    try {
-      await generator.generateAllCards(list, zipFilename);
-    } catch (err) {
-      console.error('Batch generation failed:', err);
-    }
+  try {
+    await generator.generateAllCards(list, zipFilename, locale);
+  } catch (err) {
+    console.error('Batch generation failed:', err);
   }
 };
 

@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { BatchCardGenerator } from './BatchCardGenerator';
 import { creatureDatabase } from '../data/CreatureDatabase';
+import { getAllCreatures, filterCreaturesByTribe } from '../utils/batchHelpers';
 
 const BatchGeneratorUI = () => {
   const [generating, setGenerating] = useState(false);
@@ -49,11 +50,14 @@ const BatchGeneratorUI = () => {
           });
         }
       });
+
+      const allCreatures = getAllCreatures();
       
       if (selectedTribe === 'all') {
-        await generator.generateAllCards();
+        await generator.generateAllCards(allCreatures, 'creatures.zip');
       } else {
-        await generator.generateCardsByTribe(selectedTribe);
+        const filteredCreatures = filterCreaturesByTribe(allCreatures, selectedTribe);
+        await generator.generateAllCards(filteredCreatures, `${selectedTribe}-cards.zip`);
       }
     } catch (error) {
       console.error('Error in batch generation:', error);
