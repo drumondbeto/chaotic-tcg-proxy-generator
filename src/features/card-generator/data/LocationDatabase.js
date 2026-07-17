@@ -1,12 +1,86 @@
 // This file was automatically generated from Excel data
 // src/components/LocationDatabase.js
-import LocationPtBr from './json/LocationPtBr.json';
+import LocationDatabasePt from './json/LocationDatabasePt.json';
+import LocationDatabaseEn from './json/LocationDatabaseEn.json';
 
 console.log("Iniciando Localizações")
 
+var locale = 'pt'; // Default locale
+
+const setLocale = (newLocale) => {
+  locale = newLocale;
+  updateLocaleDatabase();
+};
+
+const updateLocaleDatabase = () => {
+  if (locale === 'pt') {
+    locationDatabase = LocationDatabasePt.map(location => mergeWithPtBr(location));
+  } else {
+    locationDatabase = LocationDatabaseEn;
+  }
+};
+
+const usePtFields = (location) => {
+  if (!location) return location;
+
+  return {
+    ...location,
+
+    name: location.name_pt || location.name,
+    name_pt: location.name_pt,
+    name_en: location.name,
+
+    subname: location.subname_pt || location.subname,
+    subname_pt: location.subname_pt,
+    subname_en: location.subname,
+
+    ability: location.ability_pt || location.ability,
+    ability_pt: location.ability_pt,
+    ability_en: location.ability,
+
+    flavorText: location.flavorText_pt || location.flavorText,
+    flavorText_pt: location.flavorText_pt,
+    flavorText_en: location.flavorText,
+
+    initiative: location.initiative_pt || location.initiative,
+    initiative_pt: location.initiative_pt,
+    initiative_en: location.initiative,
+    
+    type: location.type_pt || location.type,
+    type_pt: location.type_pt,
+    type_en: location.type,
+  }
+}
+
+const useEnFields = (location) => {
+  if (!location) return location;
+
+  return {
+    ...location,
+    name: location.name,
+    name_pt: location.name_pt,
+    name_en: location.name,
+    subname: location.subname,
+    subname_pt: location.subname_pt,
+    subname_en: location.subname,
+    ability: location.ability,
+    ability_pt: location.ability_pt,
+    ability_en: location.ability,
+    flavorText: location.flavorText,
+    flavorText_pt: location.flavorText_pt,
+    flavorText_en: location.flavorText,
+    initiative: location.initiative,
+    initiative_pt: location.initiative_pt,
+    initiative_en: location.initiative,
+    type: location.type,
+    type_pt: location.type_pt,
+    type_en: location.type
+  }
+}
+
 // Build a quick lookup for PT-BR entries by `name||subname`
   // console.log('Testeando dados de localização PT-BR:', LocationPtBr);
-const _ptbrEntries = Array.isArray(LocationPtBr) ? LocationPtBr : [];
+const _ptbrEntries = Array.isArray(LocationDatabasePt) ? LocationDatabasePt : [];
 // const testee = _ptbrEntries.filter(l => _ptbrEntries.filter(p => p.name === l.name).length > 1).sort(e => e.name);
 const _ptbrLookup = new Map();
 _ptbrEntries.forEach(e => {
