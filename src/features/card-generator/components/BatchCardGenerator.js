@@ -4,6 +4,10 @@ import { getAllCreatures, filterCreaturesByTribe } from '../utils/batchHelpers';
 import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
 
+// Module-level cache for art blob fetches — avoids re-downloading the same
+// imageUrl for every copy of a card that appears in a batch run.
+const _artBlobCache = new Map();
+
 export class BatchCardGenerator {
   constructor(progressCallback = () => {}, useEmptyStats = false, useUnofficials = false) {
     this.progressCallback = progressCallback;
@@ -19,12 +23,17 @@ export class BatchCardGenerator {
   async generateCardFromData(cardEntry, locale = 'pt') {
     const cardType = cardEntry.type || 'creature';
 
-    // Convert image URL to File object if it exists
+    // Convert image URL to File object if it exists — cache blobs to avoid
+    // re-fetching the same URL for every card copy in a batch.
     let artFile = null;
     if (cardEntry.imageUrl) {
       try {
-        const response = await fetch(cardEntry.imageUrl);
-        const blob = await response.blob();
+        let blob = _artBlobCache.get(cardEntry.imageUrl);
+        if (!blob) {
+          const response = await fetch(cardEntry.imageUrl);
+          blob = await response.blob();
+          _artBlobCache.set(cardEntry.imageUrl, blob);
+        }
         artFile = new File([blob], 'art.png', { type: blob.type });
       } catch (error) {
         console.error(`Failed to load image for ${cardEntry.name}:`, error);
@@ -138,8 +147,9 @@ export class BatchCardGenerator {
       total
     });
 
-    // Process cards in batches to avoid memory issues
-    const BATCH_SIZE = 10;
+    // Smaller batches keep peak memory lower; the main pressure is the
+    // blob accumulation inside JSZip, so fewer concurrent allocations help.
+    const BATCH_SIZE = 5;
     for (let i = 0; i < cardList.length; i += BATCH_SIZE) {
       const batch = cardList.slice(i, i + BATCH_SIZE);
       
@@ -157,6 +167,8 @@ export class BatchCardGenerator {
           // Generate card (sequential to avoid canvas reuse race)
           const canvas = await this.generateCardFromData(card, locale);
           const blob = await this.canvasToBlob(canvas);
+          // Release the canvas pixel buffer immediately after conversion
+          canvas.width = 0;
 
           // Create a safe filename and ensure uniqueness (no duplicate names)
           let filename = this.createSafeFilename(card);
@@ -171,8 +183,8 @@ export class BatchCardGenerator {
           }
           usedFilenames.add(uniqueName);
 
-          // Add file to zip root
-          zip.file(uniqueName, blob, { binary: true });
+          // Add file to zip root — STORE avoids re-compressing already-compressed PNGs
+          zip.file(uniqueName, blob, { binary: true, compression: 'STORE' });
 
           completed++;
         } catch (error) {
@@ -193,21 +205,15 @@ export class BatchCardGenerator {
       total
     });
 
-    // Generate and download the zip
-    const content = await zip.generateAsync({ 
-      type: 'blob',
-      compression: 'DEFLATE',
-      compressionOptions: { level: 6 }
-    });
-    // If there were errors, include an errors.txt at root
+    // Append error log before generating the final archive
     if (errorsList.length > 0) {
       zip.file('errors.txt', errorsList.join('\n'));
-      // regenerate content including errors.txt
-      const contentWithErrors = await zip.generateAsync({ type: 'blob', compression: 'DEFLATE', compressionOptions: { level: 6 } });
-      saveAs(contentWithErrors, zipFilename);
-    } else {
-      saveAs(content, zipFilename);
     }
+
+    // STORE skips re-compressing already-compressed PNGs, cutting both peak
+    // RAM usage and CPU time during generateAsync().
+    const content = await zip.generateAsync({ type: 'blob', compression: 'STORE' });
+    saveAs(content, zipFilename);
     
     this.progressCallback({
       status: `Complete! Generated ${completed} cards with ${errors} errors.`,

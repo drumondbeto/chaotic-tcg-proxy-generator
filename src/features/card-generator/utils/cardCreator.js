@@ -1238,15 +1238,21 @@ try {
 return assets;
 }
 
+// Module-level cache — avoids re-fetching and re-decoding the same asset
+// (templates, set symbols, element overlays) across multiple cards in a batch.
+const _assetCache = new Map();
+
 async function loadAsset(key, path) {
-    // console.log(`Loading asset: ${key} from path: ${path}`);
+    // Use a namespaced cache key for symbols (they receive additional processing)
+    const cacheKey = key === 'symbol' ? `symbol:${path}` : path;
+    if (_assetCache.has(cacheKey)) {
+        return _assetCache.get(cacheKey);
+    }
+
     return new Promise((resolve, reject) => {
         const img = new Image();
         img.crossOrigin = 'anonymous';
         img.onload = () => {
-            // console.log(`Successfully loaded: ${key} from ${path}`);
-            // console.log(`Original dimensions: ${img.width}x${img.height}`);
-
             // For set symbols, pre-process the image for better quality
 
             if (key === 'symbol') {
@@ -1256,11 +1262,12 @@ async function loadAsset(key, path) {
                 // Create a new image from the high-quality canvas
                 const processedImg = new Image();
                 processedImg.onload = () => {
-                    // console.log(`Processed ${key} for high-quality scaling`);
+                    _assetCache.set(cacheKey, processedImg);
                     resolve(processedImg);
                 };
                 processedImg.src = canvas.toDataURL('image/png');
             } else {
+                _assetCache.set(cacheKey, img);
                 resolve(img);
             }
         };
@@ -1279,6 +1286,7 @@ async function loadAsset(key, path) {
                 fallbackImg.crossOrigin = 'anonymous';
                 fallbackImg.onload = () => {
                     console.log(`Successfully loaded fallback for ${key}: ${fallbackPath}`);
+                    _assetCache.set(cacheKey, fallbackImg);
                     resolve(fallbackImg);
                 };
                 fallbackImg.onerror = () => {
@@ -1853,7 +1861,7 @@ if (cardData.type === 'attack') {
             const yPos = startY + (i * lineHeight);
 
             if (yPos + lineHeight <= bottomBoundary - flavorHeight - statusHeight) {
-                drawTextWithSymbols(lines[i], 21, yPos, fontSize);
+                await drawTextWithSymbols(lines[i], 21, yPos, fontSize);
             }
         }
 
@@ -2587,7 +2595,7 @@ if (cardData.showCopyright !== false) {
     
     // New copyright text
     const serialNum = cardData.serialNumber || cardData.id || '--/100';
-    let copyrightText = `${serialNum}    This is a non-authentic proxy card made at Bulbastore.com`;
+    let copyrightText = `${serialNum}    This is a non-authentic proxy card`;
     
     // For mugic and location cards, append the artist info to copyright text if available
     if ((cardData.type === 'mugic' || cardData.type === 'location') && cardData.artist && cardData.showArtist !== false) {
