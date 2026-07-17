@@ -1,7 +1,27 @@
 import CardForm from '../features/card-generator/components/CardForm';
+import DeckBuilderScreen from '../features/deck-builder/components/DeckBuilderScreen';
 import { LocaleProvider, useLocale } from './LocaleContext';
 import React from 'react';
 import { Listbox } from '@headlessui/react';
+import { HashRouter, Routes, Route, NavLink } from 'react-router-dom';
+
+const NavBar = () => {
+  const linkClass = ({ isActive }) =>
+    `px-3 py-1.5 rounded text-sm transition-colors ${
+      isActive ? 'bg-[#9FE240] text-black font-semibold' : 'bg-gray-800 text-white hover:bg-gray-700'
+    }`;
+
+  return (
+    <nav className="flex gap-2 px-3">
+      <NavLink to="/" end className={linkClass}>
+        Gerador
+      </NavLink>
+      <NavLink to="/decks" className={linkClass}>
+        Decks
+      </NavLink>
+    </nav>
+  );
+};
 
 const LocaleSelector = () => {
   const { locale, setLocale } = useLocale();
@@ -56,10 +76,18 @@ const LocaleSelector = () => {
 function App() {
   return (
     <LocaleProvider>
-      <div className="min-h-screen bg-black">
-        <LocaleSelector />
-        <CardForm />
-      </div>
+      <HashRouter>
+        <div className="min-h-screen bg-black">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+            <NavBar />
+            <LocaleSelector />
+          </div>
+          <Routes>
+            <Route path="/" element={<CardForm />} />
+            <Route path="/decks" element={<DeckBuilderScreen />} />
+          </Routes>
+        </div>
+      </HashRouter>
     </LocaleProvider>
   );
 }

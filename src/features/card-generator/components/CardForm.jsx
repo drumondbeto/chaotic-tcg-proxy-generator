@@ -1514,6 +1514,7 @@ return (
 
         // Set form data from attackData
         setName(attackData.name || '');
+        setSubname(attackData.subname || '');
         setSet(attackData.set?.toLowerCase() || '');
         setRarity(attackData.rarity || '');
         setAbility(attackData.ability || '');
@@ -1571,8 +1572,10 @@ return (
         
         // Set form data from battlegearData
         setName(battlegearData.name || '');
+        setSubname(battlegearData.subname || '');
         setSet(battlegearData.set?.toLowerCase() || '');
         setRarity(battlegearData.rarity || '');
+        setSubtype(battlegearData.subtype || '');
         setAbility(battlegearData.ability || '');
         setFlavorText(battlegearData.flavorText || '');
         setUnique(battlegearData.unique || false);
@@ -1886,6 +1889,15 @@ return (
     value={subtype}
     onChange={(e) => setSubtype(e.target.value)}
     placeholder={getFormattedSubtype(selectedType, tribe, '', isPast, mainTribe) + ' [your input]'}
+  />
+)}
+
+{selectedType === 'battlegear' && (
+  <InputField 
+    label="Subtype" 
+    value={subtype}
+    onChange={(e) => setSubtype(e.target.value)}
+    placeholder="e.g., Weapon, Armor, Shield"
   />
 )}
 

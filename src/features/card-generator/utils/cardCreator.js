@@ -1644,8 +1644,12 @@ if (cardData.type === 'attack') {
     ctx.shadowBlur = 0.1;
     ctx.shadowOffsetX = 0.5;
     ctx.shadowOffsetY = 0.5;
-    ctx.shadowColor = "#696969"; 
-    fillText(battlegearText, 17, 218);    
+    ctx.shadowColor = "#696969";
+    let battlegearTypeText = battlegearText;
+    if (cardData.subtype && cardData.subtype.trim() !== '') {
+        battlegearTypeText += ` - ${cardData.subtype.trim()}`;
+    }
+    fillText(battlegearTypeText, 17, 218);
 } else if (cardData.type === 'location') {
     // Location cards - rotate text 90 degrees counter-clockwise
     setFont(7.5, 'Eurostile Heavy Italic');
