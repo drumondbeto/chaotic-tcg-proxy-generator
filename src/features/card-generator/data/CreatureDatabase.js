@@ -10,21 +10,79 @@ const usePtFields = (creature) => {
 
   return {
     ...creature,
+
     displayName: creature.displayName_pt || creature.displayName,
+    displayName_pt: creature.displayName_pt,
+    displayName_en: creature.displayName,
+
     name: creature.name_pt || creature.name,
+    name_pt: creature.name_pt,
+    name_en: creature.name,
+
     subname: creature.subname_pt || creature.subname,
+    subname_pt: creature.subname_pt,
+    subname_en: creature.subname,
+
     subtype: creature.subtype_pt || creature.subtype,
+    subtype_pt: creature.subtype_pt,
+    subtype_en: creature.subtype,
+
     ability: creature.ability_pt || creature.ability,
+    ability_pt: creature.ability_pt,
+    ability_en: creature.ability,
+
     flavorText: creature.flavorText_pt || creature.flavorText,
+    flavorText_pt: creature.flavorText_pt,
+    flavorText_en: creature.flavorText,
+
     brainwashedText: creature.brainwashedText_pt || creature.brainwashedText,
+    brainwashedText_pt: creature.brainwashedText_pt,
+    brainwashedText_en: creature.brainwashedText,
+
     isPast: false
   }
 }
 
-export const creatureDatabaseEn = Array.isArray(CreatureDatabaseEn) ? CreatureDatabaseEn : [];
+const useEnFields = (creature) => {
+  if (!creature) return creature;
+
+  return {
+    ...creature,
+
+    displayName: creature.displayName,
+    displayName_pt: creature.displayName_pt,
+    displayName_en: creature.displayName,
+
+    name: creature.name,
+    name_pt: creature.name_pt,
+    name_en: creature.name,
+
+    subname: creature.subname,
+    subname_pt: creature.subname_pt,
+    subname_en: creature.subname,
+
+    subtype: creature.subtype,
+    subtype_pt: creature.subtype_pt,
+    subtype_en: creature.subtype,
+
+    ability: creature.ability,
+    ability_pt: creature.ability_pt,
+    ability_en: creature.ability,
+
+    flavorText: creature.flavorText,
+    flavorText_pt: creature.flavorText_pt,
+    flavorText_en: creature.flavorText,
+
+    brainwashedText: creature.brainwashedText,
+    brainwashedText_pt: creature.brainwashedText_pt,
+    brainwashedText_en: creature.brainwashedText,
+    
+    isPast: false
+  }
+}
 
 export const creatureDatabasePt = Array.isArray(CreatureDatabasePt) ? CreatureDatabasePt.map(creature => { return usePtFields(creature) }) : [];
-// export const creatureDatabase = creatureDatabasePt.map(creature => { return usePtFields(creature) });
+export const creatureDatabaseEn = Array.isArray(CreatureDatabaseEn) ? CreatureDatabaseEn.map(creature => { return useEnFields(creature) }) : [];
 
 export var creatureDatabase = locale === 'pt' ? creatureDatabasePt : creatureDatabaseEn;
 
