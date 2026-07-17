@@ -1,7 +1,7 @@
 // This file was automatically generated from Excel data
 // src/components/AttackDatabase.js
 import AttackDatabasePt from './json/AttackDatabasePt.json';
-import AttackDatabaseEn from './json/AttackDatabaseEn.json';
+// import AttackDatabaseEn from './json/AttackDatabaseEn.json';
 
 var locale = 'pt'; // Default locale
 
@@ -12,9 +12,9 @@ const setLocale = (newLocale) => {
 
 const updateAttackDatabase = () => {
   if (locale === 'pt') {
-    attackDatabase = attackDatabasePt.map(attack => { return usePtFields(attack) });
+    attackDatabase = attackDatabase.map(attack => { return usePtFields(attack) });
   } else {
-    attackDatabase = attackDatabaseEn;
+    attackDatabase = attackDatabase.map(attack => { return useEnFields(attack) });
   }
 }
 const usePtFields = (attack) => {
@@ -22,14 +22,44 @@ const usePtFields = (attack) => {
 
   return {
     ...attack,
+
+    displayName: attack.displayName_pt || attack.displayName,
+    displayName_pt: attack.displayName_pt,
+    displayName_en: attack.displayName,
+
     name: attack.name_pt || attack.name,
+    name_pt: attack.name_pt,
+    name_en: attack.name,
+
+    subname: attack.subname_pt || attack.subname,
+    subname_pt: attack.subname_pt,
+    subname_en: attack.subname,
+
     ability: attack.ability_pt || attack.ability,
+    ability_pt: attack.ability_pt,
+    ability_en: attack.ability,
+
     flavorText: attack.flavorText_pt || attack.flavorText,
+    flavorText_pt: attack.flavorText_pt,
+    flavorText_en: attack.flavorText,
   }
 };
 
-const attackDatabaseEn = Array.isArray(AttackDatabaseEn) ? AttackDatabaseEn : [];
-const attackDatabasePt = Array.isArray(AttackDatabasePt) ? AttackDatabasePt.map(attack => { return usePtFields(attack) }) : [];
+const useEnFields = (attack) => {
+  if (!attack) return attack;
+  
+  return {
+    ...attack,
+    displayName: attack.displayName_en,
+    name: attack.name_en,
+    subname: attack.subname_en,
+    ability: attack.ability_en,
+    flavorText: attack.flavorText_en,
+  }
+};
+
+// const attackDatabasePt = Array.isArray(AttackDatabasePt) ? AttackDatabasePt.map(attack => { return usePtFields(attack) }) : [];
+// const attackDatabaseEn = Array.isArray(AttackDatabaseEn) ? AttackDatabaseEn.map(attack => { return useEnFields(attack) }) : [];
 
 // Helper function for creating unique card keys
 function createUniqueCardKey(card) {
@@ -49,7 +79,7 @@ function createUniqueCardKey(card) {
 }
 
 // Pre-populated attack database
-export var attackDatabase = locale === 'pt' ? attackDatabasePt : attackDatabaseEn;
+export var attackDatabase = AttackDatabasePt.map(attack => { return usePtFields(attack) });
 
 // Helper functions to work with the database
 export const getAttackById = (idOrKey, locale = 'pt') => {
@@ -77,7 +107,7 @@ export const getAllAttackNames = (locale = 'pt') => {
   setLocale(locale);
   return attackDatabase.map(attack => ({
     id: attack.uniqueId || createUniqueCardKey(attack), // Use the composite key here
-    name: attack.name,
+    name: attack.displayName || attack.name || '',
     set: attack.set || '',
     setDisplay: attack.set ? attack.set.toUpperCase() : '',
     fire: attack.fire !== undefined ? attack.fire : null,
