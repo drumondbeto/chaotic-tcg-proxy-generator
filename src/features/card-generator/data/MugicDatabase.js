@@ -2,6 +2,78 @@
 // src/components/MugicDatabase.js
 
 import MugicDatabaseEn from './json/MugicDatabaseEn.json';
+import MugicDatabasePt from './json/MugicDatabasePt.json';
+
+var locale = 'pt'; // Default locale
+
+const setLocale = (newLocale) => {
+  locale = newLocale;
+  updateMugicDatabase();
+};
+
+const updateMugicDatabase = () => {
+  if (locale === 'pt') {
+    mugicDatabase = MugicDatabasePt.map(mugic => { return usePtFields(mugic) });
+  } else {
+    mugicDatabase = MugicDatabaseEn.map(mugic => { return useEnFields(mugic) });
+  }
+}
+
+const usePtFields = (mugic) => {
+  if (!mugic) return mugic;
+
+  return {
+    ...mugic,
+
+    name: mugic.name_pt || mugic.name,
+    name_pt: mugic.name_pt,
+    name_en: mugic.name,
+
+    subname: mugic.subname_pt || mugic.subname,
+    subname_pt: mugic.subname_pt,
+    subname_en: mugic.subname,
+
+    tribe: mugic.tribe_pt || mugic.tribe,
+    tribe_pt: mugic.tribe_pt,
+    tribe_en: mugic.tribe,
+
+    ability: mugic.ability_pt || mugic.ability,
+    ability_pt: mugic.ability_pt,
+    ability_en: mugic.ability,
+
+    flavorText: mugic.flavorText_pt || mugic.flavorText,
+    flavorText_pt: mugic.flavorText_pt,
+    flavorText_en: mugic.flavorText
+  }
+}
+
+const useEnFields = (mugic) => {
+  if (!mugic) return mugic;
+
+  return {
+    ...mugic,
+
+    name: mugic.name,
+    name_pt: mugic.name_pt,
+    name_en: mugic.name,
+
+    subname: mugic.subname,
+    subname_pt: mugic.subname_pt,
+    subname_en: mugic.subname,
+
+    tribe: mugic.tribe,
+    tribe_pt: mugic.tribe_pt,
+    tribe_en: mugic.tribe,
+
+    ability: mugic.ability,
+    ability_pt: mugic.ability_pt,
+    ability_en: mugic.ability,
+
+    flavorText: mugic.flavorText,
+    flavorText_pt: mugic.flavorText_pt,
+    flavorText_en: mugic.flavorText
+  }
+}
 
 // Helper function for creating unique card keys
 function createUniqueCardKey(card) {
@@ -21,10 +93,11 @@ function createUniqueCardKey(card) {
 }
 
 // Pre-populated mugic database
-export const mugicDatabase = MugicDatabaseEn;
+export var mugicDatabase = locale === 'pt' ? MugicDatabasePt.map(mugic => { return usePtFields(mugic) }) : MugicDatabaseEn.map(mugic => { return useEnFields(mugic) });
 
 // Helper functions to work with the database
-export const getMugicById = (idOrKey) => {
+export const getMugicById = (idOrKey, locale = 'pt') => {
+  setLocale(locale);
   // First try direct ID lookup for backward compatibility
   const directMatch = mugicDatabase.find(mugic => mugic.id === idOrKey);
   if (directMatch) return directMatch;
@@ -44,7 +117,8 @@ export const getMugicById = (idOrKey) => {
   return null;
 };
 
-export const getAllMugicNames = () => {
+export const getAllMugicNames = (locale = 'pt') => {
+  setLocale(locale);
   return mugicDatabase.map(mugic => ({
     id: mugic.uniqueId || createUniqueCardKey(mugic), // Use the composite key here
     name: mugic.name,
