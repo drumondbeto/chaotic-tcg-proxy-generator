@@ -54,6 +54,8 @@ const usePtFields = (battlegear) => {
     loyalRestriction: battlegear.loyalRestriction_pt || battlegear.loyalRestriction,
     loyalRestriction_pt: battlegear.loyalRestriction_pt,
     loyalRestriction_en: battlegear.loyalRestriction,
+
+    imageUrl: battlegear.imageUrl_fixed || battlegear.imageUrl,
   }
 }
 
@@ -125,6 +127,7 @@ export const getAllBattlegearNames = (locale = 'pt') => {
     unique: battlegear.unique || false,
     legendary: battlegear.legendary || false,
     loyal: battlegear.loyal || false,
+    loyalRestriction: battlegear.loyalRestriction || '',
     // Keep the original ID for reference
     originalId: battlegear.id
   }));

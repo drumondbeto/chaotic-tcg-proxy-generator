@@ -1581,6 +1581,7 @@ return (
         setUnique(battlegearData.unique || false);
         setLegendary(battlegearData.legendary || false);
         setLoyal(battlegearData.loyal || false);
+        setLoyalRestriction(battlegearData.loyalRestriction || '');
         setArtist(battlegearData.artist || '');
         setSerialNumber(battlegearData.id || battlegearData.serialNumber || '');
         
