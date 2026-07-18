@@ -70,7 +70,7 @@ const CardPreview = ({ cardData }) => {
           buildPoints: cardData.buildPoints || 0,
           base: cardData.base || 0,
           mugicCost: cardData.mugicCost || 0,
-          mugicNotes: cardData.mugicNotes || [],
+          mugicNotes: (cardData.mugicNotes || []).filter(note => note?.letter !== ""),
           initiative: cardData.initiative || '',
           serialNumber: cardData.serialNumber || '',
           showCopyright: cardData.showCopyright !== undefined ? cardData.showCopyright : true,

@@ -91,7 +91,7 @@ export class BatchCardGenerator {
       buildPoints: cardEntry.buildPoints,
       base: cardEntry.base,
       mugicCost: cardEntry.mugicCost,
-      mugicNotes: cardEntry.mugicNotes,
+      mugicNotes: (cardEntry.mugicNotes || []).filter(note => note?.letter !== ""),
       serialNumber: cardEntry.serialNumber || cardEntry.id || '',
       showCopyright: true,
       showArtist: true
