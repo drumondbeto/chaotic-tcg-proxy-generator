@@ -172,7 +172,7 @@ const SYMBOL_MAPPINGS = {
 async function processCustomTribeLogo(logo, color, scale) {
 
   if (!logo) return null;
-  console.log("Processing custom tribe logo:", logo);
+  // console.log("Processing custom tribe logo:", logo);
 
   // Create an image from the logo file
   const img = new Image();
@@ -180,7 +180,7 @@ async function processCustomTribeLogo(logo, color, scale) {
   // Wait for the image to load
   await new Promise((resolve, reject) => {
     img.onload = () => {
-      console.log("Logo loaded successfully with dimensions:", img.width, img.height);
+      // console.log("Logo loaded successfully with dimensions:", img.width, img.height);
       resolve();
     };
     img.onerror = (err) => {
@@ -346,7 +346,7 @@ async function processCustomTribeLogo(logo, color, scale) {
   if (logo instanceof File && img.src.startsWith('blob:')) {
     URL.revokeObjectURL(img.src);
   }
-  console.log("Processed logo without colorization");
+//   console.log("Processed logo without colorization");
 
   // Return the final processed image
   return glowCanvas;
@@ -583,9 +583,9 @@ function fillText(text, x, y, maxWidth) {
 }
 
 function remapText(text) {
-    if (text == 'Unique') return "Única";
-    if (text == 'Loyal') return "Leal";
-    if (text == 'Legendary') return "Lendária";
+    if (text === 'Unique') return "Única";
+    if (text === 'Loyal') return "Leal";
+    if (text === 'Legendary') return "Lendária";
 
     return text;
 }
@@ -957,10 +957,10 @@ if (cardData.type) {
 
             // Use blended template for mixed tribes
             templatePath = getAssetPath(`${templateFolder}/${cardData.tribe.toLowerCase()}.png`);
-            console.log('Loading mixed tribe template:', templatePath);
+            // console.log('Loading mixed tribe template:', templatePath);
         } else if (cardData.brainwashed) {
             templatePath = getAssetPath(`${standardTemplateFolder}/${cardData.tribe.toLowerCase()}bw.png`);
-            console.log('Loading brainwashed template:', templatePath);
+            // console.log('Loading brainwashed template:', templatePath);
         } else {
             templatePath = getAssetPath(`${standardTemplateFolder}/${cardData.tribe.toLowerCase()}.png`);
             // console.log('Loading normal template:', templatePath);
@@ -973,16 +973,16 @@ if (cardData.type) {
 
             // For bleed templates, use mugic.png directly from the bleed folder
             templatePath = getAssetPath(`${standardTemplateFolder}/mugic.png`);
-            console.log('Loading mugic bleed template:', templatePath);
+            // console.log('Loading mugic bleed template:', templatePath);
         } else {
 
             // For standard templates, use tribe-specific mugic templates
             templatePath = getAssetPath(`img/template/mugic/${cardData.tribe.toLowerCase()}.png`);
-            console.log('Loading mugic standard template:', templatePath);
+            // console.log('Loading mugic standard template:', templatePath);
         }
     } else {
         templatePath = getAssetPath(`${standardTemplateFolder}/${cardData.type.toLowerCase()}.png`);
-        console.log(`Loading ${cardData.type} template:`, templatePath);
+        // console.log(`Loading ${cardData.type} template:`, templatePath);
     }
     promises.push(loadAsset('template', templatePath)
         .then(img => {
@@ -998,18 +998,18 @@ if (cardData.type) {
 
                 // If mixed tribe template fails, try standard template as fallback
                 const fallbackPath = templatePath.replace('/blended bleed/', '/bleed/').replace('/blended/', '/');
-                console.log(`Trying standard template fallback: ${fallbackPath}`);
+                // console.log(`Trying standard template fallback: ${fallbackPath}`);
                 return loadAsset('template', fallbackPath)
                     .then(img => {
-                        console.log('Fallback template loaded successfully');
+                        // console.log('Fallback template loaded successfully');
                         assets.template = img;
                     });
             } else if (useBleed) {
                 const fallbackPath = templatePath.replace('/bleed/', '/');
-                console.log(`Trying non-bleed template fallback: ${fallbackPath}`);
+                // console.log(`Trying non-bleed template fallback: ${fallbackPath}`);
                 return loadAsset('template', fallbackPath)
                     .then(img => {
-                        console.log('Non-bleed fallback template loaded successfully');
+                        // console.log('Non-bleed fallback template loaded successfully');
                         assets.template = img;
                     });
             }
@@ -1025,11 +1025,11 @@ if (cardData.type) {
         // Load the appropriate elements overlay based on brainwashed status
         const elementsFile = cardData.brainwashed ? 'elementsbw.png' : 'elements.png';
         const elementsPath = getAssetPath(`${elementsFolder}/${elementsFile}`);
-        console.log(`Loading elements overlay: ${elementsPath}`);
+        // console.log(`Loading elements overlay: ${elementsPath}`);
         promises.push(loadAsset('elementsOverlay', elementsPath)
             .then(img => {
                 assets.elementsOverlay = img;
-                console.log('Elements overlay loaded successfully');
+                // console.log('Elements overlay loaded successfully');
             })
             .catch(error => {
                 console.error(`Failed to load elements overlay: ${elementsPath}`, error);
@@ -1038,10 +1038,10 @@ if (cardData.type) {
 
                 if (useBleed) {
                     const fallbackPath = elementsPath.replace('/bleed/', '/');
-                    console.log(`Trying standard elements overlay fallback: ${fallbackPath}`);
+                    // console.log(`Trying standard elements overlay fallback: ${fallbackPath}`);
                     return loadAsset('elementsOverlay', fallbackPath)
                         .then(img => {
-                            console.log('Fallback elements overlay loaded successfully');
+                            // console.log('Fallback elements overlay loaded successfully');
                             assets.elementsOverlay = img;
                         });
                 }
@@ -1049,7 +1049,7 @@ if (cardData.type) {
     }
 
     if (cardData.tribeLogo) {
-        console.log('Loading custom tribe logo');
+        // console.log('Loading custom tribe logo');
         promises.push(
             new Promise((resolve) => {
                 const reader = new FileReader();
@@ -1057,7 +1057,7 @@ if (cardData.type) {
                     const img = new Image();
                     img.onload = () => {
                         assets.tribeLogo = img;
-                        console.log('Tribe logo loaded successfully');
+                        // console.log('Tribe logo loaded successfully');
                         resolve();
                     };
                     img.src = e.target.result;
@@ -1070,12 +1070,12 @@ if (cardData.type) {
     // If brainwashed, load the brainwashed bar
 
     if (cardData.type === 'creature' && cardData.brainwashed) {
-        console.log('Loading brainwashed bar');
+        // console.log('Loading brainwashed bar');
         const brainwashedBarPathText = locale === 'pt' ? 'img/brainwashed_bar_pt.png' : 'img/brainwashed_bar_en.png';
         promises.push(loadAsset('brainwashedBar', 
             getAssetPath(brainwashedBarPathText)
         ).then(img => {
-            console.log('Brainwashed bar loaded successfully');
+            // console.log('Brainwashed bar loaded successfully');
             assets.brainwashedBar = img;
         }));
     }
@@ -1178,11 +1178,11 @@ if (cardData.type === 'mugic' && cardData.tribe && cardData.mugicCost !== undefi
     }
 
     // Add to loading promises
-    console.log(`Preloading mugic icon: ${iconPath}`);
+    // console.log(`Preloading mugic icon: ${iconPath}`);
     promises.push(loadAsset('mugicIcon', getAssetPath(iconPath))
         .then(img => {
             assets.mugicIcon = img;
-            console.log('Mugic icon preloaded successfully');
+            // console.log('Mugic icon preloaded successfully');
         })
         .catch(error => {
             console.error(`Failed to preload mugic icon: ${iconPath}`, error);
@@ -1216,12 +1216,12 @@ if (cardData.type === 'mugic' && cardData.mugicNotes && cardData.mugicNotes.leng
 
     // Add loading promises for each asset
     noteAssets.forEach(path => {
-        console.log(`Preloading mugic note asset: ${path}`);
+        // console.log(`Preloading mugic note asset: ${path}`);
         promises.push(
             loadAsset(`mugicNoteAsset_${path}`, getAssetPath(path))
                 .then(img => {
                     assets[`mugicNoteAsset_${path}`] = img;
-                    console.log(`Mugic note asset loaded: ${path}`);
+                    // console.log(`Mugic note asset loaded: ${path}`);
                 })
                 .catch(error => {
                     console.error(`Failed to load mugic note asset: ${path}`, error);
@@ -1231,7 +1231,7 @@ if (cardData.type === 'mugic' && cardData.mugicNotes && cardData.mugicNotes.leng
 }
 try {
     await Promise.all(promises);
-    console.log('All assets loaded successfully:', assets);
+    // console.log('All assets loaded successfully:', assets);
 } catch (error) {
     console.error('Error loading assets:', error);
 }
@@ -1375,8 +1375,8 @@ if (assets.art) {
 }
 
 if (assets.template) {
-    console.log(`Drawing template: ${cardData.useBleedTemplates ? 'Bleed' : 'Standard'}`);
-    console.log(`Template dimensions: ${assets.template.width}x${assets.template.height}`);
+    // console.log(`Drawing template: ${cardData.useBleedTemplates ? 'Bleed' : 'Standard'}`);
+    // console.log(`Template dimensions: ${assets.template.width}x${assets.template.height}`);
 
 if (cardData.tribe === 'custom' && cardData.customColor) {
     console.log("CUSTOM TRIBE DETECTED - Using Photoshop-like Colorize effect");
@@ -1471,7 +1471,7 @@ if (cardData.tribe === 'custom' && cardData.customColor) {
 
         // Draw the colorized template onto the main canvas
         drawImage(tempCanvas, 0, 0, tempCanvas.width, tempCanvas.height, 0, 0, width, height);
-        console.log("Photoshop-like colorization completed successfully");
+        // console.log("Photoshop-like colorization completed successfully");
     } catch (error) {
         console.error("Error during colorization:", error);
 
@@ -1481,14 +1481,14 @@ if (cardData.tribe === 'custom' && cardData.customColor) {
 } else {
 
     // Normal template drawing for non-custom tribes
-    console.log("Drawing normal template (non-custom tribe)");
+    // console.log("Drawing normal template (non-custom tribe)");
     drawImage(assets.template, 0, 0, assets.template.width, assets.template.height, 0, 0, width, height);
 }
 
   // After drawing the base template (colorized or normal), add the elements overlay if it exists
 
   if (cardData.tribe === 'custom' && assets.elementsOverlay) {
-    console.log("Drawing elements overlay on top of custom tribe template");
+    // console.log("Drawing elements overlay on top of custom tribe template");
     drawImage(
       assets.elementsOverlay, 
       0, 0, 
@@ -1692,7 +1692,7 @@ if (cardData.type === 'attack') {
 
     let typeText = remapTypeText(cardData.type);
 
-    console.log(`Card Type: ${cardData.type}, Tribe: ${cardData.tribe}, Subtype: ${cardData.subtype}`);
+    // console.log(`Card Type: ${cardData.type}, Tribe: ${cardData.tribe}, Subtype: ${cardData.subtype}`);
 
     if (cardData.tribe) {
         typeText += ` - `;
@@ -2472,13 +2472,13 @@ if (!cardData.brainwashed && cardData.flavorText) {
 
 if (cardData.tribe === 'custom' && assets.tribeLogo) {
   try {
-    console.log("Rendering custom tribe logo:", assets.tribeLogo);
+    // console.log("Rendering custom tribe logo:", assets.tribeLogo);
 
     // Process the tribe logo without colorization
     const processedLogo = await processCustomTribeLogo(assets.tribeLogo, null, scale);
 
     if (processedLogo) {
-      console.log("Successfully processed logo, rendering to card");
+      // console.log("Successfully processed logo, rendering to card");
 
       // Get the original aspect ratio
       const logoAspectRatio = processedLogo.width / processedLogo.height;
@@ -3090,7 +3090,7 @@ if (cardData.mugicNotes && cardData.mugicNotes.length > 0) {
   const useWhiteNotes = whiteNotesTribes.includes(cardData.tribe.toLowerCase());
   const noteSuffix = useWhiteNotes ? 'w' : '';
 
-  console.log(`Using ${useWhiteNotes ? 'white' : 'regular'} notes for tribe: ${cardData.tribe}`);
+  // console.log(`Using ${useWhiteNotes ? 'white' : 'regular'} notes for tribe: ${cardData.tribe}`);
 
   // Pre-calculate the height of the tallest possible note (note with both sharp and flat)
   // to ensure consistent vertical alignment
@@ -3127,7 +3127,7 @@ if (cardData.mugicNotes && cardData.mugicNotes.length > 0) {
     let img = assets[assetKey];
 
     if (!img) {
-      console.log(`Loading mugic note asset: ${assetPath}`);
+      // console.log(`Loading mugic note asset: ${assetPath}`);
       try {
         img = await loadAsset(assetKey, getAssetPath(assetPath));
         assets[assetKey] = img;
@@ -3137,7 +3137,7 @@ if (cardData.mugicNotes && cardData.mugicNotes.length > 0) {
         // If white note fails to load, try fallback to regular note
         if (noteSuffix === 'w') {
           const fallbackPath = assetPath.replace(/w\.png$/, '.png');
-          console.log(`Trying fallback path: ${fallbackPath}`);
+          // console.log(`Trying fallback path: ${fallbackPath}`);
           try {
             img = await loadAsset(`mugicNoteAsset_${fallbackPath}`, getAssetPath(fallbackPath));
             assets[`mugicNoteAsset_${fallbackPath}`] = img;
@@ -3175,7 +3175,7 @@ if (cardData.mugicNotes && cardData.mugicNotes.length > 0) {
     const letterPath = `img/Mugic Notes/${note.letter}${noteSuffix}.png`;
     const lengthPath = `img/Mugic Notes/${note.length}${noteSuffix}.png`;
     
-    console.log(`Loading note components: ${letterPath}, ${lengthPath}`);
+    // console.log(`Loading note components: ${letterPath}, ${lengthPath}`);
     
     const letterDims = await loadAssetAndGetDimensions(letterPath, 'letter');
     const lengthDims = await loadAssetAndGetDimensions(lengthPath, 'length');

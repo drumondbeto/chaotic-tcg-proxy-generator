@@ -264,7 +264,7 @@ export class BatchCardGenerator {
     // Clean up invalid filename characters
     const filename = `${name}${suffix}`;
     const safeFilename = filename.replace(/[/\\?%*:|"<>]/g, '-');
-    console.log(`Generated filename: ${safeFilename}`);
+    // console.log(`Generated filename: ${safeFilename}`);
     return safeFilename;
   }
   
