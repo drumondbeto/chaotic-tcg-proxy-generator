@@ -1,9 +1,9 @@
 // src/components/MugicNotesEditor.jsx
-import React, { useState } from 'react';
+import React from 'react';
 import { getAssetPath } from '../utils/assetPaths';
 
 // Musical note options
-const NOTES = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+const NOTES = ['', 'A', 'B', 'C', 'D', 'E', 'F', 'G'];
 const LENGTHS = [1, 2, 3, 4]; // Note lengths (quarter, half, dotted half, whole)
 
 const MugicNotesEditor = ({ notes, onChange }) => {
@@ -49,6 +49,9 @@ const MugicNotesEditor = ({ notes, onChange }) => {
   
   // Render a note length image based on value
   const renderNoteLength = (length) => {
+    if (!length || !LENGTHS.includes(length)) {
+      return null; // Invalid length, render nothing
+    }
     // Map the length value to a note name for alt text
     const noteNames = {
       1: '1',
@@ -153,6 +156,7 @@ const MugicNotesEditor = ({ notes, onChange }) => {
         <div className="bg-white rounded-lg p-2 border border-gray-300 shadow-md" style={{ width: '450px', height: '90px' }}>
           <div className="flex items-center justify-center gap-2 h-full">
             {notes.map((note, index) => (
+              note?.letter ? (
               <div key={index} className="flex flex-row items-center h-20">
                 {/* Note length on the left, aligned to center axis */}
                 <div className="flex items-center justify-center h-full">
@@ -183,6 +187,7 @@ const MugicNotesEditor = ({ notes, onChange }) => {
                   )}
                 </div>
               </div>
+              ) : null
             ))}
           </div>
         </div>
