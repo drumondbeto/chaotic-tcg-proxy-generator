@@ -865,7 +865,7 @@ function formatTranslatedSingleTribe(tribe) {
         'mipedian': currentLocale === 'pt' ? 'Mipedian' : 'Mipedian',
         'underworld': currentLocale === 'pt' ? 'Submundo' : 'UnderWorld',
         "m'arrillian": currentLocale === 'pt' ? "M'arrillian" : "M'arrillian",
-        'tribeless': currentLocale === 'pt' ? '' : '',
+        'tribeless': currentLocale === 'pt' ? 'Sem Tribo' : 'Tribeless',
         'generic': currentLocale === 'pt' ? 'Genérico' : 'Generic',
         'mipedianow': currentLocale === 'pt' ? 'Mipedian OutroMundo' : 'Mipedian OverWorld',
         'panivian': currentLocale === 'pt' ? 'Paniviano' : 'Panivian',
