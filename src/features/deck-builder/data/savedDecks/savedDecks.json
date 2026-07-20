@@ -1,0 +1,2460 @@
+[
+    {
+        "id": "090a6f2c-0753-4ed9-a967-5afc2bba9311",
+        "name": "OverWorld Starter",
+        "description": "",
+        "createdAt": "2026-07-20T03:23:51.320Z",
+        "updatedAt": "2026-07-20T03:24:12.465Z",
+        "cards": [
+            {
+                "type": "creature",
+                "id": "SS-1/100",
+                "name": "Arbeid",
+                "subname": "",
+                "set": "ss",
+                "quantity": 1
+            },
+            {
+                "type": "creature",
+                "id": "AU-12/200",
+                "name": "Najarin",
+                "subname": "High Muge of the Lake",
+                "set": "au",
+                "quantity": 1
+            },
+            {
+                "type": "creature",
+                "id": "TOTT-20/100",
+                "name": "Rellim",
+                "subname": "Watermaster",
+                "set": "tott",
+                "quantity": 1
+            },
+            {
+                "type": "creature",
+                "id": "BTD-7/222",
+                "name": "Issaley",
+                "subname": "",
+                "set": "btd",
+                "quantity": 2
+            },
+            {
+                "type": "creature",
+                "id": "AU-3/200",
+                "name": "Dalgad",
+                "subname": "",
+                "set": "au",
+                "quantity": 1
+            },
+            {
+                "type": "battlegear",
+                "id": "TOTT-74/100",
+                "name": "Weightless Energy Vessel",
+                "subname": "",
+                "set": "tott",
+                "quantity": 1
+            },
+            {
+                "type": "battlegear",
+                "id": "AU-126/200",
+                "name": "AZAIA Mindprobe",
+                "subname": "",
+                "set": "au",
+                "quantity": 1
+            },
+            {
+                "type": "battlegear",
+                "id": "FUN-70/100",
+                "name": "Gigantroper",
+                "subname": "",
+                "set": "fun",
+                "quantity": 1
+            },
+            {
+                "type": "battlegear",
+                "id": "DOP-153/232",
+                "name": "Riverland Star",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "battlegear",
+                "id": "AU-148/200",
+                "name": "Xerium Armor",
+                "subname": "",
+                "set": "au",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "AU-149/200",
+                "name": "Battlesong of Renewal",
+                "subname": "",
+                "set": "au",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "AU-150/200",
+                "name": "Fluid Fugue",
+                "subname": "",
+                "set": "au",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "TOTT-77/100",
+                "name": "Harmonious Highsong",
+                "subname": "",
+                "set": "tott",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "AU-173/200",
+                "name": "Harmonics of Water",
+                "subname": "",
+                "set": "au",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "AU-151/200",
+                "name": "Interlude of Interruption",
+                "subname": "",
+                "set": "au",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "DOP-181/232",
+                "name": "Song of Resurgence",
+                "subname": "",
+                "set": "dop",
+                "quantity": 1
+            },
+            {
+                "type": "location",
+                "id": "DOP-208/232",
+                "name": "Doors of the Deepmines",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "DOP-210/232",
+                "name": "Everrain",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "DOP-219/232",
+                "name": "Kiru City",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "DOP-225/232",
+                "name": "Riverlands",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "BTD-214/222",
+                "name": "The OverWorld Library",
+                "subname": "",
+                "set": "btd",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "AU-109/200",
+                "name": "Rainspears",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "SS-53/100",
+                "name": "Mind Strike",
+                "subname": "",
+                "set": "ss",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "AU-87/200",
+                "name": "Eidolon Advance",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "AU-94/200",
+                "name": "Flood Force",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "ROTO-52/100",
+                "name": "Force Balls",
+                "subname": "",
+                "set": "roto",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "ROTO-53/100",
+                "name": "Invader's Tactics",
+                "subname": "",
+                "set": "roto",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "FUN-60/100",
+                "name": "Thermo Rings",
+                "subname": "",
+                "set": "fun",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "TOTT-38/100",
+                "name": "Aqua Recoil",
+                "subname": "",
+                "set": "tott",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "BTD-68/222",
+                "name": "Burning Rain",
+                "subname": "",
+                "set": "btd",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "TOTT-40/100",
+                "name": "Flamebloom",
+                "subname": "",
+                "set": "tott",
+                "quantity": 2
+            }
+        ]
+    },
+    {
+        "id": "affa1565-32bb-409d-9410-886cfdae2596",
+        "name": "UnderWorld Starter",
+        "description": "",
+        "createdAt": "2026-07-20T13:35:08.500Z",
+        "updatedAt": "2026-07-20T13:35:11.764Z",
+        "cards": [
+            {
+                "type": "creature",
+                "id": "ROTO-11/100",
+                "name": "Nivenna",
+                "subname": "",
+                "set": "roto",
+                "quantity": 1
+            },
+            {
+                "type": "creature",
+                "id": "AU-19/200",
+                "name": "Kopond",
+                "subname": "High Muge of the Hearth",
+                "set": "au",
+                "quantity": 1
+            },
+            {
+                "type": "creature",
+                "id": "DOP-42/232",
+                "name": "Lord Van Bloot",
+                "subname": "",
+                "set": "dop",
+                "quantity": 1
+            },
+            {
+                "type": "creature",
+                "id": "AU-24/200",
+                "name": "Rothar",
+                "subname": "Forceful Negotiator",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "creature",
+                "id": "DOP-31/232",
+                "name": "Chaor",
+                "subname": "",
+                "set": "dop",
+                "quantity": 1
+            },
+            {
+                "type": "battlegear",
+                "id": "AU-126/200",
+                "name": "AZAIA Mindprobe",
+                "subname": "",
+                "set": "au",
+                "quantity": 1
+            },
+            {
+                "type": "battlegear",
+                "id": "TOTT-74/100",
+                "name": "Weightless Energy Vessel",
+                "subname": "",
+                "set": "tott",
+                "quantity": 1
+            },
+            {
+                "type": "battlegear",
+                "id": "AU-146/200",
+                "name": "Sun Chariot of Kehn-Sep",
+                "subname": "",
+                "set": "au",
+                "quantity": 1
+            },
+            {
+                "type": "battlegear",
+                "id": "AU-132/200",
+                "name": "Drilldozer",
+                "subname": " Customized Rig",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "battlegear",
+                "id": "TOTT-60/100",
+                "name": "Evergreen Tunic",
+                "subname": "",
+                "set": "tott",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "DOP-183/232",
+                "name": "Canon of Casualty",
+                "subname": "",
+                "set": "dop",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "ZOTH-87/100",
+                "name": "Casters' Warsong",
+                "subname": "",
+                "set": "zoth",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "TOTT-81/100",
+                "name": "Shock Song",
+                "subname": "",
+                "set": "tott",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "DOP-166/232",
+                "name": "Ember Flourish",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "mugic",
+                "id": "SS-82/100",
+                "name": "Song of Desperation",
+                "subname": "",
+                "set": "ss",
+                "quantity": 1
+            },
+            {
+                "type": "location",
+                "id": "AU-177/200",
+                "name": "Castle Rathwaq",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "DOP-221/232",
+                "name": "Lava Pond",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "ZOTH-99/100",
+                "name": "Sands of the Unseen",
+                "subname": "",
+                "set": "zoth",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "BTD-215/222",
+                "name": "The Pits",
+                "subname": "",
+                "set": "btd",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "DOP-230/232",
+                "name": "UnderWorld City",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "AU-91/200",
+                "name": "Fireram",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "SS-45/100",
+                "name": "Force Strike",
+                "subname": "",
+                "set": "ss",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "FUN-41/100",
+                "name": "Clashjet",
+                "subname": "",
+                "set": "fun",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "AU-81/200",
+                "name": "Consuming Flame",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "AU-99/200",
+                "name": "Inferno Claws",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "ROTO-56/100",
+                "name": "Mightswing",
+                "subname": "",
+                "set": "roto",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "BTD-95/222",
+                "name": "Outwit",
+                "subname": "",
+                "set": "btd",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "TOTT-40/100",
+                "name": "Flamebloom",
+                "subname": "",
+                "set": "tott",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "TOTT-41/100",
+                "name": "Flying Advantage",
+                "subname": "",
+                "set": "tott",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "FUN-62/100",
+                "name": "Unbalanced Charge",
+                "subname": "",
+                "set": "fun",
+                "quantity": 2
+            }
+        ]
+    },
+    {
+        "id": "639918fd-b2f5-4599-b79b-8b13e086826f",
+        "name": "Mipedian Starter",
+        "description": "",
+        "createdAt": "2026-07-20T13:35:20.425Z",
+        "updatedAt": "2026-07-20T13:35:23.472Z",
+        "cards": [
+            {
+                "type": "creature",
+                "id": "BTD-52/222",
+                "name": "Owayki",
+                "subname": "",
+                "set": "btd",
+                "quantity": 1
+            },
+            {
+                "type": "creature",
+                "id": "ROTO-28/100",
+                "name": "Taffial",
+                "subname": "",
+                "set": "roto",
+                "quantity": 1
+            },
+            {
+                "type": "creature",
+                "id": "FAS-27/100",
+                "name": "Malvadine",
+                "subname": "The King's Herald",
+                "set": "fas",
+                "quantity": 1
+            },
+            {
+                "type": "creature",
+                "id": "BTD-54/222",
+                "name": "Sirri",
+                "subname": "",
+                "set": "btd",
+                "quantity": 2
+            },
+            {
+                "type": "creature",
+                "id": "BTD-50/222",
+                "name": "Maliph",
+                "subname": "Guard of the Palace",
+                "set": "btd",
+                "quantity": 1
+            },
+            {
+                "type": "battlegear",
+                "id": "DOP-160/232",
+                "name": "Torwegg",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "battlegear",
+                "id": "AU-143/200",
+                "name": "Sandstorm Shroud",
+                "subname": "",
+                "set": "au",
+                "quantity": 1
+            },
+            {
+                "type": "battlegear",
+                "id": "OP-P-011",
+                "name": "The Indigo Arc",
+                "subname": "",
+                "set": "op",
+                "quantity": 1
+            },
+            {
+                "type": "battlegear",
+                "id": "AU-132/200",
+                "name": "Drilldozer",
+                "subname": " Customized Rig",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "mugic",
+                "id": "BTD-158/222",
+                "name": "Carnivore's Keening",
+                "subname": "",
+                "set": "btd",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "ZOTH-84/100",
+                "name": "Melodic Might",
+                "subname": "",
+                "set": "zoth",
+                "quantity": 2
+            },
+            {
+                "type": "mugic",
+                "id": "DOP-198/232",
+                "name": "Melody of Mirage",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "mugic",
+                "id": "SS-90/100",
+                "name": "Tune of Xerium",
+                "subname": "",
+                "set": "ss",
+                "quantity": 1
+            },
+            {
+                "type": "location",
+                "id": "BTD-197/222",
+                "name": "Broken Edge",
+                "subname": "",
+                "set": "btd",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "DOP-222/232",
+                "name": "Mipedim Oasis",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "AU-187/200",
+                "name": "Mipedim Valley",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "DOP-224/232",
+                "name": "Ravanaugh Ridge",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "DOP-228/232",
+                "name": "The Storm Tunnel",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "AU-118/200",
+                "name": "Turbulence Funnel",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "SS-54/100",
+                "name": "Progressive Speed",
+                "subname": "",
+                "set": "ss",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "AU-76/200",
+                "name": "Airsault",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "AU-77/200",
+                "name": "Atmosfear",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "FUN-47/100",
+                "name": "Funnel Blast",
+                "subname": "",
+                "set": "fun",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "BTD-83/222",
+                "name": "Hammer Dash",
+                "subname": "",
+                "set": "btd",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "ROTO-61/100",
+                "name": "Sandstrike",
+                "subname": "",
+                "set": "roto",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "TOTT-41/100",
+                "name": "Flying Advantage",
+                "subname": "",
+                "set": "tott",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "TOTT-50/100",
+                "name": "Sediment Stormshield",
+                "subname": "",
+                "set": "tott",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "DOP-132/232",
+                "name": "Velocitrap",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            }
+        ]
+    },
+    {
+        "id": "e289f281-591e-4420-a875-5ed11f959cdc",
+        "name": "Danian Starter",
+        "description": "",
+        "createdAt": "2026-07-20T13:35:27.185Z",
+        "updatedAt": "2026-07-20T13:37:13.062Z",
+        "cards": [
+            {
+                "type": "creature",
+                "id": "FAS-26/100",
+                "name": "Aszil",
+                "subname": "the Young Queen",
+                "set": "fas",
+                "quantity": 1
+            },
+            {
+                "type": "creature",
+                "id": "BTD-32/222",
+                "name": "Irrabeq",
+                "subname": "",
+                "set": "btd",
+                "quantity": 2
+            },
+            {
+                "type": "creature",
+                "id": "TOTT-24/100",
+                "name": "Ivelaan",
+                "subname": "",
+                "set": "tott",
+                "quantity": 1
+            },
+            {
+                "type": "creature",
+                "id": "FUN-17/100",
+                "name": "Elna",
+                "subname": "",
+                "set": "fun",
+                "quantity": 1
+            },
+            {
+                "type": "creature",
+                "id": "TOTT-22/100",
+                "name": "Elhadd",
+                "subname": "",
+                "set": "tott",
+                "quantity": 1
+            },
+            {
+                "type": "battlegear",
+                "id": "ZOTH-59/100",
+                "name": "Mandiblor Crown",
+                "subname": "",
+                "set": "zoth",
+                "quantity": 1
+            },
+            {
+                "type": "battlegear",
+                "id": "TOTT-60/100",
+                "name": "Evergreen Tunic",
+                "subname": "",
+                "set": "tott",
+                "quantity": 2
+            },
+            {
+                "type": "battlegear",
+                "id": "AU-132/200",
+                "name": "Drilldozer",
+                "subname": " Customized Rig",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "battlegear",
+                "id": "SS-67/100",
+                "name": "The Doomhammer",
+                "subname": "",
+                "set": "ss",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "FUN-84/100",
+                "name": "Adaptive Progression",
+                "subname": "",
+                "set": "fun",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "BTD-158/222",
+                "name": "Carnivore's Keening",
+                "subname": "",
+                "set": "btd",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "BTD-185/222",
+                "name": "Domestic Hive Hymn",
+                "subname": "",
+                "set": "btd",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "DOP-196/232",
+                "name": "Song of Symmetry",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "DOP-212/232",
+                "name": "Fear Valley",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "DOP-216/232",
+                "name": "Gloomuck Swamp",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "BTD-204/222",
+                "name": "The Hive Gallery",
+                "subname": "",
+                "set": "btd",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "TOTT-98/100",
+                "name": "The Phalanx Portcullis",
+                "subname": "",
+                "set": "tott",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "TOTT-100/100",
+                "name": "UnderWorld City",
+                "subname": "During Van Bloot's Ascent",
+                "set": "tott",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "AU-115/200",
+                "name": "Tectostrike",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "SS-43/100",
+                "name": "Enlightened Tenacity",
+                "subname": "",
+                "set": "ss",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "AU-85/200",
+                "name": "Earth Pulse",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "FUN-48/100",
+                "name": "Geyser Gush",
+                "subname": "",
+                "set": "fun",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "AU-107/200",
+                "name": "Paraseed",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "BTD-115/222",
+                "name": "Streak Strike",
+                "subname": "",
+                "set": "btd",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "ROTO-64/100",
+                "name": "Swarming Destruction",
+                "subname": "",
+                "set": "roto",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "TOTT-38/100",
+                "name": "Aqua Recoil",
+                "subname": "",
+                "set": "tott",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "TOTT-50/100",
+                "name": "Sediment Stormshield",
+                "subname": "",
+                "set": "tott",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "DOP-118/232",
+                "name": "Shadow Strike",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            }
+        ]
+    },
+    {
+        "id": "9aed4d0a-f207-47d7-af75-0743e7e46e61",
+        "name": "M'arrillian Starter",
+        "description": "",
+        "createdAt": "2026-07-20T13:37:18.376Z",
+        "updatedAt": "2026-07-20T13:37:20.634Z",
+        "cards": [
+            {
+                "type": "creature",
+                "id": "ROTO-40/100",
+                "name": "Mock'adyn",
+                "subname": "",
+                "set": "roto",
+                "quantity": 1
+            },
+            {
+                "type": "creature",
+                "id": "TOTT-20/100",
+                "name": "Rellim",
+                "subname": "Watermaster",
+                "set": "tott",
+                "quantity": 1
+            },
+            {
+                "type": "creature",
+                "id": "BTD-66/222",
+                "name": "Xis'torq",
+                "subname": "",
+                "set": "btd",
+                "quantity": 1
+            },
+            {
+                "type": "creature",
+                "id": "ROTO-38/100",
+                "name": "Lam'inkal",
+                "subname": "",
+                "set": "roto",
+                "quantity": 2
+            },
+            {
+                "type": "creature",
+                "id": "ROTO-41/100",
+                "name": "Nunk'worn",
+                "subname": "",
+                "set": "roto",
+                "quantity": 1
+            },
+            {
+                "type": "battlegear",
+                "id": "OP-OP-0g0jkoty",
+                "name": "Mommark's Energy Infuser",
+                "subname": "",
+                "set": "op",
+                "quantity": 1
+            },
+            {
+                "type": "battlegear",
+                "id": "AU-138/200",
+                "name": "Orb of Unda",
+                "subname": "",
+                "set": "au",
+                "quantity": 1
+            },
+            {
+                "type": "battlegear",
+                "id": "ROTO-67/100",
+                "name": "Baton of Aa'une",
+                "subname": "",
+                "set": "roto",
+                "quantity": 1
+            },
+            {
+                "type": "battlegear",
+                "id": "DOP-159/232",
+                "name": "Torrent Krinth",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "battlegear",
+                "id": "ROTO-73/100",
+                "name": "Kha'rall Shard of the Tidal Crest",
+                "subname": "",
+                "set": "roto",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "ROTO-84/100",
+                "name": "Curemorph Chords",
+                "subname": "",
+                "set": "roto",
+                "quantity": 2
+            },
+            {
+                "type": "mugic",
+                "id": "ROTO-86/100",
+                "name": "Denial Refrain of the Deep",
+                "subname": "",
+                "set": "roto",
+                "quantity": 2
+            },
+            {
+                "type": "mugic",
+                "id": "ROTO-78/100",
+                "name": "Vexing Waveform",
+                "subname": "",
+                "set": "roto",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "AU-S20/26",
+                "name": "Dranakis Threshold",
+                "subname": "Portal to the Past",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "AU-S22/26",
+                "name": "Graalorn Forest",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "BTD-212/222",
+                "name": "Mount Pillar Reservoir",
+                "subname": "Neth'uar's Foothold",
+                "set": "btd",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "BTD-218/222",
+                "name": "Riverlands",
+                "subname": "Erak'tabb's Foothold",
+                "set": "btd",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "DOP-226/232",
+                "name": "Runic Grove",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "ROTO-65/100",
+                "name": "Tainted Thunderstorm",
+                "subname": "",
+                "set": "roto",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "AU-87/200",
+                "name": "Eidolon Advance",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "AU-89/200",
+                "name": "Essential Evaporation",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "AU-94/200",
+                "name": "Flood Force",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "ROTO-53/100",
+                "name": "Invader's Tactics",
+                "subname": "",
+                "set": "roto",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "ROTO-54/100",
+                "name": "Kha'rall Crush",
+                "subname": "",
+                "set": "roto",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "TOTT-47/100",
+                "name": "Morphwrath",
+                "subname": "",
+                "set": "tott",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "TOTT-38/100",
+                "name": "Aqua Recoil",
+                "subname": "",
+                "set": "tott",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "BTD-68/222",
+                "name": "Burning Rain",
+                "subname": "",
+                "set": "btd",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "TOTT-40/100",
+                "name": "Flamebloom",
+                "subname": "",
+                "set": "tott",
+                "quantity": 2
+            }
+        ]
+    },
+    {
+        "id": "7f954587-b106-46f5-afb6-db3aa27c8c5f",
+        "name": "Smarts",
+        "description": "",
+        "createdAt": "2026-07-20T13:39:02.136Z",
+        "updatedAt": "2026-07-20T13:39:05.664Z",
+        "cards": [
+            {
+                "type": "creature",
+                "id": "BTD-58/222",
+                "name": "Erak'tabb",
+                "subname": "",
+                "set": "btd",
+                "quantity": 1
+            },
+            {
+                "type": "creature",
+                "id": "ROTO-36/100",
+                "name": "Ikub'ra",
+                "subname": "",
+                "set": "roto",
+                "quantity": 1
+            },
+            {
+                "type": "creature",
+                "id": "ROTO-5/100",
+                "name": "Gimwei",
+                "subname": "",
+                "set": "roto",
+                "quantity": 2
+            },
+            {
+                "type": "creature",
+                "id": "BTD-5/222",
+                "name": "Gronmor",
+                "subname": "",
+                "set": "btd",
+                "quantity": 2
+            },
+            {
+                "type": "battlegear",
+                "id": "ZOTH-62/100",
+                "name": "Supercharged Alterant",
+                "subname": "",
+                "set": "zoth",
+                "quantity": 1
+            },
+            {
+                "type": "battlegear",
+                "id": "ROTO-72/100",
+                "name": "Kha'rall Magma Shard",
+                "subname": "",
+                "set": "roto",
+                "quantity": 1
+            },
+            {
+                "type": "battlegear",
+                "id": "BTD-132/222",
+                "name": "Aspect Amplifier: Wit",
+                "subname": "",
+                "set": "btd",
+                "quantity": 2
+            },
+            {
+                "type": "battlegear",
+                "id": "FUN-65/100",
+                "name": "Aichlyys Wisp",
+                "subname": "",
+                "set": "fun",
+                "quantity": 2
+            },
+            {
+                "type": "mugic",
+                "id": "ROTO-77/100",
+                "name": "Sound of Noise",
+                "subname": "",
+                "set": "roto",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "TOTT-89/100",
+                "name": "March of the M'arrillian Minions",
+                "subname": "",
+                "set": "tott",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "AU-170/200",
+                "name": "Anthem of Stone",
+                "subname": "",
+                "set": "au",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "ROTO-89/100",
+                "name": "Requiem of Lost Minds",
+                "subname": "",
+                "set": "roto",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "BTD-174/222",
+                "name": "Tonal Destruction",
+                "subname": "",
+                "set": "btd",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "BTD-172/222",
+                "name": "Specific Diminishing",
+                "subname": "",
+                "set": "btd",
+                "quantity": 1
+            },
+            {
+                "type": "location",
+                "id": "BTD-214/222",
+                "name": "The OverWorld Library",
+                "subname": "",
+                "set": "btd",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "BTD-218/222",
+                "name": "Riverlands",
+                "subname": "Erak'tabb's Foothold",
+                "set": "btd",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "BTD-198/222",
+                "name": "Chamber of Waves",
+                "subname": "",
+                "set": "btd",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "TOTT-97/100",
+                "name": "Shardcrafters' Workshop",
+                "subname": "",
+                "set": "tott",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "DOP-219/232",
+                "name": "Kiru City",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "DOP-93/232",
+                "name": "Ember Swarm",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "TOTT-46/100",
+                "name": "Mindrazor",
+                "subname": "",
+                "set": "tott",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "BTD-96/222",
+                "name": "Perplexing Heat",
+                "subname": "",
+                "set": "btd",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "BTD-97/222",
+                "name": "Piercing Brilliance",
+                "subname": "",
+                "set": "btd",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "DOP-121/232",
+                "name": "Sleep Sting",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "BTD-102/222",
+                "name": "Primal Smash",
+                "subname": "",
+                "set": "btd",
+                "quantity": 1
+            },
+            {
+                "type": "attack",
+                "id": "AU-106/200",
+                "name": "Outfreeze",
+                "subname": "",
+                "set": "au",
+                "quantity": 1
+            },
+            {
+                "type": "attack",
+                "id": "FUN-60/100",
+                "name": "Thermo Rings",
+                "subname": "",
+                "set": "fun",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "DOP-98/232",
+                "name": "Flash Mend",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "DOP-91/232",
+                "name": "Delerium",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "DOP-114/232",
+                "name": "Quick Exit",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            }
+        ]
+    },
+    {
+        "id": "866e859c-b576-4e84-a120-610ca820e560",
+        "name": "Infect",
+        "description": "",
+        "createdAt": "2026-07-20T13:39:17.129Z",
+        "updatedAt": "2026-07-20T13:39:19.123Z",
+        "cards": [
+            {
+                "type": "creature",
+                "id": "FAS-26/100",
+                "name": "Aszil",
+                "subname": "the Young Queen",
+                "set": "fas",
+                "quantity": 1
+            },
+            {
+                "type": "creature",
+                "id": "AU-45/200",
+                "name": "Tarin",
+                "subname": "",
+                "set": "au",
+                "quantity": 1
+            },
+            {
+                "type": "creature",
+                "id": "FAS-20/100",
+                "name": "Wamma",
+                "subname": "Flame Guard",
+                "set": "fas",
+                "quantity": 1
+            },
+            {
+                "type": "creature",
+                "id": "BTD-30/222",
+                "name": "Drazz",
+                "subname": "",
+                "set": "btd",
+                "quantity": 2
+            },
+            {
+                "type": "creature",
+                "id": "FUN-17/100",
+                "name": "Elna",
+                "subname": "",
+                "set": "fun",
+                "quantity": 1
+            },
+            {
+                "type": "battlegear",
+                "id": "ZOTH-59/100",
+                "name": "Mandiblor Crown",
+                "subname": "",
+                "set": "zoth",
+                "quantity": 1
+            },
+            {
+                "type": "battlegear",
+                "id": "AU-132/200",
+                "name": "Drilldozer",
+                "subname": " Customized Rig",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "battlegear",
+                "id": "AU-S19/26",
+                "name": "Vlaric Shard",
+                "subname": " Relic of the Past",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "battlegear",
+                "id": "ZOTH-56/100",
+                "name": "Danian Carapace",
+                "subname": "",
+                "set": "zoth",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "BTD-187/222",
+                "name": "Intense Polyphony",
+                "subname": "",
+                "set": "btd",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "BTD-167/222",
+                "name": "Nourishing Nocturne",
+                "subname": "",
+                "set": "btd",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "DOP-167/232",
+                "name": "Fortissimo",
+                "subname": "",
+                "set": "dop",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "ZOTH-77/100",
+                "name": "Elemental Elegy",
+                "subname": "",
+                "set": "zoth",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "DOP-191/232",
+                "name": "Chorus of the Hive",
+                "subname": "",
+                "set": "dop",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "BTD-174/222",
+                "name": "Tonal Destruction",
+                "subname": "",
+                "set": "btd",
+                "quantity": 1
+            },
+            {
+                "type": "location",
+                "id": "DOP-223/232",
+                "name": "Mount Pillar",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "BTD-204/222",
+                "name": "The Hive Gallery",
+                "subname": "",
+                "set": "btd",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "AU-188/200",
+                "name": "Mount Pillar Reservoir",
+                "subname": "Liberated",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "AU-195/200",
+                "name": "Rock River Canyon",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "BTD-208/222",
+                "name": "The Infectorium",
+                "subname": "",
+                "set": "btd",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "SS-43/100",
+                "name": "Enlightened Tenacity",
+                "subname": "",
+                "set": "ss",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "AU-115/200",
+                "name": "Tectostrike",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "DOP-117/232",
+                "name": "Rustoxic",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "FUN-48/100",
+                "name": "Geyser Gush",
+                "subname": "",
+                "set": "fun",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "AU-85/200",
+                "name": "Earth Pulse",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "BTD-102/222",
+                "name": "Primal Smash",
+                "subname": "",
+                "set": "btd",
+                "quantity": 1
+            },
+            {
+                "type": "attack",
+                "id": "ROTO-64/100",
+                "name": "Swarming Destruction",
+                "subname": "",
+                "set": "roto",
+                "quantity": 1
+            },
+            {
+                "type": "attack",
+                "id": "AU-107/200",
+                "name": "Paraseed",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "TOTT-50/100",
+                "name": "Sediment Stormshield",
+                "subname": "",
+                "set": "tott",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "TOTT-38/100",
+                "name": "Aqua Recoil",
+                "subname": "",
+                "set": "tott",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "DOP-123/232",
+                "name": "Spirit Gust",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            }
+        ]
+    },
+    {
+        "id": "6f9120ea-3bd2-45fc-a96b-6a9a020f7e71",
+        "name": "Ignite",
+        "description": "",
+        "createdAt": "2026-07-20T13:39:24.143Z",
+        "updatedAt": "2026-07-20T13:39:27.724Z",
+        "cards": [
+            {
+                "type": "creature",
+                "id": "AU-21/200",
+                "name": "Magmon",
+                "subname": "Engulfed",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "creature",
+                "id": "ROTO-13/100",
+                "name": "Takinom",
+                "subname": "The Shadowknight",
+                "set": "roto",
+                "quantity": 1
+            },
+            {
+                "type": "creature",
+                "id": "BTD-18/222",
+                "name": "Brimflame",
+                "subname": "",
+                "set": "btd",
+                "quantity": 2
+            },
+            {
+                "type": "creature",
+                "id": "FUN-11/100",
+                "name": "Chaor",
+                "subname": "The Fierce",
+                "set": "fun",
+                "quantity": 1
+            },
+            {
+                "type": "battlegear",
+                "id": "DOP-163/232",
+                "name": "Whepcrack",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "battlegear",
+                "id": "AU-133/200",
+                "name": "Flameblade of Seeryn",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "battlegear",
+                "id": "DOP-161/232",
+                "name": "Viledriver",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "mugic",
+                "id": "BTD-184/222",
+                "name": "Improvisational Melody",
+                "subname": "",
+                "set": "btd",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "DOP-168/232",
+                "name": "Geo Flourish",
+                "subname": "",
+                "set": "dop",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "TOTT-79/100",
+                "name": "Nocturne of the Elements",
+                "subname": "",
+                "set": "tott",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "FUN-83/100",
+                "name": "Intertwined Melody",
+                "subname": "",
+                "set": "fun",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "BTD-174/222",
+                "name": "Tonal Destruction",
+                "subname": "",
+                "set": "btd",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "ZOTH-73/100",
+                "name": "Elemental Denial",
+                "subname": "",
+                "set": "zoth",
+                "quantity": 1
+            },
+            {
+                "type": "location",
+                "id": "DOP-230/232",
+                "name": "UnderWorld City",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "DOP-221/232",
+                "name": "Lava Pond",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "FAS-12/100",
+                "name": "The Flame Gate",
+                "subname": "",
+                "set": "fas",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "DOP-231/232",
+                "name": "UnderWorld Colosseum",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "AU-186/200",
+                "name": "The Magma Dam",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "DOP-96/232",
+                "name": "Flame Orb",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "AU-91/200",
+                "name": "Fireram",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "AU-80/200",
+                "name": "Combustion Carnage",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "AU-92/200",
+                "name": "Flame Breach",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "TOTT-40/100",
+                "name": "Flamebloom",
+                "subname": "",
+                "set": "tott",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "AU-81/200",
+                "name": "Consuming Flame",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "ROTO-56/100",
+                "name": "Mightswing",
+                "subname": "",
+                "set": "roto",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "FUN-41/100",
+                "name": "Clashjet",
+                "subname": "",
+                "set": "fun",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "DOP-88/232",
+                "name": "Ash Torrent",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "AU-96/200",
+                "name": "Gladiator's Fire",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            }
+        ]
+    },
+    {
+        "id": "0a05b141-4900-4137-a438-23456e81705d",
+        "name": "Giants",
+        "description": "",
+        "createdAt": "2026-07-20T13:39:34.127Z",
+        "updatedAt": "2026-07-20T13:39:35.951Z",
+        "cards": [
+            {
+                "type": "creature",
+                "id": "BTD-53/222",
+                "name": "Savell",
+                "subname": "",
+                "set": "btd",
+                "quantity": 1
+            },
+            {
+                "type": "creature",
+                "id": "AU-52/200",
+                "name": "Habekh",
+                "subname": "",
+                "set": "au",
+                "quantity": 1
+            },
+            {
+                "type": "creature",
+                "id": "TOTT-16/100",
+                "name": "Gaffat-ra",
+                "subname": "",
+                "set": "tott",
+                "quantity": 1
+            },
+            {
+                "type": "creature",
+                "id": "BTD-49/222",
+                "name": "Kileron",
+                "subname": "Warbeast of the Dust Storm",
+                "set": "btd",
+                "quantity": 1
+            },
+            {
+                "type": "creature",
+                "id": "SS-21/100",
+                "name": "Blazvatan",
+                "subname": "The Epic Warbeast",
+                "set": "ss",
+                "quantity": 1
+            },
+            {
+                "type": "creature",
+                "id": "SS-34/100",
+                "name": "Uboraan",
+                "subname": "",
+                "set": "ss",
+                "quantity": 1
+            },
+            {
+                "type": "battlegear",
+                "id": "BTD-135/222",
+                "name": "Destructozooka",
+                "subname": "",
+                "set": "btd",
+                "quantity": 1
+            },
+            {
+                "type": "battlegear",
+                "id": "BTD-155/222",
+                "name": "Ulmar's Projector",
+                "subname": "",
+                "set": "btd",
+                "quantity": 1
+            },
+            {
+                "type": "battlegear",
+                "id": "SS-74/100",
+                "name": "Warbeast Power Leash",
+                "subname": "",
+                "set": "ss",
+                "quantity": 2
+            },
+            {
+                "type": "battlegear",
+                "id": "FUN-73/100",
+                "name": "Mipedian Fulgurite",
+                "subname": "",
+                "set": "fun",
+                "quantity": 2
+            },
+            {
+                "type": "mugic",
+                "id": "ZOTH-83/100",
+                "name": "Gear Glissando",
+                "subname": "",
+                "set": "zoth",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "FUN-86/100",
+                "name": "Iflar's Improvisation",
+                "subname": "",
+                "set": "fun",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "AU-164/200",
+                "name": "Aegis Airia",
+                "subname": "",
+                "set": "au",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "DOP-199/232",
+                "name": "Notes of Neverwhere",
+                "subname": "",
+                "set": "dop",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "DOP-202/232",
+                "name": "Trills of Diminution",
+                "subname": "",
+                "set": "dop",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "TOTT-87/100",
+                "name": "Symphony of the Guard",
+                "subname": "",
+                "set": "tott",
+                "quantity": 1
+            },
+            {
+                "type": "location",
+                "id": "SS-100/100",
+                "name": "Rao'Pa Sahkk",
+                "subname": "The Ocean with No Water",
+                "set": "ss",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "DOP-222/232",
+                "name": "Mipedim Oasis",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "ZOTH-99/100",
+                "name": "Sands of the Unseen",
+                "subname": "",
+                "set": "zoth",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "ROTO-94/100",
+                "name": "Royal Mipedian Academy of Melee Arts",
+                "subname": "",
+                "set": "roto",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "SS-93/100",
+                "name": "The Hunter's Perimeter",
+                "subname": "",
+                "set": "ss",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "ROTO-61/100",
+                "name": "Sandstrike",
+                "subname": "",
+                "set": "roto",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "FUN-47/100",
+                "name": "Funnel Blast",
+                "subname": "",
+                "set": "fun",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "SS-40/100",
+                "name": "Cyclone Slam",
+                "subname": "",
+                "set": "ss",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "TOTT-50/100",
+                "name": "Sediment Stormshield",
+                "subname": "",
+                "set": "tott",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "TOTT-41/100",
+                "name": "Flying Advantage",
+                "subname": "",
+                "set": "tott",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "BTD-106/222",
+                "name": "Radical Ice Balls",
+                "subname": "",
+                "set": "btd",
+                "quantity": 1
+            },
+            {
+                "type": "attack",
+                "id": "AU-76/200",
+                "name": "Airsault",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "BTD-112/222",
+                "name": "Slowsand",
+                "subname": "",
+                "set": "btd",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "ROTO-58/100",
+                "name": "Poison Steam",
+                "subname": "",
+                "set": "roto",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "BTD-102/222",
+                "name": "Primal Smash",
+                "subname": "",
+                "set": "btd",
+                "quantity": 1
+            },
+            {
+                "type": "attack",
+                "id": "SS-39/100",
+                "name": "Blind Fury",
+                "subname": "",
+                "set": "ss",
+                "quantity": 2
+            }
+        ]
+    },
+    {
+        "id": "9538cc10-1f5b-4bb6-a467-8ac95a1c5392",
+        "name": "Tetrad",
+        "description": "",
+        "createdAt": "2026-07-20T13:46:12.153Z",
+        "updatedAt": "2026-07-20T13:50:43.263Z",
+        "cards": [
+            {
+                "type": "creature",
+                "id": "TOTT-20/100",
+                "name": "Rellim",
+                "subname": "Watermaster",
+                "set": "tott",
+                "quantity": 1
+            },
+            {
+                "type": "creature",
+                "id": "DOP-11/232",
+                "name": "Heptadd",
+                "subname": "",
+                "set": "dop",
+                "quantity": 1
+            },
+            {
+                "type": "creature",
+                "id": "FAS-qsjl73tf",
+                "name": "Arctus",
+                "subname": "Heptadd's Squire",
+                "set": "fas",
+                "quantity": 2
+            },
+            {
+                "type": "creature",
+                "id": "OP-LR01/10",
+                "name": "Ebkeex",
+                "subname": "Patchwork Minion",
+                "set": "op",
+                "quantity": 2
+            },
+            {
+                "type": "battlegear",
+                "id": "BTD-135/222",
+                "name": "Destructozooka",
+                "subname": "",
+                "set": "btd",
+                "quantity": 1
+            },
+            {
+                "type": "battlegear",
+                "id": "FUN-70/100",
+                "name": "Gigantroper",
+                "subname": "",
+                "set": "fun",
+                "quantity": 1
+            },
+            {
+                "type": "battlegear",
+                "id": "OP-P-021",
+                "name": "Bodal's Element Converter",
+                "subname": "",
+                "set": "op",
+                "quantity": 2
+            },
+            {
+                "type": "battlegear",
+                "id": "AU-128/200",
+                "name": "Citadel Fragments",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "mugic",
+                "id": "BTD-174/222",
+                "name": "Tonal Destruction",
+                "subname": "",
+                "set": "btd",
+                "quantity": 2
+            },
+            {
+                "type": "mugic",
+                "id": "BTD-177/222",
+                "name": "Empowering Serenade",
+                "subname": "",
+                "set": "btd",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "DOP-179/232",
+                "name": "Refrain of Denial",
+                "subname": "",
+                "set": "dop",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "AU-170/200",
+                "name": "Anthem of Stone",
+                "subname": "",
+                "set": "au",
+                "quantity": 1
+            },
+            {
+                "type": "mugic",
+                "id": "BTD-175/222",
+                "name": "Dissonance of Will",
+                "subname": "",
+                "set": "btd",
+                "quantity": 1
+            },
+            {
+                "type": "location",
+                "id": "DOP-219/232",
+                "name": "Kiru City",
+                "subname": "",
+                "set": "dop",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "AU-180/200",
+                "name": "Elmantiir",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "AU-S22/26",
+                "name": "Graalorn Forest",
+                "subname": "",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "AU-184/200",
+                "name": "Kaizeph",
+                "subname": "City of the Elements",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "location",
+                "id": "AU-190/200",
+                "name": "The Passage",
+                "subname": "OverWorld",
+                "set": "au",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "DOP-87/232",
+                "name": "Allmageddon",
+                "subname": "",
+                "set": "dop",
+                "quantity": 1
+            },
+            {
+                "type": "attack",
+                "id": "SS-36/100",
+                "name": "Apoc-eclipse",
+                "subname": "",
+                "set": "ss",
+                "quantity": 1
+            },
+            {
+                "type": "attack",
+                "id": "TOTT-44/100",
+                "name": "Landgore",
+                "subname": "",
+                "set": "tott",
+                "quantity": 1
+            },
+            {
+                "type": "attack",
+                "id": "SS-38/100",
+                "name": "Blaze Barrage",
+                "subname": "",
+                "set": "ss",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "SS-55/100",
+                "name": "Purifying Mud",
+                "subname": "",
+                "set": "ss",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "ZOTH-40/100",
+                "name": "Elementalist's Psy-Blast",
+                "subname": "",
+                "set": "zoth",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "ROTO-52/100",
+                "name": "Force Balls",
+                "subname": "",
+                "set": "roto",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "SS-42/100",
+                "name": "Elemental Oxidation",
+                "subname": "",
+                "set": "ss",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "SS-62/100",
+                "name": "Symmetry Slam",
+                "subname": "",
+                "set": "ss",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "TOTT-40/100",
+                "name": "Flamebloom",
+                "subname": "",
+                "set": "tott",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "id": "TOTT-38/100",
+                "name": "Aqua Recoil",
+                "subname": "",
+                "set": "tott",
+                "quantity": 2
+            },
+            {
+                "type": "attack",
+                "uniqueId": "Twister of Elements__ss",
+                "name": "Twister of Elements",
+                "subname": "",
+                "set": "ss",
+                "quantity": 1
+            }
+        ]
+    }
+]
