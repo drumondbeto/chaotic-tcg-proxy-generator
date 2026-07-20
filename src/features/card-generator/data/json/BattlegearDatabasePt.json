@@ -2,6 +2,7 @@
  {
    "displayName": "Aqua Shield",
    "displayName_pt": "Escudo D'água",
+   "importName": "aquashield",
    "name": "Aqua Shield",
    "name_pt": "Escudo D'água",
    "subname": "",
@@ -29,6 +30,7 @@
  {
    "displayName": "Cyclance",
    "displayName_pt": "Cyclance",
+   "importName": "cyclance",
    "name": "Cyclance",
    "name_pt": "Cyclance",
    "subname": "",
@@ -56,6 +58,7 @@
  {
    "displayName": "Diamond of Vlaric",
    "displayName_pt": "Diamante de Vlaric",
+   "importName": "diamondofvlaric",
    "name": "Diamond of Vlaric",
    "name_pt": "Diamante de Vlaric",
    "subname": "",
@@ -83,6 +86,7 @@
  {
    "displayName": "Dragon Pulse",
    "displayName_pt": "Pulso de Dragão",
+   "importName": "dragonpulse",
    "name": "Dragon Pulse",
    "name_pt": "Pulso de Dragão",
    "subname": "",
@@ -110,6 +114,7 @@
  {
    "displayName": "Elixir of Tenacity",
    "displayName_pt": "Elixir da Tenacidade",
+   "importName": "elixiroftenacity",
    "name": "Elixir of Tenacity",
    "name_pt": "Elixir da Tenacidade",
    "subname": "",
@@ -137,6 +142,7 @@
  {
    "displayName": "Flux Bauble",
    "displayName_pt": "Treco de Troca",
+   "importName": "fluxbauble",
    "name": "Flux Bauble",
    "name_pt": "Treco de Troca",
    "subname": "",
@@ -164,6 +170,7 @@
  {
    "displayName": "Gauntlets of Might",
    "displayName_pt": "Manoplas do Poder",
+   "importName": "gauntletsofmight",
    "name": "Gauntlets of Might",
    "name_pt": "Manoplas do Poder",
    "subname": "",
@@ -191,6 +198,7 @@
  {
    "displayName": "Liquilizer",
    "displayName_pt": "Liquilizer",
+   "importName": "liquilizer",
    "name": "Liquilizer",
    "name_pt": "Liquilizer",
    "subname": "",
@@ -218,6 +226,7 @@
  {
    "displayName": "Mipedian Cactus",
    "displayName_pt": "Cactus Mipedian",
+   "importName": "mipediancactus",
    "name": "Mipedian Cactus",
    "name_pt": "Cactus Mipedian",
    "subname": "",
@@ -245,6 +254,7 @@
  {
    "displayName": "Mowercycle",
    "displayName_pt": "Mowercycle",
+   "importName": "mowercycle",
    "name": "Mowercycle",
    "name_pt": "Mowercycle",
    "subname": "",
@@ -272,6 +282,7 @@
  {
    "displayName": "Mugician's Lyre",
    "displayName_pt": "Mugic Lira",
+   "importName": "mugicianslyre",
    "name": "Mugician's Lyre",
    "name_pt": "Mugic Lira",
    "subname": "",
@@ -299,6 +310,7 @@
  {
    "displayName": "Nexus Fuse",
    "displayName_pt": "Detonador Nexus",
+   "importName": "nexusfuse",
    "name": "Nexus Fuse",
    "name_pt": "Detonador Nexus",
    "subname": "",
@@ -326,6 +338,7 @@
  {
    "displayName": "Orb of Foresight",
    "displayName_pt": "Orbe da Previsão",
+   "importName": "orbofforesight",
    "name": "Orb of Foresight",
    "name_pt": "Orbe da Previsão",
    "subname": "",
@@ -353,6 +366,7 @@
  {
    "displayName": "Phobia Mask",
    "displayName_pt": "Máscara de Fobia",
+   "importName": "phobiamask",
    "name": "Phobia Mask",
    "name_pt": "Máscara de Fobia",
    "subname": "",
@@ -380,6 +394,7 @@
  {
    "displayName": "Prism of Vacuity",
    "displayName_pt": "Prisma do Vácuo",
+   "importName": "prismofvacuity",
    "name": "Prism of Vacuity",
    "name_pt": "Prisma do Vácuo",
    "subname": "",
@@ -407,6 +422,7 @@
  {
    "displayName": "Pyroblaster",
    "displayName_pt": "Pyroblaster",
+   "importName": "pyroblaster",
    "name": "Pyroblaster",
    "name_pt": "Pyroblaster",
    "subname": "",
@@ -434,6 +450,7 @@
  {
    "displayName": "Ring of Na'arin",
    "displayName_pt": "Anel de Na'arin",
+   "importName": "ringofnaarin",
    "name": "Ring of Na'arin",
    "name_pt": "Anel de Na'arin",
    "subname": "",
@@ -461,6 +478,7 @@
  {
    "displayName": "Riverland Star",
    "displayName_pt": "Estrela dos Rios",
+   "importName": "riverlandstar",
    "name": "Riverland Star",
    "name_pt": "Estrela dos Rios",
    "subname": "",
@@ -488,6 +506,7 @@
  {
    "displayName": "Skeletal Steed",
    "displayName_pt": "Corcel Esqueleto",
+   "importName": "skeletalsteed",
    "name": "Skeletal Steed",
    "name_pt": "Corcel Esqueleto",
    "subname": "",
@@ -515,6 +534,7 @@
  {
    "displayName": "Spectral Viewer",
    "displayName_pt": "Visor Espectral",
+   "importName": "spectralviewer",
    "name": "Spectral Viewer",
    "name_pt": "Visor Espectral",
    "subname": "",
@@ -542,6 +562,7 @@
  {
    "displayName": "Staff of Wisdom",
    "displayName_pt": "Cajado da Sabedoria",
+   "importName": "staffofwisdom",
    "name": "Staff of Wisdom",
    "name_pt": "Cajado da Sabedoria",
    "subname": "",
@@ -569,6 +590,7 @@
  {
    "displayName": "Stone Mail",
    "displayName_pt": "Armadura de Pedra",
+   "importName": "stonemail",
    "name": "Stone Mail",
    "name_pt": "Armadura de Pedra",
    "subname": "",
@@ -596,6 +618,7 @@
  {
    "displayName": "Talisman of the Mandiblor",
    "displayName_pt": "Talismã do Mandiblor",
+   "importName": "talismanofthemandiblor",
    "name": "Talisman of the Mandiblor",
    "name_pt": "Talismã do Mandiblor",
    "subname": "",
@@ -623,6 +646,7 @@
  {
    "displayName": "Torrent Krinth",
    "displayName_pt": "Temporal Krinth",
+   "importName": "torrentkrinth",
    "name": "Torrent Krinth",
    "name_pt": "Temporal Krinth",
    "subname": "",
@@ -650,6 +674,7 @@
  {
    "displayName": "Torwegg",
    "displayName_pt": "Torwegg",
+   "importName": "torwegg",
    "name": "Torwegg",
    "name_pt": "Torwegg",
    "subname": "",
@@ -677,6 +702,7 @@
  {
    "displayName": "Viledriver",
    "displayName_pt": "Viledriver",
+   "importName": "viledriver",
    "name": "Viledriver",
    "name_pt": "Viledriver",
    "subname": "",
@@ -704,6 +730,7 @@
  {
    "displayName": "Vlaric Shard",
    "displayName_pt": "Caco de Vlaric",
+   "importName": "vlaricshard",
    "name": "Vlaric Shard",
    "name_pt": "Caco de Vlaric",
    "subname": "",
@@ -731,6 +758,7 @@
  {
    "displayName": "Whepcrack",
    "displayName_pt": "Whepcrack",
+   "importName": "whepcrack",
    "name": "Whepcrack",
    "name_pt": "Whepcrack",
    "subname": "",
@@ -758,6 +786,7 @@
  {
    "displayName": "Windstrider",
    "displayName_pt": "Ventos Agudos",
+   "importName": "windstrider",
    "name": "Windstrider",
    "name_pt": "Ventos Agudos",
    "subname": "",
@@ -785,6 +814,7 @@
  {
    "displayName": "Danian Carapace",
    "displayName_pt": "Carapaça Danian",
+   "importName": "daniancarapace",
    "name": "Danian Carapace",
    "name_pt": "Carapaça Danian",
    "subname": "",
@@ -812,6 +842,7 @@
  {
    "displayName": "Elementalist Pauldrons",
    "displayName_pt": "Brafoneiras de Elementalista",
+   "importName": "elementalistpauldrons",
    "name": "Elementalist Pauldrons",
    "name_pt": "Brafoneiras de Elementalista",
    "subname": "",
@@ -839,6 +870,7 @@
  {
    "displayName": "Ice Cloak",
    "displayName_pt": "Manto de Gelo",
+   "importName": "icecloak",
    "name": "Ice Cloak",
    "name_pt": "Manto de Gelo",
    "subname": "",
@@ -866,6 +898,7 @@
  {
    "displayName": "Mandiblor Crown",
    "displayName_pt": "Coroa Mandiblor",
+   "importName": "mandiblorcrown",
    "name": "Mandiblor Crown",
    "name_pt": "Coroa Mandiblor",
    "subname": "",
@@ -893,6 +926,7 @@
  {
    "displayName": "Scout's Monocular",
    "displayName_pt": "Monócolo de Explorador",
+   "importName": "scoutsmonocular",
    "name": "Scout's Monocular",
    "name_pt": "Monócolo de Explorador",
    "subname": "",
@@ -920,6 +954,7 @@
  {
    "displayName": "Stingblade Prototype",
    "displayName_pt": "Protótipo de Espada de Espinho",
+   "importName": "stingbladeprototype",
    "name": "Stingblade Prototype",
    "name_pt": "Protótipo de Espada de Espinho",
    "subname": "",
@@ -947,6 +982,7 @@
  {
    "displayName": "Supercharged Alterant",
    "displayName_pt": "Alterador Supercarregado",
+   "importName": "superchargedalterant",
    "name": "Supercharged Alterant",
    "name_pt": "Alterador Supercarregado",
    "subname": "",
@@ -974,6 +1010,7 @@
  {
    "displayName": "Sword of Khy'at",
    "displayName_pt": "Espada de Khy'at",
+   "importName": "swordofkhyat",
    "name": "Sword of Khy'at",
    "name_pt": "Espada de Khy'at",
    "subname": "",
@@ -1001,6 +1038,7 @@
  {
    "displayName": "Telebracers",
    "displayName_pt": "Telebraceletes",
+   "importName": "telebracers",
    "name": "Telebracers",
    "name_pt": "Telebraceletes",
    "subname": "",
@@ -1028,6 +1066,7 @@
  {
    "displayName": "Ur-Shard",
    "displayName_pt": "Caco de Ur",
+   "importName": "urshard",
    "name": "Ur-Shard",
    "name_pt": "Caco de Ur",
    "subname": "",
@@ -1055,6 +1094,7 @@
  {
    "displayName": "Challor",
    "displayName_pt": "Challor",
+   "importName": "challor",
    "name": "Challor",
    "name_pt": "Challor",
    "subname": "",
@@ -1082,6 +1122,7 @@
  {
    "displayName": "Entropy Modulator",
    "displayName_pt": "Modulador de Entropia",
+   "importName": "entropymodulator",
    "name": "Entropy Modulator",
    "name_pt": "Modulador de Entropia",
    "subname": "",
@@ -1109,6 +1150,7 @@
  {
    "displayName": "Heptadd's Crown",
    "displayName_pt": "Coroa de Heptadd",
+   "importName": "heptaddscrown",
    "name": "Heptadd's Crown",
    "name_pt": "Coroa de Heptadd",
    "subname": "",
@@ -1136,6 +1178,7 @@
  {
    "displayName": "Hunter's Lure",
    "displayName_pt": "Isca do Caçador",
+   "importName": "hunterslure",
    "name": "Hunter's Lure",
    "name_pt": "Isca do Caçador",
    "subname": "",
@@ -1163,6 +1206,7 @@
  {
    "displayName": "Lightning Canister",
    "displayName_pt": "Cápsula de Raios",
+   "importName": "lightningcanister",
    "name": "Lightning Canister",
    "name_pt": "Cápsula de Raios",
    "subname": "",
@@ -1190,6 +1234,7 @@
  {
    "displayName": "Ravita Flower",
    "displayName_pt": "Flor de Ravita",
+   "importName": "ravitaflower",
    "name": "Ravita Flower",
    "name_pt": "Flor de Ravita",
    "subname": "",
@@ -1217,6 +1262,7 @@
  {
    "displayName": "Reality Field Generator",
    "displayName_pt": "Gerador de Campos de Realidade",
+   "importName": "realityfieldgenerator",
    "name": "Reality Field Generator",
    "name_pt": "Gerador de Campos de Realidade",
    "subname": "",
@@ -1244,6 +1290,7 @@
  {
    "displayName": "The Doomhammer",
    "displayName_pt": "O Doomammer",
+   "importName": "thedoomhammer",
    "name": "The Doomhammer",
    "name_pt": "O Doomammer",
    "subname": "",
@@ -1271,6 +1318,7 @@
  {
    "displayName": "Warbeast Power Leash",
    "displayName_pt": "Coleira de Fera da Guerra",
+   "importName": "warbeastpowerleash",
    "name": "Warbeast Power Leash",
    "name_pt": "Coleira de Fera da Guerra",
    "subname": "",
@@ -1298,6 +1346,7 @@
  {
    "displayName": "Wind Whip",
    "displayName_pt": "Chicote de Vento",
+   "importName": "windwhip",
    "name": "Wind Whip",
    "name_pt": "Chicote de Vento",
    "subname": "",
@@ -1325,6 +1374,7 @@
  {
    "displayName": "Aerodrone",
    "displayName_pt": "Aerodrone",
+   "importName": "aerodrone",
    "name": "Aerodrone",
    "name_pt": "Aerodrone",
    "subname": "",
@@ -1352,6 +1402,7 @@
  {
    "displayName": "Algal Wings of Attraction",
    "displayName_pt": "Asas Algais da Atração",
+   "importName": "algalwingsofattraction",
    "name": "Algal Wings of Attraction",
    "name_pt": "Asas Algais da Atração",
    "subname": "",
@@ -1379,6 +1430,7 @@
  {
    "displayName": "Alluring Bait",
    "displayName_pt": "Isca Fascinante",
+   "importName": "alluringbait",
    "name": "Alluring Bait",
    "name_pt": "Isca Fascinante",
    "subname": "",
@@ -1406,6 +1458,7 @@
  {
    "displayName": "Aspect Amplifier: Agility",
    "displayName_pt": "Amplificador de Aspecto: Agilidade",
+   "importName": "aspectamplifieragility",
    "name": "Aspect Amplifier: Agility",
    "name_pt": "Amplificador de Aspecto: Agilidade",
    "subname": "",
@@ -1433,6 +1486,7 @@
  {
    "displayName": "Aspect Amplifier: Bravery",
    "displayName_pt": "Amplificador de Aspecto: Bravura",
+   "importName": "aspectamplifierbravery",
    "name": "Aspect Amplifier: Bravery",
    "name_pt": "Amplificador de Aspecto: Bravura",
    "subname": "",
@@ -1460,6 +1514,7 @@
  {
    "displayName": "Aspect Amplifier: Might",
    "displayName_pt": "Amplificador de Aspecto: Força",
+   "importName": "aspectamplifiermight",
    "name": "Aspect Amplifier: Might",
    "name_pt": "Amplificador de Aspecto: Força",
    "subname": "",
@@ -1487,6 +1542,7 @@
  {
    "displayName": "Aspect Amplifier: Wit",
    "displayName_pt": "Amplificador de Aspecto: Sagacidade",
+   "importName": "aspectamplifierwit",
    "name": "Aspect Amplifier: Wit",
    "name_pt": "Amplificador de Aspecto: Sagacidade",
    "subname": "",
@@ -1514,6 +1570,7 @@
  {
    "displayName": "Brain Amplifier",
    "displayName_pt": "Amplificador Cerebral",
+   "importName": "brainamplifier",
    "name": "Brain Amplifier",
    "name_pt": "Amplificador Cerebral",
    "subname": "",
@@ -1541,6 +1598,7 @@
  {
    "displayName": "Breath of the Desert",
    "displayName_pt": "Sopro do Deserto",
+   "importName": "breathofthedesert",
    "name": "Breath of the Desert",
    "name_pt": "Sopro do Deserto",
    "subname": "",
@@ -1568,6 +1626,7 @@
  {
    "displayName": "Destructozooka",
    "displayName_pt": "Destructozooka",
+   "importName": "destructozooka",
    "name": "Destructozooka",
    "name_pt": "Destructozooka",
    "subname": "",
@@ -1595,6 +1654,7 @@
  {
    "displayName": "Hive Amber",
    "displayName_pt": "Âmbar da Multidão",
+   "importName": "hiveamber",
    "name": "Hive Amber",
    "name_pt": "Âmbar da Multidão",
    "subname": "",
@@ -1622,6 +1682,7 @@
  {
    "displayName": "Kha'rall Husk Armor",
    "displayName_pt": "Carapaça Kha'rall",
+   "importName": "kharallhuskarmor",
    "name": "Kha'rall Husk Armor",
    "name_pt": "Carapaça Kha'rall",
    "subname": "",
@@ -1649,6 +1710,7 @@
  {
    "displayName": "Manual of Vidav",
    "displayName_pt": "Manual do Vidav",
+   "importName": "manualofvidav",
    "name": "Manual of Vidav",
    "name_pt": "Manual do Vidav",
    "subname": "",
@@ -1676,6 +1738,7 @@
  {
    "displayName": "Maxxor's Torch",
    "displayName_pt": "Tocha do Maxxor",
+   "importName": "maxxorstorch",
    "name": "Maxxor's Torch",
    "name_pt": "Tocha do Maxxor",
    "subname": "",
@@ -1703,6 +1766,7 @@
  {
    "displayName": "Mind Prism",
    "displayName_pt": "Prisma da Mente",
+   "importName": "mindprism",
    "name": "Mind Prism",
    "name_pt": "Prisma da Mente",
    "subname": "",
@@ -1730,6 +1794,7 @@
  {
    "displayName": "Mindclasp",
    "displayName_pt": "Agarramente",
+   "importName": "mindclasp",
    "name": "Mindclasp",
    "name_pt": "Agarramente",
    "subname": "",
@@ -1757,6 +1822,7 @@
  {
    "displayName": "Mirrors of Misplacement",
    "displayName_pt": "Espelhos do Deslocamento",
+   "importName": "mirrorsofmisplacement",
    "name": "Mirrors of Misplacement",
    "name_pt": "Espelhos do Deslocamento",
    "subname": "",
@@ -1784,6 +1850,7 @@
  {
    "displayName": "Parasite Tablet",
    "displayName_pt": "Pílula do Parasita",
+   "importName": "parasitetablet",
    "name": "Parasite Tablet",
    "name_pt": "Pílula do Parasita",
    "subname": "",
@@ -1811,6 +1878,7 @@
  {
    "displayName": "Phobia Tabard",
    "displayName_pt": "Tabardo de Fobia",
+   "importName": "phobiatabard",
    "name": "Phobia Tabard",
    "name_pt": "Tabardo de Fobia",
    "subname": "",
@@ -1838,6 +1906,7 @@
  {
    "displayName": "Plasma Pounder",
    "displayName_pt": "Canhão de Plasma",
+   "importName": "plasmapounder",
    "name": "Plasma Pounder",
    "name_pt": "Canhão de Plasma",
    "subname": "",
@@ -1865,6 +1934,7 @@
  {
    "displayName": "Prism of Fright",
    "displayName_pt": "Prisma do Medo",
+   "importName": "prismoffright",
    "name": "Prism of Fright",
    "name_pt": "Prisma do Medo",
    "subname": "",
@@ -1892,6 +1962,7 @@
  {
    "displayName": "Prism of Mindlessness",
    "displayName_pt": "Prisma da Inconsciência",
+   "importName": "prismofmindlessness",
    "name": "Prism of Mindlessness",
    "name_pt": "Prisma da Inconsciência",
    "subname": "",
@@ -1919,6 +1990,7 @@
  {
    "displayName": "Prism of Sloth",
    "displayName_pt": "Prisma da Preguiça",
+   "importName": "prismofsloth",
    "name": "Prism of Sloth",
    "name_pt": "Prisma da Preguiça",
    "subname": "",
@@ -1946,6 +2018,7 @@
  {
    "displayName": "Reefshard",
    "displayName_pt": "Caco de Recife",
+   "importName": "reefshard",
    "name": "Reefshard",
    "name_pt": "Caco de Recife",
    "subname": "",
@@ -1973,6 +2046,7 @@
  {
    "displayName": "Sinister Statuette",
    "displayName_pt": "Estatueta Sinistra",
+   "importName": "sinisterstatuette",
    "name": "Sinister Statuette",
    "name_pt": "Estatueta Sinistra",
    "subname": "",
@@ -2000,6 +2074,7 @@
  {
    "displayName": "The Pit Token",
    "displayName_pt": "O Emblema das Covas",
+   "importName": "thepittoken",
    "name": "The Pit Token",
    "name_pt": "O Emblema das Covas",
    "subname": "",
@@ -2027,6 +2102,7 @@
  {
    "displayName": "Ulmar's Bionic Steam Arms",
    "displayName_pt": "Braço Biônico a Vapor do Ulmar",
+   "importName": "ulmarsbionicsteamarms",
    "name": "Ulmar's Bionic Steam Arms",
    "name_pt": "Braço Biônico a Vapor do Ulmar",
    "subname": "",
@@ -2054,6 +2130,7 @@
  {
    "displayName": "Ulmar's Projector",
    "displayName_pt": "Projetor do Ulmar",
+   "importName": "ulmarsprojector",
    "name": "Ulmar's Projector",
    "name_pt": "Projetor do Ulmar",
    "subname": "",
@@ -2081,6 +2158,7 @@
  {
    "displayName": "Baton of Aa'une",
    "displayName_pt": "Bastão de Aa'une",
+   "importName": "batonofaaune",
    "name": "Baton of Aa'une",
    "name_pt": "Bastão de Aa'une",
    "subname": "",
@@ -2108,6 +2186,7 @@
  {
    "displayName": "Dractyl Scales",
    "displayName_pt": "Escamas do Dractyl",
+   "importName": "dractylscales",
    "name": "Dractyl Scales",
    "name_pt": "Escamas do Dractyl",
    "subname": "",
@@ -2135,6 +2214,7 @@
  {
    "displayName": "Kha'rall Amber Shard",
    "displayName_pt": "Caco Kha'rall Âmbar",
+   "importName": "kharallambershard",
    "name": "Kha'rall Amber Shard",
    "name_pt": "Caco Kha'rall Âmbar",
    "subname": "",
@@ -2162,6 +2242,7 @@
  {
    "displayName": "Kha'rall Chime Shard",
    "displayName_pt": "Caco Kha'rall da Harmonia",
+   "importName": "kharallchimeshard",
    "name": "Kha'rall Chime Shard",
    "name_pt": "Caco Kha'rall da Harmonia",
    "subname": "",
@@ -2189,6 +2270,7 @@
  {
    "displayName": "Kha'rall Freshwater Shard",
    "displayName_pt": "Caco Kha'rall de Água Doce",
+   "importName": "kharallfreshwatershard",
    "name": "Kha'rall Freshwater Shard",
    "name_pt": "Caco Kha'rall de Água Doce",
    "subname": "",
@@ -2216,6 +2298,7 @@
  {
    "displayName": "Kha'rall Magma Shard",
    "displayName_pt": "Caco Kha'rall de Magma",
+   "importName": "kharallmagmashard",
    "name": "Kha'rall Magma Shard",
    "name_pt": "Caco Kha'rall de Magma",
    "subname": "",
@@ -2243,6 +2326,7 @@
  {
    "displayName": "Kha'rall Shard of the Tidal Crest",
    "displayName_pt": "Caco Kha'rall da Crista da Maré",
+   "importName": "kharallshardofthetidalcrest",
    "name": "Kha'rall Shard of the Tidal Crest",
    "name_pt": "Caco Kha'rall da Crista da Maré",
    "subname": "",
@@ -2270,6 +2354,7 @@
  {
    "displayName": "Liquid Thought Evaporator",
    "displayName_pt": "Evaporador de Pensamento Líquido",
+   "importName": "liquidthoughtevaporator",
    "name": "Liquid Thought Evaporator",
    "name_pt": "Evaporador de Pensamento Líquido",
    "subname": "",
@@ -2297,6 +2382,7 @@
  {
    "displayName": "Phobia Plates",
    "displayName_pt": "Placas de Fobia",
+   "importName": "phobiaplates",
    "name": "Phobia Plates",
    "name_pt": "Placas de Fobia",
    "subname": "",
@@ -2324,6 +2410,7 @@
  {
    "displayName": "Vial of Liquid Thought",
    "displayName_pt": "Frasco de Pensamento Líquido",
+   "importName": "vialofliquidthought",
    "name": "Vial of Liquid Thought",
    "name_pt": "Frasco de Pensamento Líquido",
    "subname": "",
@@ -2351,6 +2438,7 @@
  {
    "displayName": "Blazier's Map Collection",
    "displayName_pt": "Coleção de Mapas do Blazier",
+   "importName": "blaziersmapcollection",
    "name": "Blazier's Map Collection",
    "name_pt": "Coleção de Mapas do Blazier",
    "subname": "",
@@ -2378,6 +2466,7 @@
  {
    "displayName": "Bronzeflight",
    "displayName_pt": "Bronzeflight",
+   "importName": "bronzeflight",
    "name": "Bronzeflight",
    "name_pt": "Bronzeflight",
    "subname": "",
@@ -2405,6 +2494,7 @@
  {
    "displayName": "Burithean Axe",
    "displayName_pt": "Machado Burithean",
+   "importName": "buritheanaxe",
    "name": "Burithean Axe",
    "name_pt": "Machado Burithean",
    "subname": "",
@@ -2432,6 +2522,7 @@
  {
    "displayName": "Dread Tread",
    "displayName_pt": "Piso do Medo",
+   "importName": "dreadtread",
    "name": "Dread Tread",
    "name_pt": "Piso do Medo",
    "subname": "",
@@ -2459,6 +2550,7 @@
  {
    "displayName": "Evergreen Tunic",
    "displayName_pt": "Túnica Perene",
+   "importName": "evergreentunic",
    "name": "Evergreen Tunic",
    "name_pt": "Túnica Perene",
    "subname": "",
@@ -2486,6 +2578,7 @@
  {
    "displayName": "Flitflut",
    "displayName_pt": "Flitflut",
+   "importName": "flitflut",
    "name": "Flitflut",
    "name_pt": "Flitflut",
    "subname": "",
@@ -2513,6 +2606,7 @@
  {
    "displayName": "Girgeth Tar",
    "displayName_pt": "Piche Girgeth",
+   "importName": "girgethtar",
    "name": "Girgeth Tar",
    "name_pt": "Piche Girgeth",
    "subname": "",
@@ -2540,6 +2634,7 @@
  {
    "displayName": "Hornsabre",
    "displayName_pt": "Sabre Chifre",
+   "importName": "hornsabre",
    "name": "Hornsabre",
    "name_pt": "Sabre Chifre",
    "subname": "",
@@ -2567,6 +2662,7 @@
  {
    "displayName": "Ikkatosh's Aichstick",
    "displayName_pt": "Galho do Ikkatosh",
+   "importName": "ikkatoshsaichstick",
    "name": "Ikkatosh's Aichstick",
    "name_pt": "Galho do Ikkatosh",
    "subname": "",
@@ -2594,6 +2690,7 @@
  {
    "displayName": "Levitaar",
    "displayName_pt": "Levitaar",
+   "importName": "levitaar",
    "name": "Levitaar",
    "name_pt": "Levitaar",
    "subname": "",
@@ -2621,6 +2718,7 @@
  {
    "displayName": "Mipedian Balladeers' Flute",
    "displayName_pt": "Flauta do Baladeiro Mipedian",
+   "importName": "mipedianballadeersflute",
    "name": "Mipedian Balladeers' Flute",
    "name_pt": "Flauta do Baladeiro Mipedian",
    "subname": "",
@@ -2648,6 +2746,7 @@
  {
    "displayName": "Obliterators",
    "displayName_pt": "Obliteradores",
+   "importName": "obliterators",
    "name": "Obliterators",
    "name_pt": "Obliteradores",
    "subname": "",
@@ -2675,6 +2774,7 @@
  {
    "displayName": "Ozlai's Wreck",
    "displayName_pt": "O Destruidor do Ozlai",
+   "importName": "ozlaiswreck",
    "name": "Ozlai's Wreck",
    "name_pt": "O Destruidor do Ozlai",
    "subname": "",
@@ -2702,6 +2802,7 @@
  {
    "displayName": "Residual Lightning Dust",
    "displayName_pt": "Poeira Residual de Relâmpago",
+   "importName": "residuallightningdust",
    "name": "Residual Lightning Dust",
    "name_pt": "Poeira Residual de Relâmpago",
    "subname": "",
@@ -2729,6 +2830,7 @@
  {
    "displayName": "Sahrnokk",
    "displayName_pt": "Sahrnokk",
+   "importName": "sahrnokk",
    "name": "Sahrnokk",
    "name_pt": "Sahrnokk",
    "subname": "",
@@ -2756,6 +2858,7 @@
  {
    "displayName": "Scepter of the Infernal Parasite",
    "displayName_pt": "Cetro do Parasita Infernal",
+   "importName": "scepteroftheinfernalparasite",
    "name": "Scepter of the Infernal Parasite",
    "name_pt": "Cetro do Parasita Infernal",
    "subname": "",
@@ -2783,6 +2886,7 @@
  {
    "displayName": "Van Bloot's Sickle",
    "displayName_pt": "Foice do Van Bloot",
+   "importName": "vanblootssickle",
    "name": "Van Bloot's Sickle",
    "name_pt": "Foice do Van Bloot",
    "subname": "",
@@ -2810,6 +2914,7 @@
  {
    "displayName": "Warriors of Owayki",
    "displayName_pt": "Guerreiros de Owayki",
+   "importName": "warriorsofowayki",
    "name": "Warriors of Owayki",
    "name_pt": "Guerreiros de Owayki",
    "subname": "",
@@ -2837,6 +2942,7 @@
  {
    "displayName": "Weightless Energy Vessel",
    "displayName_pt": "Nave de Energia Flutuante",
+   "importName": "weightlessenergyvessel",
    "name": "Weightless Energy Vessel",
    "name_pt": "Nave de Energia Flutuante",
    "subname": "",
@@ -2864,6 +2970,7 @@
  {
    "displayName": "Wing-Fin",
    "displayName_pt": "Barbatana-Alada",
+   "importName": "wingfin",
    "name": "Wing-Fin",
    "name_pt": "Barbatana-Alada",
    "subname": "",
@@ -2891,6 +2998,7 @@
  {
    "displayName": "Aichlyys Wisp",
    "displayName_pt": "Fogo-Fátuo do Aichlyys",
+   "importName": "aichlyyswisp",
    "name": "Aichlyys Wisp",
    "name_pt": "Fogo-Fátuo do Aichlyys",
    "subname": "",
@@ -2918,6 +3026,7 @@
  {
    "displayName": "Armbands of Lore",
    "displayName_pt": "Braçadeiras do Lore",
+   "importName": "armbandsoflore",
    "name": "Armbands of Lore",
    "name_pt": "Braçadeiras do Lore",
    "subname": "",
@@ -2945,6 +3054,7 @@
  {
    "displayName": "Bodal's Dagger",
    "displayName_pt": "Adaga do Bodal",
+   "importName": "bodalsdagger",
    "name": "Bodal's Dagger",
    "name_pt": "Adaga do Bodal",
    "subname": "",
@@ -2972,6 +3082,7 @@
  {
    "displayName": "Crown of Aa'une",
    "displayName_pt": "Coroa do Aa'une",
+   "importName": "crownofaaune",
    "name": "Crown of Aa'une",
    "name_pt": "Coroa do Aa'une",
    "subname": "",
@@ -2999,6 +3110,7 @@
  {
    "displayName": "General's Standard",
    "displayName_pt": "Estandarte do General",
+   "importName": "generalsstandard",
    "name": "General's Standard",
    "name_pt": "Estandarte do General",
    "subname": "",
@@ -3026,6 +3138,7 @@
  {
    "displayName": "Gigantroper",
    "displayName_pt": "Gigantrooper",
+   "importName": "gigantroper",
    "name": "Gigantroper",
    "name_pt": "Gigantrooper",
    "subname": "",
@@ -3053,6 +3166,7 @@
  {
    "displayName": "Indigo Sash",
    "displayName_pt": "Faixa Índigo",
+   "importName": "indigosash",
    "name": "Indigo Sash",
    "name_pt": "Faixa Índigo",
    "subname": "",
@@ -3080,6 +3194,7 @@
  {
    "displayName": "Khybon's Mech-blade",
    "displayName_pt": "Espada Mecha do Khybon",
+   "importName": "khybonsmechblade",
    "name": "Khybon's Mech-blade",
    "name_pt": "Espada Mecha do Khybon",
    "subname": "",
@@ -3107,6 +3222,7 @@
  {
    "displayName": "Mipedian Fulgurite",
    "displayName_pt": "Fulgurita Mipedian",
+   "importName": "mipedianfulgurite",
    "name": "Mipedian Fulgurite",
    "name_pt": "Fulgurita Mipedian",
    "subname": "",
@@ -3134,6 +3250,7 @@
  {
    "displayName": "Muge's Tuningfork",
    "displayName_pt": "Diasapão do Mago",
+   "importName": "mugestuningfork",
    "name": "Muge's Tuningfork",
    "name_pt": "Diasapão do Mago",
    "subname": "",
@@ -3161,6 +3278,7 @@
  {
    "displayName": "Riverland Moon",
    "displayName_pt": "Lua dos Rios",
+   "importName": "riverlandmoon",
    "name": "Riverland Moon",
    "name_pt": "Lua dos Rios",
    "subname": "",
@@ -3188,6 +3306,7 @@
  {
    "displayName": "Shard of Solitude",
    "displayName_pt": "Caco Kha'rall da Solidão",
+   "importName": "shardofsolitude",
    "name": "Shard of Solitude",
    "name_pt": "Caco Kha'rall da Solidão",
    "subname": "",
@@ -3215,6 +3334,7 @@
  {
    "displayName": "Ankh of Kehn-Sep",
    "displayName_pt": "Ankh de Kehn-Sep",
+   "importName": "ankhofkehnsep",
    "name": "Ankh of Kehn-Sep",
    "name_pt": "Ankh de Kehn-Sep",
    "subname": "",
@@ -3242,6 +3362,7 @@
  {
    "displayName": "Aquatic Familiar",
    "displayName_pt": "Familiar Aquático",
+   "importName": "aquaticfamiliar",
    "name": "Aquatic Familiar",
    "name_pt": "Familiar Aquático",
    "subname": "",
@@ -3269,6 +3390,7 @@
  {
    "displayName": "AZAIA Mindprobe",
    "displayName_pt": "Sonda Mental AZAIA",
+   "importName": "azaiamindprobe",
    "name": "AZAIA Mindprobe",
    "name_pt": "Sonda Mental AZAIA",
    "subname": "",
@@ -3296,6 +3418,7 @@
  {
    "displayName": "Bi-Mowercycle",
    "displayName_pt": "Bi-Mowercycle",
+   "importName": "bimowercycle",
    "name": "Bi-Mowercycle",
    "name_pt": "Bi-Mowercycle",
    "subname": "",
@@ -3323,6 +3446,7 @@
  {
    "displayName": "Citadel Fragments",
    "displayName_pt": "Fragmentos da Cidadela",
+   "importName": "citadelfragments",
    "name": "Citadel Fragments",
    "name_pt": "Fragmentos da Cidadela",
    "subname": "",
@@ -3350,6 +3474,7 @@
  {
    "displayName": "Citadel Lodestone",
    "displayName_pt": "Magnetita da Cidadela",
+   "importName": "citadellodestone",
    "name": "Citadel Lodestone",
    "name_pt": "Magnetita da Cidadela",
    "subname": "",
@@ -3377,6 +3502,7 @@
  {
    "displayName": "Colstone",
    "displayName_pt": "Colstone",
+   "importName": "colstone",
    "name": "Colstone",
    "name_pt": "Colstone",
    "subname": "",
@@ -3404,6 +3530,7 @@
  {
    "displayName": "Double Edge",
    "displayName_pt": "Dois Gumes",
+   "importName": "doubleedge",
    "name": "Double Edge",
    "name_pt": "Dois Gumes",
    "subname": "",
@@ -3431,6 +3558,7 @@
  {
    "displayName": "Drilldozer, Customized Rig",
    "displayName_pt": "Drilldozer, Perfuratriz Customizada",
+   "importName": "drilldozercustomizedrig",
    "name": "Drilldozer",
    "name_pt": "Drilldozer",
    "subname": " Customized Rig",
@@ -3458,6 +3586,7 @@
  {
    "displayName": "Flameblade of Seeryn",
    "displayName_pt": "Espada Flamejante de Seeryn",
+   "importName": "flamebladeofseeryn",
    "name": "Flameblade of Seeryn",
    "name_pt": "Espada Flamejante de Seeryn",
    "subname": "",
@@ -3485,6 +3614,7 @@
  {
    "displayName": "Hyperhover",
    "displayName_pt": "Hyperhover",
+   "importName": "hyperhover",
    "name": "Hyperhover",
    "name_pt": "Hyperhover",
    "subname": "",
@@ -3512,6 +3642,7 @@
  {
    "displayName": "Kha'rall Shard of the Staunch",
    "displayName_pt": "Caco Kha'rall da Firmeza",
+   "importName": "kharallshardofthestaunch",
    "name": "Kha'rall Shard of the Staunch",
    "name_pt": "Caco Kha'rall da Firmeza",
    "subname": "",
@@ -3539,6 +3670,7 @@
  {
    "displayName": "Metabolic Overloader",
    "displayName_pt": "Sobrecarregador Metabólico",
+   "importName": "metabolicoverloader",
    "name": "Metabolic Overloader",
    "name_pt": "Sobrecarregador Metabólico",
    "subname": "",
@@ -3566,6 +3698,7 @@
  {
    "displayName": "Mysterious Clawblade",
    "displayName_pt": "Lâmina Guarra Misteriosa",
+   "importName": "mysteriousclawblade",
    "name": "Mysterious Clawblade",
    "name_pt": "Lâmina Guarra Misteriosa",
    "subname": "",
@@ -3593,6 +3726,7 @@
  {
    "displayName": "Orb of Unda",
    "displayName_pt": "Orbe de Unda",
+   "importName": "orbofunda",
    "name": "Orb of Unda",
    "name_pt": "Orbe de Unda",
    "subname": "",
@@ -3620,6 +3754,7 @@
  {
    "displayName": "Orchis Undin",
    "displayName_pt": "Orquis Undin",
+   "importName": "orchisundin",
    "name": "Orchis Undin",
    "name_pt": "Orquis Undin",
    "subname": "",
@@ -3647,6 +3782,7 @@
  {
    "displayName": "Phoenix Belt",
    "displayName_pt": "Cinturão da Fênix",
+   "importName": "phoenixbelt",
    "name": "Phoenix Belt",
    "name_pt": "Cinturão da Fênix",
    "subname": "",
@@ -3674,6 +3810,7 @@
  {
    "displayName": "Pranker Tanker",
    "displayName_pt": "Pranker Tanker",
+   "importName": "prankertanker",
    "name": "Pranker Tanker",
    "name_pt": "Pranker Tanker",
    "subname": "",
@@ -3701,6 +3838,7 @@
  {
    "displayName": "Quranium Pendant",
    "displayName_pt": "Pingente Quranium",
+   "importName": "quraniumpendant",
    "name": "Quranium Pendant",
    "name_pt": "Pingente Quranium",
    "subname": "",
@@ -3728,6 +3866,7 @@
  {
    "displayName": "Sandstorm Shroud",
    "displayName_pt": "Mortalha da Tempestade de Areia",
+   "importName": "sandstormshroud",
    "name": "Sandstorm Shroud",
    "name_pt": "Mortalha da Tempestade de Areia",
    "subname": "",
@@ -3755,6 +3894,7 @@
  {
    "displayName": "Scarab of Khilai",
    "displayName_pt": "Escaravelho de Khilai",
+   "importName": "scarabofkhilai",
    "name": "Scarab of Khilai",
    "name_pt": "Escaravelho de Khilai",
    "subname": "",
@@ -3782,6 +3922,7 @@
  {
    "displayName": "Skopolon",
    "displayName_pt": "Skopolon",
+   "importName": "skopolon",
    "name": "Skopolon",
    "name_pt": "Skopolon",
    "subname": "",
@@ -3809,6 +3950,7 @@
  {
    "displayName": "Stormbird Statues",
    "displayName_pt": "Estátuas de Pássaro da Tempestade",
+   "importName": "stormbirdstatues",
    "name": "Stormbird Statues",
    "name_pt": "Estátuas de Pássaro da Tempestade",
    "subname": "",
@@ -3836,6 +3978,7 @@
  {
    "displayName": "Sun Chariot of Kehn-Sep",
    "displayName_pt": "Carruagem Solar de Kehn-Sep",
+   "importName": "sunchariotofkehnsep",
    "name": "Sun Chariot of Kehn-Sep",
    "name_pt": "Carruagem Solar de Kehn-Sep",
    "subname": "",
@@ -3863,6 +4006,7 @@
  {
    "displayName": "Trident of Treachery",
    "displayName_pt": "Tridente da Traição",
+   "importName": "tridentoftreachery",
    "name": "Trident of Treachery",
    "name_pt": "Tridente da Traição",
    "subname": "",
@@ -3890,6 +4034,7 @@
  {
    "displayName": "Ulmanator",
    "displayName_pt": "Ulmanator",
+   "importName": "ulmanator",
    "name": "Ulmanator",
    "name_pt": "Ulmanator",
    "subname": "",
@@ -3917,6 +4062,7 @@
  {
    "displayName": "Varanohs",
    "displayName_pt": "Varanohs",
+   "importName": "varanohs",
    "name": "Varanohs",
    "name_pt": "Varanohs",
    "subname": "",
@@ -3944,6 +4090,7 @@
  {
    "displayName": "Vlaric Shard, Relic of the Past",
    "displayName_pt": "Caco de Vlaric, Relíquia do Passado",
+   "importName": "vlaricshardrelicofthepast",
    "name": "Vlaric Shard",
    "name_pt": "Caco de Vlaric",
    "subname": " Relic of the Past",
@@ -3971,6 +4118,7 @@
  {
    "displayName": "Xerium Armor",
    "displayName_pt": "Armadura Xerium",
+   "importName": "xeriumarmor",
    "name": "Xerium Armor",
    "name_pt": "Armadura Xerium",
    "subname": "",
@@ -3998,6 +4146,7 @@
  {
    "displayName": "Armor of Earthen Might",
    "displayName_pt": "Armadura da Força Terrena",
+   "importName": "armorofearthenmight",
    "name": "Armor of Earthen Might",
    "name_pt": "Armadura da Força Terrena",
    "subname": "",
@@ -4025,6 +4174,7 @@
  {
    "displayName": "Flux Bauble",
    "displayName_pt": "Treco de Troca",
+   "importName": "fluxbauble",
    "name": "Flux Bauble",
    "name_pt": "Treco de Troca",
    "subname": "",
@@ -4052,6 +4202,7 @@
  {
    "displayName": "Orb of Foresight",
    "displayName_pt": "Orbe da Previsão",
+   "importName": "orbofforesight",
    "name": "Orb of Foresight",
    "name_pt": "Orbe da Previsão",
    "subname": "",
@@ -4079,6 +4230,7 @@
  {
    "displayName": "Talisman of the Mandiblor",
    "displayName_pt": "Talismã do Mandiblor",
+   "importName": "talismanofthemandiblor",
    "name": "Talisman of the Mandiblor",
    "name_pt": "Talismã do Mandiblor",
    "subname": "",
@@ -4106,6 +4258,7 @@
  {
    "displayName": "Bodal's Element Converter",
    "displayName_pt": "Conversor de Elementos do Bodal",
+   "importName": "bodalselementconverter",
    "name": "Bodal's Element Converter",
    "name_pt": "Conversor de Elementos do Bodal",
    "subname": "",
@@ -4133,6 +4286,7 @@
  {
    "displayName": "Kha'rall Shard of Chance",
    "displayName_pt": "Caco Kha'rall da Sorte",
+   "importName": "kharallshardofchance",
    "name": "Kha'rall Shard of Chance",
    "name_pt": "Caco Kha'rall da Sorte",
    "subname": "",
@@ -4160,6 +4314,7 @@
  {
    "displayName": "Mommark's Energy Infuser",
    "displayName_pt": "Infusor de Energia do Mommark",
+   "importName": "mommarksenergyinfuser",
    "name": "Mommark's Energy Infuser",
    "name_pt": "Infusor de Energia do Mommark",
    "subname": "",
@@ -4187,6 +4342,7 @@
  {
    "displayName": "Olkiex' Apron",
    "displayName_pt": "Avental do Olkiex",
+   "importName": "olkiexapron",
    "name": "Olkiex' Apron",
    "name_pt": "Avental do Olkiex",
    "subname": "",
@@ -4214,6 +4370,7 @@
  {
    "displayName": "Droskin",
    "displayName_pt": "Droskin",
+   "importName": "droskin",
    "name": "Droskin",
    "name_pt": "Droskin",
    "subname": "",
@@ -4241,6 +4398,7 @@
  {
    "displayName": "The Indigo Arc",
    "displayName_pt": "O Arco Índigo",
+   "importName": "theindigoarc",
    "name": "The Indigo Arc",
    "name_pt": "O Arco Índigo",
    "subname": "",

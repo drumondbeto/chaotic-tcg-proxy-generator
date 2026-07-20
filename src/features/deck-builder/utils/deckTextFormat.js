@@ -1,6 +1,6 @@
 // Parser/serializer for the deck-list text format used by the external
 // platform (see the "OverWorld Starter.txt" reference file): lowercase
-// section headers with no title line, one card slug per line, quantity
+// section headers with no title line, one card sanitized text per line, quantity
 // represented by repeating the same line.
 //
 // Import is intentionally tolerant (any section order/case, and a "Nome xN"
@@ -8,7 +8,7 @@
 // reproduces the exact reference style so files can be re-imported on the
 // other platform.
 
-import { slugify, resolveCardByName } from './deckCardResolver';
+import { sanitizeText, resolveCardByName } from './deckCardResolver';
 
 const SECTION_TYPE_BY_HEADER = {
   creatures: 'creature',
@@ -35,7 +35,7 @@ const QUANTITY_SUFFIX = /^(.*?)\s*[xX](\d+)$/;
  * Parses deck list text into resolved cards + a list of lines that could not
  * be matched to any card in the database (so the UI can warn the user).
  *
- * Returns: { cards: [{type, uniqueId, name, subname, set, quantity}], unresolved: [{type, raw}] }
+ * Returns: { cards: [{type, id, name, subname, set, quantity}], unresolved: [{type, raw}] }
  */
 export function parseDeckText(text, locale = 'pt') {
   const lines = (text || '').split(/\r?\n/).map((line) => line.trim());
@@ -69,13 +69,13 @@ export function parseDeckText(text, locale = 'pt') {
       continue;
     }
 
-    const existing = cards.find((c) => c.type === type && c.uniqueId === match.uniqueId);
+    const existing = cards.find((c) => c.type === type && c.id === match.id);
     if (existing) {
       existing.quantity += quantity;
     } else {
       cards.push({
         type,
-        uniqueId: match.uniqueId,
+        id: match.id,
         name: match.name,
         subname: match.subname || '',
         set: match.set || '',
@@ -87,7 +87,7 @@ export function parseDeckText(text, locale = 'pt') {
   return { cards, unresolved };
 }
 
-/** Serializes a deck to the reference slug-based text format. */
+/** Serializes a deck to the reference sanitized-based text format. */
 export function serializeDeckToText(deck) {
   const lines = [];
 
@@ -97,9 +97,9 @@ export function serializeDeckToText(deck) {
 
     lines.push(header);
     cardsOfType.forEach((card) => {
-      const slug = slugify(`${card.name || ''}${card.subname || ''}`);
+      const sanitized = sanitizeText(`${card.name_en || ''}${card.subname_en || ''}`);
       for (let i = 0; i < card.quantity; i++) {
-        lines.push(slug);
+        lines.push(sanitized);
       }
     });
   });
