@@ -16,11 +16,11 @@ import {
 import { BatchCardGenerator } from '../../card-generator/components/BatchCardGenerator';
 
 const LOOKUP_BY_TYPE = {
-  creature: (uniqueId, locale) => getCreatureById(uniqueId, locale),
-  attack: (uniqueId, locale) => getAttackById(uniqueId, locale),
-  location: (uniqueId, locale) => getLocationById(uniqueId, locale),
-  battlegear: (uniqueId) => getBattlegearById(uniqueId),
-  mugic: (uniqueId) => getMugicById(uniqueId)
+  creature: (id, locale) => getCreatureById(id, locale),
+  attack: (id, locale) => getAttackById(id, locale),
+  location: (id, locale) => getLocationById(id, locale),
+  battlegear: (id) => getBattlegearById(id),
+  mugic: (id) => getMugicById(id)
 };
 
 const CONVERTER_BY_TYPE = {
@@ -40,7 +40,7 @@ export function buildDeckBatchList(deck, locale = 'pt') {
     const converter = CONVERTER_BY_TYPE[card.type];
     if (!lookup || !converter) return;
 
-    const dbCard = lookup(card.uniqueId, locale);
+    const dbCard = lookup(card.id, locale);
     if (!dbCard) return;
 
     const entry = converter(dbCard);
