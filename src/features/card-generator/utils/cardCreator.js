@@ -3307,7 +3307,7 @@ async function drawLocation(cardData) {
                     'poder': ':power:',
                     'sabedoria': ':wisdom:',
                     'velocidade': ':speed:',
-                    'outro mundo': ':overworld:',
+                    'outromundo': ':overworld:',
                     'submundo': ':underworld:',
                     'mipediano': ':mipedian:'
                 };
@@ -3357,7 +3357,7 @@ async function processInitiativeText(initiativeText) {
         ':sabedoria:': ':wisdom: Sabedoria', 
         ':velocidade:': ':speed: Velocidade',
 
-        ':overworld:': ':overworld: Outro Mundo',
+        ':overworld:': ':overworld: OutroMundo',
         ':underworld:': ':underworld: Submundo',
         ':mipedian:': ':mipedian: Mipedian',
         ':danian:': ':danian: Danian',
@@ -3367,7 +3367,7 @@ async function processInitiativeText(initiativeText) {
         ':umbrian:': ':umbrian: Umbrian',
         ':frozen:': ':frozen: Frozen',
 
-        ':outro mundo:': ':overworld: Outro Mundo',
+        ':outromundo:': ':overworld: OutroMundo',
         ':submundo:': ':underworld: Submundo',
         ':mipediano:': ':mipedian: Mipedian',
     };
