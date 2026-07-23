@@ -1,5 +1,6 @@
 import CreatureDatabasePt from './json/CreatureDatabasePt.json';
 import CreatureDatabaseEn from './json/CreatureDatabaseEn.json';
+import CreatureAltArtDatabase from './json/CreatureAltArtDatabase.json';
 
 console.log("Iniciando Craturas")
 
@@ -39,7 +40,8 @@ const usePtFields = (creature) => {
     brainwashedText_pt: creature.brainwashedText_pt,
     brainwashedText_en: creature.brainwashedText,
 
-    isPast: false
+    isPast: false,
+    artList: creatureAltArtDatabase.filter(alt => alt.id === creature.id) || []
   }
 }
 
@@ -77,10 +79,12 @@ const useEnFields = (creature) => {
     brainwashedText_pt: creature.brainwashedText_pt,
     brainwashedText_en: creature.brainwashedText,
     
-    isPast: false
+    isPast: false,
+    artList: creatureAltArtDatabase.filter(alt => alt.id === creature.id) || []
   }
 }
 
+export const creatureAltArtDatabase = Array.isArray(CreatureAltArtDatabase) ? CreatureAltArtDatabase : [];
 export const creatureDatabasePt = Array.isArray(CreatureDatabasePt) ? CreatureDatabasePt.map(creature => { return usePtFields(creature) }) : [];
 export const creatureDatabaseEn = Array.isArray(CreatureDatabaseEn) ? CreatureDatabaseEn.map(creature => { return useEnFields(creature) }) : [];
 
@@ -95,7 +99,8 @@ export const getAllCreatureNames = (locale = 'pt') => {
     tribe: creature.tribe,
     isPast: creature.isPast,
     set: creature.set || '',
-    setDisplay: creature.set ? creature.set.toUpperCase() : ''
+    setDisplay: creature.set ? creature.set.toUpperCase() : '',
+    artList: creatureAltArtDatabase.filter(alt => alt.id === creature.id) || []
   }});
 };
 

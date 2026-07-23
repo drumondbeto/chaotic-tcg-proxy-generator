@@ -580,6 +580,8 @@ const CardForm = () => {
   const [batchTribeFilter, setBatchTribeFilter] = useState('all');
   const [batchEmptyStats, setBatchEmptyStats] = useState(false);
   const [batchUnofficialsIncluded, setBatchUnofficialsIncluded] = useState(false);
+  const [artList, setArtList] = useState([]);
+  const [customArt, setCustomArt] = useState(false);
   const handleArtPositionChange = useCallback((newPosition) => {
     setArtPosition(newPosition);
   }, []);  
@@ -1324,6 +1326,29 @@ const handleDownloadAllOfType = async () => {
   }
 };
 
+const loadAndSetImage = async (url) => {
+  if (!url) {
+    setArt(null);
+    return;
+  }
+  if (url === 'custom') {
+    setCustomArt(true);
+    return;
+  }
+  setCustomArt(false);
+  loadImageFromUrl(url)
+            .then(imageFile => {
+              if (imageFile) {
+                setArt(imageFile);
+              }
+              setIsLoading(false);
+            })
+            .catch(err => {
+              console.error('Failed to load image:', err);
+              setIsLoading(false);
+            });
+}
+
 return (
   // Added a max-width container that centers the content
   <div className="mx-auto flex flex-col lg:flex-row gap-0 p-2 lg:p-4 max-w-6xl">
@@ -1485,6 +1510,8 @@ return (
         
         // Set Past flag based on isPast property only
         setIsPast(!!cardData.isPast);
+
+        setArtList(cardData.artList || []);
 
         // Then, create a sequence of re-renders with increasing delays
         setTimeout(() => {
@@ -1799,20 +1826,64 @@ return (
       />
     )}
 
+    {/* Alt Arts for Creatures */}
+    {selectedType === 'creature' && artList.length > 0 && (
+      <SelectField
+        label=""
+        value={art}
+        onChange={(e) => {
+          loadAndSetImage(e.target.value);
+          setIsFromDatabase(true); // User is selecting art from database
+          // Reset art position when new art is selected
+          setArtPosition({ x: 0, y: 0, width: 0, height: 0 });
+        }}
+        options={artList.map((artItem) => ({
+          value: artItem.url,
+          label: artItem.altArtName,
+        })).concat({ value: 'custom', label: 'Custom' })}
+        className="hide-internal-label w-full mb-2 w-full p-2 border border-gray-700 rounded bg-black text-white focus:border-[#9FE240] focus:outline-none"
+        label={false}
+      />
+    )}
+
     <div className="flex items-center gap-4">
       <label className="w-24 text-right font-bold">Art</label>
       <div className="flex-1">
-        <input 
-          type="file" 
-          accept="image/*" 
+
+      {/* Alt Arts for Creatures */}
+      {/* {selectedType === 'creature' && artList.length > 0 && (
+        <SelectField
+          label=""
+          value={artList.find((artItem) => artItem.altArtName.toLowerCase() === 'default')?.url || ''}
           onChange={(e) => {
-            setArt(e.target.files[0]);
-            setIsFromDatabase(false); // User is uploading custom art
-            // Reset art position when new art is uploaded
+            loadAndSetImage(e.target.value);
+            setIsFromDatabase(true); // User is selecting art from database
+            // Reset art position when new art is selected
             setArtPosition({ x: 0, y: 0, width: 0, height: 0 });
           }}
-          className="w-full mb-2"
+          options={artList.map((artItem) => ({
+            value: artItem.url,
+            label: artItem.altArtName,
+          })).concat({ value: 'custom', label: 'Custom' })}
+          className="hide-internal-label w-full mb-2 w-full p-2 border border-gray-700 rounded bg-black text-white focus:border-[#9FE240] focus:outline-none"
+          label={false}
         />
+      )} */}
+
+        {((customArt && selectedType === 'creature') || artList.length === 0) && (
+          <input 
+            type="file" 
+            accept="image/*" 
+            onChange={(e) => {
+              setArt(e.target.files[0]);
+              setIsFromDatabase(false); // User is uploading custom art
+              // Reset art position when new art is uploaded
+              setArtPosition({ x: 0, y: 0, width: 0, height: 0 });
+            }}
+            className="w-full mb-2"
+          />
+        )}
+
         {/* Show CardArtPositioner for all card types except location */}        
         {art && showArtPositioner && selectedType !== 'location' && (
           <CardArtPositioner
