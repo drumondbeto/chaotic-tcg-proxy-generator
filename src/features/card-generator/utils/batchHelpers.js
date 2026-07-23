@@ -99,7 +99,7 @@ export function convertLocationToBatchEntry(loc) {
     subname: loc.subname || '',
     tribe: '',
     type: 'location',
-    subtype: loc.subtype || '',
+    subtype: loc.type || '',
     imageUrl: loc.imageUrl || '',
     initiative: loc.initiative || loc.initiative_PtBr || '',
     set: loc.set || '',

@@ -98,7 +98,9 @@ export const getLocationById = (idOrKey, locale = 'pt') => {
 
 export const getAllLocationNames = (locale = 'pt') => {
   setLocale(locale);
-  return locationDatabase.map(location => ({
+  return locationDatabase
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .map(location => ({
       id: location.id, // Use the composite key here
       name: location.displayName || location.name,
       set: location.set || '',
@@ -117,5 +119,7 @@ export const getAllLocationNames = (locale = 'pt') => {
  */
 export const getLocalizedLocationDatabase = (locale = 'pt') => {
   setLocale(locale);
-  return locationDatabase.slice();
+  return locationDatabase
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .slice();
 };
