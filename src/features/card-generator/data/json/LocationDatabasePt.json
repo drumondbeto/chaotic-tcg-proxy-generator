@@ -1769,7 +1769,7 @@
    "initiative": "OverWorld",
    "initiative_pt": "OutroMundo",
    "type": "Mirage",
-   "type_pt": "",
+   "type_pt": "Miragem",
    "artist": "HotShotsVFX",
    "imageUrl": "https://i.imgur.com/tzP4oby.png",
    "uniqueId": "The Heart of the Jungle__btd"
@@ -2294,7 +2294,7 @@
    "initiative": "Power",
    "initiative_pt": "Poder",
    "type": "Mirage",
-   "type_pt": "",
+   "type_pt": "Miragem",
    "artist": "HotShotsVFX",
    "imageUrl": "https://i.imgur.com/KuWBRm4.png",
    "uniqueId": "Lore's Chamber of Recall__tott"
@@ -2494,7 +2494,7 @@
    "initiative": "Power",
    "initiative_pt": "Poder",
    "type": "Mirage",
-   "type_pt": "",
+   "type_pt": "Miragem",
    "artist": "Chris Fisher, HotShotsVFX",
    "imageUrl": "https://i.imgur.com/qcUCrtk.png",
    "uniqueId": "Cryomorph Barricades__fun"
