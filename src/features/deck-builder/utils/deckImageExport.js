@@ -59,3 +59,9 @@ export async function downloadDeckImages(deck, locale = 'pt', progressCallback =
   const safeName = (deck.name || 'deck').replace(/[/\\?%*:|"<>]/g, '-');
   return generator.generateAllCards(list, `${safeName}.zip`, locale);
 }
+
+export async function downloadDeckPdf(deck, locale = 'pt', progressCallback = () => {}) {
+  const list = buildDeckBatchList(deck, locale);
+  const generator = new BatchCardGenerator(progressCallback);
+  return await generator.generatePdfFromCardList(list, deck.name, locale);
+}
