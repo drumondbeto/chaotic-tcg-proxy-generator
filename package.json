@@ -1,8 +1,8 @@
 {
-  "name": "chaotic-react",
+  "name": "chaotic-tcg-proxy-generator",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://bulbastore.github.io/chaotic-react/",
+  "homepage": "https://drumondbeto.github.io/chaotic-tcg-proxy-generator/",
   "dependencies": {
     "@headlessui/react": "^2.2.10",
     "@testing-library/jest-dom": "^5.17.0",
