@@ -95,7 +95,8 @@ export class BatchCardGenerator {
       mugicNotes: (cardEntry.mugicNotes || []).filter(note => note?.letter !== ""),
       serialNumber: cardEntry.serialNumber || cardEntry.id || '',
       showCopyright: true,
-      showArtist: true
+      showArtist: true,
+      useBleedTemplates: true
     };
 
     // Create the card canvas
