@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/chaotic-tcg-proxy-generator/static/css/main.7b8d9859.css",
+    "main.js": "/chaotic-tcg-proxy-generator/static/js/main.4eecbca6.js",
+    "static/js/453.1875b153.chunk.js": "/chaotic-tcg-proxy-generator/static/js/453.1875b153.chunk.js",
+    "static/media/Roboto-Bold.ttf": "/chaotic-tcg-proxy-generator/static/media/Roboto-Bold.c13d0c4f45623629e371.ttf",
+    "static/media/arial-narrow-italic.ttf": "/chaotic-tcg-proxy-generator/static/media/arial-narrow-italic.465dc0649679f65097f5.ttf",
+    "static/media/century-gothic-bold.ttf": "/chaotic-tcg-proxy-generator/static/media/century-gothic-bold.861d22617fdfce5fc922.ttf",
+    "static/media/arial_black.ttf": "/chaotic-tcg-proxy-generator/static/media/arial_black.70134b2bf7545a003946.ttf",
+    "static/media/Eurostile Heavy Italic.ttf": "/chaotic-tcg-proxy-generator/static/media/Eurostile Heavy Italic.8326e7a272a76fe1cf7d.ttf",
+    "static/media/Eurostile Medium Italic.ttf": "/chaotic-tcg-proxy-generator/static/media/Eurostile Medium Italic.a9e8eec80f5ded2f2178.ttf",
+    "static/media/Eurostile Extd Black.ttf": "/chaotic-tcg-proxy-generator/static/media/Eurostile Extd Black.a9d631bc94b9edd6981b.ttf",
+    "static/media/Eurostile Black.ttf": "/chaotic-tcg-proxy-generator/static/media/Eurostile Black.6d36515a79fe551077ec.ttf",
+    "static/media/Eurostile Heavy.ttf": "/chaotic-tcg-proxy-generator/static/media/Eurostile Heavy.6f7af606fcc20bc46f05.ttf",
+    "static/media/Eurostile Medium.ttf": "/chaotic-tcg-proxy-generator/static/media/Eurostile Medium.d3e53eead657da6e8d7b.ttf",
+    "static/media/Arial Bold.ttf": "/chaotic-tcg-proxy-generator/static/media/Arial Bold.e8aba7faaa99fdcbd7e8.ttf",
+    "static/media/Eurostile Cond Heavy Italic.ttf": "/chaotic-tcg-proxy-generator/static/media/Eurostile Cond Heavy Italic.ab58fd6ff2a110ff0fab.ttf",
+    "index.html": "/chaotic-tcg-proxy-generator/index.html",
+    "main.7b8d9859.css.map": "/chaotic-tcg-proxy-generator/static/css/main.7b8d9859.css.map",
+    "main.4eecbca6.js.map": "/chaotic-tcg-proxy-generator/static/js/main.4eecbca6.js.map",
+    "453.1875b153.chunk.js.map": "/chaotic-tcg-proxy-generator/static/js/453.1875b153.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7b8d9859.css",
+    "static/js/main.4eecbca6.js"
+  ]
+}
